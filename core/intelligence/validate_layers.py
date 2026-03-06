@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Layer Validation Script for Mega Brain Repository
+Layer Validation Script for Aureon AI Repository
 
 Validates classification conformance: checks that no L3/NEVER files are
 tracked by git (would indicate accidental commit of personal/sensitive data).
@@ -188,7 +188,7 @@ def generate_markdown_report(report: dict, output_path: Path) -> None:
     status_icon = '✅ PASS' if s['status'] == 'PASS' else '❌ FAIL'
 
     with open(output_path, 'w') as f:
-        f.write('# Mega Brain Layer Validation Report\n\n')
+        f.write('# Aureon AI Layer Validation Report\n\n')
         f.write(f"**Generated:** {report['generated_at']}\n")
         f.write(f"**Repository:** {report['repo_root']}\n")
         f.write(f"**Git-tracked files checked:** {report['git_tracked_files']}\n\n")
@@ -260,7 +260,7 @@ def generate_markdown_report(report: dict, output_path: Path) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Validate Mega Brain layer conformance (CI-runnable)'
+        description='Validate Aureon AI layer conformance (CI-runnable)'
     )
     parser.add_argument(
         '--report',
@@ -274,7 +274,7 @@ def main():
     )
     args = parser.parse_args()
 
-    # Resolve repo root: core/intelligence/ -> core/ -> mega-brain/
+    # Resolve repo root: core/intelligence/ -> core/ -> aureon-ai/
     script_path = Path(__file__).resolve()
     repo_root = script_path.parent.parent.parent
 

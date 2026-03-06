@@ -218,7 +218,7 @@
 
 ## EXECUÇÃO AUTOMÁTICA
 
-Este protocolo é executado pela **PHASE 6.6** do process-jarvis.md (após DOSSIER COMPILATION).
+Este protocolo é executado pela **PHASE 6.6** do aureon-process.md (após DOSSIER COMPILATION).
 
 ### Modo de Operação
 

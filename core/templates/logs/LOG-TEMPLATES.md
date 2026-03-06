@@ -49,7 +49,7 @@ Cada log responde 4 perguntas fundamentais:
 | 4 | AGENT ENRICHMENT | Após Phase 7 | O que agentes receberam |
 | 5 | INGEST REPORT | /ingest | Material entrou |
 | 6 | INBOX STATUS | /inbox | O que aguarda |
-| 7 | FULL PIPELINE REPORT | /jarvis-full | Tudo consolidado |
+| 7 | FULL PIPELINE REPORT | /aureon-full | Tudo consolidado |
 
 ---
 
@@ -708,7 +708,7 @@ Cada log responde 4 perguntas fundamentais:
 
    Para processar este material:
 
-   /process-jarvis "{SOURCE_ID}"
+   /aureon-process "{SOURCE_ID}"
 
    Ou para ver todos pendentes:
 
@@ -748,19 +748,19 @@ Cada log responde 4 perguntas fundamentais:
    🟡 [CG005] Objection Handling Masterclass.txt
       ├─ Added: 2024-12-15 (3 days ago)
       ├─ Size: 45KB │ Duration: ~60 min
-      └─ Process: /process-jarvis "CG005"
+      └─ Process: /aureon-process "CG005"
 
    🟢 [CG006] Sales Team Structure Q&A.txt
       ├─ Added: 2024-12-18 (today)
       ├─ Size: 32KB │ Duration: ~45 min
-      └─ Process: /process-jarvis "CG006"
+      └─ Process: /aureon-process "CG006"
 
 📁 JORDAN LEE (AI BUSINESS):
 ───────────────────────────────────────────────────────────────────────────────
    🔴 [JL008] AI Sales Integration.txt
       ├─ Added: 2024-12-10 (8 days ago) ⚠️
       ├─ Size: 55KB │ Duration: ~75 min
-      └─ Process: /process-jarvis "JL008"
+      └─ Process: /aureon-process "JL008"
 
 📁 ALEX HORMOZI:
 ───────────────────────────────────────────────────────────────────────────────
@@ -809,7 +809,7 @@ Cada log responde 4 perguntas fundamentais:
 
 ## 7. FULL PIPELINE REPORT v5.1
 
-> **Gerado:** Após comando `/jarvis-full` completar
+> **Gerado:** Após comando `/aureon-full` completar
 > **Propósito:** Log consolidado de execução full auto (ingest + pipeline + enrichment)
 
 ```

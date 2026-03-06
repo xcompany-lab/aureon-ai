@@ -1,6 +1,6 @@
-# Mega Brain Persona Registry
-# Version: 2.0.0
-# Updated: 2026-02-27
+# Aureon AI — Persona Registry
+# Version: 3.0.0
+# Updated: 2026-03-06
 
 identity:
   enabled: true
@@ -11,7 +11,7 @@ layers:
   L0_SYSTEM:
     name: "System Agents"
     icon: "⚙️"
-    location: "core/jarvis/"
+    location: "core/aureon/"
     description: "Orquestradores imutáveis do sistema"
     auto_create: false
 
@@ -50,52 +50,59 @@ layers:
     threshold:
       weighted_score: 5
 
+  L5_SQUADS:
+    name: "SQUADs"
+    icon: "🚀"
+    location: "agents/squads/"
+    description: "Times de especialistas por setor"
+    trigger: "keyword"
+
   SUB_AGENTS:
     name: "Operatives"
     icon: "⚡"
-    location: ".claude/jarvis/sub-agents/"
-    description: "Súbditos do JARVIS"
+    location: ".claude/aureon/sub-agents/"
+    description: "Operativos do Aureon Core"
     trigger: "keyword"
 
 # =============================================================================
 # SYSTEM AGENTS (L0)
 # =============================================================================
 system:
-  - id: jarvis
+  - id: aureon-core
     role: "Master Orchestrator"
     icon: "🤖"
     element: "Air"
-    location: "core/jarvis/"
+    location: "core/aureon/"
 
   - id: agent-creator
     role: "Agent Factory"
     icon: "🏭"
     element: "Earth"
-    location: "core/jarvis/agent-creator/"
+    location: "core/aureon/agent-creator/"
 
   - id: benchmark
     role: "Performance Evaluator"
     icon: "📊"
     element: "Earth"
-    location: "core/jarvis/autonomous/benchmark/"
+    location: "core/aureon/autonomous/benchmark/"
 
   - id: critic
     role: "Quality Auditor"
     icon: "🔎"
     element: "Earth"
-    location: "core/jarvis/autonomous/critic/"
+    location: "core/aureon/autonomous/critic/"
 
   - id: evolver
     role: "System Evolver"
     icon: "🧬"
     element: "Air"
-    location: "core/jarvis/autonomous/evolver/"
+    location: "core/aureon/autonomous/evolver/"
 
   - id: playbook-generator
     role: "Playbook Creator"
     icon: "📖"
     element: "Fire"
-    location: "core/jarvis/autonomous/playbook-generator/"
+    location: "core/aureon/autonomous/playbook-generator/"
 
 # =============================================================================
 # CONCLAVE AGENTS (L1)
@@ -159,6 +166,52 @@ minds:
     location: "agents/minds/the-scalable-company/"
 
 # =============================================================================
+# SQUADS (L5)
+# =============================================================================
+squads:
+  - id: sales
+    role: "Sales SQUAD Router"
+    icon: "💰"
+    location: "agents/squads/sales/"
+    triggers: ["vendas", "pipeline", "fechamento", "objeção", "bdr", "sdr"]
+
+  - id: exec
+    role: "Executive SQUAD Router"
+    icon: "🏆"
+    location: "agents/squads/exec/"
+    triggers: ["ebitda", "valuation", "scaling", "exit", "m&a"]
+
+  - id: ops
+    role: "Operations SQUAD Router"
+    icon: "⚙️"
+    location: "agents/squads/ops/"
+    triggers: ["processo", "sop", "operação", "checklist", "eficiência"]
+
+  - id: marketing
+    role: "Marketing SQUAD Router"
+    icon: "📢"
+    location: "agents/squads/marketing/"
+    triggers: ["marketing", "tráfego", "copy", "conteúdo", "branding"]
+
+  - id: tech
+    role: "Tech SQUAD Router"
+    icon: "💻"
+    location: "agents/squads/tech/"
+    triggers: ["código", "sistema", "deploy", "automação", "api", "bug"]
+
+  - id: research
+    role: "Research SQUAD Router"
+    icon: "🔬"
+    location: "agents/squads/research/"
+    triggers: ["pesquisar", "analisar", "mercado", "dados", "benchmark"]
+
+  - id: finance
+    role: "Finance SQUAD Router"
+    icon: "📊"
+    location: "agents/squads/finance/"
+    triggers: ["financeiro", "dre", "caixa", "precificação", "margem"]
+
+# =============================================================================
 # CARGO ROLES (L4)
 # =============================================================================
 cargo:
@@ -218,30 +271,6 @@ cargo:
       element: "Fire"
       location: "agents/cargo/sales/sales-manager/"
 
-    - id: sales-lead
-      role: "Senior Sales Rep"
-      icon: "⭐"
-      element: "Fire"
-      location: "agents/cargo/sales/sales-lead/"
-
-    - id: sales-coordinator
-      role: "Sales Operations"
-      icon: "📋"
-      element: "Earth"
-      location: "agents/cargo/sales/sales-coordinator/"
-
-    - id: nepq-specialist
-      role: "NEPQ Methodology Expert"
-      icon: "🧠"
-      element: "Water"
-      location: "agents/cargo/sales/nepq-specialist/"
-
-    - id: customer-success
-      role: "Customer Success Manager"
-      icon: "🌟"
-      element: "Water"
-      location: "agents/cargo/sales/customer-success/"
-
   marketing:
     - id: paid-media-specialist
       role: "Paid Acquisition Expert"
@@ -258,35 +287,35 @@ operatives:
     icon: "📝"
     element: "Earth"
     keywords: ["log", "session", "history"]
-    location: ".claude/jarvis/sub-agents/chronicler/"
+    location: ".claude/aureon/sub-agents/chronicler/"
 
   - id: devops
     role: "DevOps Guardian"
     icon: "🛡️"
     element: "Earth"
     keywords: ["deploy", "ci", "infrastructure"]
-    location: ".claude/jarvis/sub-agents/devops/"
+    location: ".claude/aureon/sub-agents/devops/"
 
   - id: pipeline-master
     role: "Pipeline Orchestrator"
     icon: "🔄"
     element: "Air"
     keywords: ["pipeline", "batch", "process"]
-    location: ".claude/jarvis/sub-agents/pipeline-master/"
+    location: ".claude/aureon/sub-agents/pipeline-master/"
 
   - id: sentinel-org
     role: "Organization Monitor"
     icon: "👁️"
     element: "Earth"
     keywords: ["org", "structure", "monitor"]
-    location: ".claude/jarvis/sub-agents/sentinel-org/"
+    location: ".claude/aureon/sub-agents/sentinel-org/"
 
   - id: status-trigger
     role: "Status Automation"
     icon: "⚡"
     element: "Fire"
     keywords: ["status", "trigger", "automation"]
-    location: ".claude/jarvis/sub-agents/status-trigger/"
+    location: ".claude/aureon/sub-agents/status-trigger/"
 
 # =============================================================================
 # TOTALS
@@ -295,6 +324,7 @@ totals:
   L0_system: 6
   L1_conclave: 3
   L3_minds: 5
-  L4_cargo: 14
+  L4_cargo: 10
+  L5_squads: 7
   sub_agents: 5
-  total: 33
+  total: 36

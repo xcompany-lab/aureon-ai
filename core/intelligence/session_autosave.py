@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Session Autosave Hook - Mega Brain
+Session Autosave Hook - Aureon AI
 Tracks tool usage for session persistence.
 Called as PostToolUse hook for Bash, Write, Edit.
 

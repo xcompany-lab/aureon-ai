@@ -591,7 +591,7 @@ Ao salvar dossiê, indexar no ChromaDB com metadados:
 
 ## EXECUÇÃO AUTOMÁTICA (CHAMADA PELO PROCESS-JARVIS)
 
-Este protocolo é executado pela PHASE 6.5 do process-jarvis.md.
+Este protocolo é executado pela PHASE 6.5 do aureon-process.md.
 
 ### Modo de Operação
 
@@ -641,7 +641,7 @@ FOR each THEME in NARRATIVES_STATE.themes:
 ```
 # NOTA: Atualização de Agent MEMORYs foi CONSOLIDADA em Phase 7 (Agent Enrichment)
 # Motivo: Evitar duplicação (antes executava em Phase 6.5.5, Phase 7.4, e Phase 8.4)
-# Ver: process-jarvis.md → Phase 7.4
+# Ver: aureon-process.md → Phase 7.4
 
 # NÃO executar update de MEMORYs nesta fase
 # A lógica abaixo é REFERÊNCIA para Phase 7:
@@ -695,7 +695,7 @@ INSERT row:
 ```
 # NOTA: Role-Tracking foi MOVIDO para Phase 8.1.7 (Role Discovery)
 # Execução centralizada usando INSIGHTS-STATE.json (dados mais ricos)
-# Ver: process-jarvis.md → Phase 8.1.7
+# Ver: aureon-process.md → Phase 8.1.7
 
 # NÃO executar role-tracking nesta fase
 # Motivo: INSIGHTS têm confidence levels, priority, chunk_refs

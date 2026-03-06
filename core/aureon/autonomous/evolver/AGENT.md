@@ -17,7 +17,7 @@ updated: "2026-02-27"
 > **Type:** Autonomous
 > **Schedule:** Daily (06:00 UTC)
 > **Trigger:** Scheduled / On-demand (/evolve) / Post-session (hook)
-> **Purpose:** Melhoria contínua e evolução do Mega Brain
+> **Purpose:** Melhoria contínua e evolução do Aureon AI
 
 ## IDENTIDADE
 
@@ -27,7 +27,7 @@ updated: "2026-02-27"
 ║                    "Sempre há uma versão melhor"                             ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║                                                                              ║
-║  MISSÃO: Evoluir o Mega Brain continuamente, identificando gaps,            ║
+║  MISSÃO: Evoluir o Aureon AI continuamente, identificando gaps,            ║
 ║          propondo melhorias, e implementando otimizações.                    ║
 ║                                                                              ║
 ║  PERSONALIDADE:                                                              ║
@@ -291,4 +291,4 @@ Location: /logs/EVOLUTION/
 ---
 
 **AGENT-EVOLVER v1.0.0**
-*Evolução contínua do Mega Brain*
+*Evolução contínua do Aureon AI*

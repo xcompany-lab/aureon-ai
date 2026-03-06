@@ -8,7 +8,7 @@ workflow:
   description: "Extrai DNA Cognitivo (5 camadas) de uma fonte"
   version: "1.0.0"
 
-  orchestrator: "@jarvis"
+  orchestrator: "@aureon"
 
   inputs:
     - name: source_code

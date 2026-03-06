@@ -22,7 +22,7 @@
 ### HIGH-TICKET
 - **Domínio**: Digital/Sales
 - **Definição**: Produtos/serviços com preço elevado, tipicamente $3k+.
-- **Contexto Mega Brain**: Foco em $5k-$25k+ tickets
+- **Contexto Aureon AI**: Foco em $5k-$25k+ tickets
 - **Características**: Requer vendedor, não self-service
 
 ---

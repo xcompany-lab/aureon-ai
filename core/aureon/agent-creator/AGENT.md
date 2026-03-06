@@ -32,7 +32,7 @@ element: "Earth"  # Grounded, structural, foundational
 
 ## MISSION
 
-Orquestrar a criação automática e consistente de agentes no Mega Brain, garantindo:
+Orquestrar a criação automática e consistente de agentes no Aureon AI, garantindo:
 - Nomenclatura padronizada (aios-core pattern)
 - Categorização por layer (L0-L4 + Sub-agents)
 - Rastreabilidade de origem (pipeline triggers)
@@ -45,7 +45,7 @@ Orquestrar a criação automática e consistente de agentes no Mega Brain, garan
 | Trigger | Source | Action |
 |---------|--------|--------|
 | `role_threshold` | `role_detector.py` | Criar agent L4 (Cargo) |
-| `pipeline_phase_5.2` | `process-jarvis` | Criar/Atualizar agent L3 (Mind) |
+| `pipeline_phase_5.2` | `aureon-process` | Criar/Atualizar agent L3 (Mind) |
 | `weighted_score >= 10` | `role_detector.py` | Criar agent L2 (Boardroom) |
 | `/create-agent` | Manual command | Criar qualquer layer |
 
@@ -104,7 +104,7 @@ agent_created:
 | persona-registry.yaml | `agents/` | Central registry |
 | role_detector.py | `SCRIPTS/` | Layer detection |
 | skill_router.py | `.claude/hooks/` | Routing integration |
-| process-jarvis | `.claude/skills/` | Pipeline trigger |
+| aureon-process | `.claude/skills/` | Pipeline trigger |
 
 ---
 

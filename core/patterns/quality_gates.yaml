@@ -240,7 +240,7 @@ viability_scoring:
         "< 2 frameworks": 3
 
     S_strategic_fit:
-      description: "Alinhamento com objetivos do Mega Brain"
+      description: "Alinhamento com objetivos do Aureon AI"
       weight: 0.8
       min_threshold: 5
       scoring:

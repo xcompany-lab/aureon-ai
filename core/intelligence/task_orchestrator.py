@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Task Orchestrator - Workflow execution engine for Mega Brain pipeline.
+Task Orchestrator - Workflow execution engine for Aureon AI pipeline.
 
 Reads workflow YAML files from core/workflows/ and executes tasks sequentially,
 tracking state between tasks and managing checkpoint validation.
@@ -243,7 +243,7 @@ def load_task_definition(task_path: Path) -> TaskDefinition:
         task_id=anatomy.get('task_id', task_path.stem),
         name=anatomy.get('task_name', task_path.stem),
         execution_type=anatomy.get('execution_type', 'Agent'),
-        responsible=anatomy.get('responsible', '@jarvis'),
+        responsible=anatomy.get('responsible', '@aureon'),
         inputs=inputs,
         outputs=outputs,
         description=anatomy.get('description', ''),
@@ -652,7 +652,7 @@ class TaskOrchestrator:
 
 def print_usage():
     print("""
-Task Orchestrator - Mega Brain Pipeline
+Task Orchestrator - Aureon AI Pipeline
 ========================================
 
 Usage:

@@ -2,7 +2,7 @@
 """
 THEME ANALYZER - Intelligence Layer v1.0
 ==========================================
-Extrai e normaliza temas de TODOS os formatos de chunk e insight do Mega Brain.
+Extrai e normaliza temas de TODOS os formatos de chunk e insight do Aureon AI.
 
 Formatos suportados:
 - AH-BP001: key_concepts[], section, framework_name

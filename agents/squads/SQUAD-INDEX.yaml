@@ -41,3 +41,107 @@ squads:
       - "m&a"
       - "scaling"
       - "headcount"
+
+  ops:
+    description: "SQUAD de Operações (OpsManager/ProcessAgent/ProjectAgent)."
+    members:
+      - agents/cargo/ops/ops-manager/AGENT.md
+      - agents/cargo/ops/process-agent/AGENT.md
+      - agents/cargo/ops/project-agent/AGENT.md
+    router:
+      agent_path: agents/squads/ops/AGENT.md
+    triggers:
+      - "processo"
+      - "sop"
+      - "checklist"
+      - "fluxograma"
+      - "kpi operacional"
+      - "eficiência"
+      - "projeto"
+      - "cronograma"
+      - "padronização"
+
+  marketing:
+    description: "SQUAD de Marketing (CMO/GrowthAgent/CopyAgent)."
+    members:
+      - agents/cargo/marketing/cmo/AGENT.md
+      - agents/cargo/marketing/growth-agent/AGENT.md
+      - agents/cargo/marketing/copy-agent/AGENT.md
+    router:
+      agent_path: agents/squads/marketing/AGENT.md
+    triggers:
+      - "marketing"
+      - "tráfego"
+      - "seo"
+      - "copy"
+      - "headline"
+      - "vsl"
+      - "branding"
+      - "funil"
+      - "cpa"
+      - "roas"
+      - "anúncio"
+      - "conteúdo"
+
+  tech:
+    description: "SQUAD de Tecnologia (ArchAgent/DevOps/AutomationAgent)."
+    members:
+      - agents/cargo/tech/arch-agent/AGENT.md
+      - agents/cargo/tech/devops-agent/AGENT.md
+      - agents/cargo/tech/automation-agent/AGENT.md
+    router:
+      agent_path: agents/squads/tech/AGENT.md
+    triggers:
+      - "código"
+      - "sistema"
+      - "deploy"
+      - "infra"
+      - "vps"
+      - "docker"
+      - "automação"
+      - "api"
+      - "webhook"
+      - "n8n"
+      - "zapier"
+      - "script"
+
+  research:
+    description: "SQUAD de Pesquisa (ResearchAgent/AnalystAgent/IntelAgent)."
+    members:
+      - agents/cargo/research/research-agent/AGENT.md
+      - agents/cargo/research/analyst-agent/AGENT.md
+      - agents/cargo/research/intel-agent/AGENT.md
+    router:
+      agent_path: agents/squads/research/AGENT.md
+    triggers:
+      - "pesquisa"
+      - "mercado"
+      - "tendência"
+      - "concorrência"
+      - "benchmark"
+      - "dados"
+      - "análise"
+      - "swot"
+      - "relatório"
+      - "inteligência competitiva"
+
+  finance:
+    description: "SQUAD de Finanças (CFO/ControllerAgent/PricingAgent)."
+    members:
+      - agents/cargo/finance/cfo/AGENT.md
+      - agents/cargo/finance/controller-agent/AGENT.md
+      - agents/cargo/finance/pricing-agent/AGENT.md
+    router:
+      agent_path: agents/squads/finance/AGENT.md
+    triggers:
+      - "financeiro"
+      - "dre"
+      - "caixa"
+      - "fluxo de caixa"
+      - "precificação"
+      - "margem bruta"
+      - "ltv"
+      - "cac"
+      - "imposto"
+      - "balanço"
+      - "contabilidade"

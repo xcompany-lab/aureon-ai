@@ -91,7 +91,7 @@ def create_empty_registry():
             "version": 0,
             "created_at": datetime.now(timezone.utc).isoformat(),
             "updated_at": datetime.now(timezone.utc).isoformat(),
-            "description": "ENTITY-REGISTRY - Single Source of Truth for Mega Brain entities"
+            "description": "ENTITY-REGISTRY - Single Source of Truth for Aureon AI entities"
         },
         "persons": {},
         "themes": {},

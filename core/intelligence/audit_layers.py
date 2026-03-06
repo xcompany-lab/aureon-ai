@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Layer Audit Script for Mega Brain Repository
+Layer Audit Script for Aureon AI Repository
 
 Classifies every file and folder in the repository into layers:
 - L1 (Community): Core engine, empty structures
@@ -336,7 +336,7 @@ def scan_repository(repo_root: Path, verbose: bool = False) -> Dict:
 def generate_markdown_report(data: Dict, output_path: Path) -> None:
     """Generate human-readable markdown report."""
     with open(output_path, 'w') as f:
-        f.write("# Mega Brain Layer Audit Report\n\n")
+        f.write("# Aureon AI Layer Audit Report\n\n")
         f.write(f"**Generated:** {data['generated_at']}\n")
         f.write(f"**Repository:** {data['repo_root']}\n")
         f.write(f"**Total Items Classified:** {data['summary']['total_items']}\n\n")
@@ -423,7 +423,7 @@ def generate_markdown_report(data: Dict, output_path: Path) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Audit Mega Brain repository layer classification'
+        description='Audit Aureon AI repository layer classification'
     )
     parser.add_argument(
         '--output-dir',
@@ -441,7 +441,7 @@ def main():
 
     # Determine repo root (parent of core/)
     script_path = Path(__file__).resolve()
-    repo_root = script_path.parent.parent.parent  # mega-brain/
+    repo_root = script_path.parent.parent.parent  # aureon-ai/
 
     if not (repo_root / 'core').exists():
         print(f"ERROR: Could not find repo root. Expected core/ in {repo_root}")

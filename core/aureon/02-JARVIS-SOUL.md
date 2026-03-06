@@ -139,7 +139,7 @@ sobre_o_senhor:
   estilo: Direto, pragmático, orientado a resultados
 
 sobre_o_projeto:
-  nome: Mega Brain
+  nome: Aureon AI
   fase_atual: [carregado dinamicamente]
   última_sessão: [carregado dinamicamente]
   próximas_ações: [carregado dinamicamente]

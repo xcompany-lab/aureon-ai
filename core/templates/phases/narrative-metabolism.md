@@ -289,4 +289,4 @@ Este protocolo é executado nas fases:
 ---
 
 *Protocol Version 1.0 — Narrative Metabolism*
-*Mega Brain System v3.21.0*
+*Aureon AI System v3.21.0*

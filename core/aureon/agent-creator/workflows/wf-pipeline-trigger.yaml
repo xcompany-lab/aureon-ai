@@ -25,7 +25,7 @@ triggers:
         traits: "{detected_traits}"
 
   # Trigger 2: Pipeline Phase 5.2 (Mind clones - L3)
-  - source: ".claude/skills/process-jarvis/"
+  - source: ".claude/skills/aureon-process/"
     event: "phase_5.2_complete"
     condition:
       dna_extracted: true
@@ -62,7 +62,7 @@ phases:
       - listen:
           sources:
             - "role_detector.py"
-            - "process-jarvis skill"
+            - "aureon-process skill"
       - validate:
           - "trigger is authentic"
           - "data is complete"
@@ -91,9 +91,9 @@ integration_points:
       elif weighted_score >= EXECUTIVE_THRESHOLD:
           trigger_agent_creation("L2", role_data)
 
-  # Hook into process-jarvis skill
+  # Hook into aureon-process skill
   process_jarvis:
-    hook_location: ".claude/skills/process-jarvis/SKILL.md"
+    hook_location: ".claude/skills/aureon-process/SKILL.md"
     hook_type: "phase_5.2_complete"
     instruction: |
       After DNA extraction completes:

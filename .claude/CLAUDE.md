@@ -1,34 +1,35 @@
-# Mega Brain - AI Knowledge Management System
+# Aureon AI — AI Knowledge Management System
 
-## What is Mega Brain?
+## What is Aureon AI?
 
-AI-powered system that transforms expert materials (videos, PDFs, transcriptions) into structured playbooks, DNA schemas, and mind-clone agents. Powered by JARVIS orchestrator.
+AI-powered system that transforms expert materials (videos, PDFs, transcriptions) into structured playbooks, DNA schemas, and mind-clone agents. Organized into SQUADs of specialist agents by sector.
 
 ## Quick Start
 
-1. Run `npx mega-brain-ai setup` (auto-triggers on first use if `.env` missing)
+1. Run `npx aureon-ai setup` (auto-triggers on first use if `.env` missing)
 2. Fill in API keys when prompted (only `OPENAI_API_KEY` is required)
-3. Use `/jarvis-briefing` to see system status
+3. Use `/aureon-status` to see system status
 
 ## Architecture
 
 ```
-mega-brain/
-├── core/           -> Engine (Pedro pattern)
-│   ├── tasks/          -> Atomic tasks (HO-TP-001 anatomy)
+aureon-ai/
+├── core/           -> Engine (tasks, workflows, schemas)
+│   ├── tasks/          -> Atomic tasks
 │   ├── workflows/      -> YAML orchestration
 │   ├── intelligence/   -> Python scripts
 │   ├── patterns/       -> YAML configs
-│   ├── protocols/      -> Pipeline, conclave, DNA protocols
 │   ├── schemas/        -> JSON schemas
-│   ├── jarvis/         -> JARVIS Soul + DNA
+│   ├── aureon/         -> Aureon Core orchestrator
 │   ├── templates/      -> Log templates
 │   └── glossary/       -> Domain glossaries
-├── agents/         -> AI agents (conclave, cargo, persons)
+├── agents/         -> AI agents
+│   ├── squads/         -> SQUAD routers (sales/exec/ops/marketing/tech/research/finance)
+│   ├── cargo/          -> Functional role agents
+│   ├── minds/          -> Expert mind clones
+│   └── conclave/       -> Multi-agent deliberation
 ├── .claude/        -> Claude Code integration
 ├── docs/           -> Documentation, PRDs, plans
-│   ├── prd/            -> Product requirements
-│   └── plans/          -> Plan mode outputs
 ├── bin/            -> CLI tools (npm)
 ├── inbox/          -> Raw materials (L3)
 ├── artifacts/      -> Pipeline stages (L3)
@@ -46,8 +47,8 @@ When in plan mode, save the plan file to: `docs/plans/YYYY-MM-DD-description.md`
 | Layer | Content | Git Status |
 |-------|---------|------------|
 | L1 (Community) | core/, agents/conclave, .claude/, bin/, docs/ | Tracked (npm package) |
-| L2 (Pro) | agents/cargo, agents/sub-agents | Tracked (premium) |
-| L3 (Personal) | .data/, .env, agents/persons | Gitignored |
+| L2 (Pro) | agents/cargo, agents/squads | Tracked (premium) |
+| L3 (Personal) | .data/, .env, agents/minds | Gitignored |
 
 ## Community vs Pro
 
@@ -59,7 +60,8 @@ When in plan mode, save the plan file to: `docs/plans/YYYY-MM-DD-description.md`
 | Knowledge Base (populated) | - | yes |
 | Mind Clone Agents | - | yes |
 | Pipeline Processing | - | yes |
-| Council / Conclave | - | yes |
+| SQUADs | - | yes |
+| Conclave | - | yes |
 
 ## DNA Schema (5 Knowledge Layers)
 
@@ -75,27 +77,38 @@ When in plan mode, save the plan file to: `docs/plans/YYYY-MM-DD-description.md`
 
 | Command | Description |
 |---------|-------------|
-| `/jarvis-briefing` | Operational status + health score |
-| `/jarvis-full` | Full pipeline (ingest + process + enrich) |
-| `/process-jarvis` | Pipeline processor (5 phases) |
-| `/conclave` | Council session (multi-agent debate) |
+| `/aureon-status` | Operational status + health score |
+| `/aureon-process` | Full pipeline (ingest + process + enrich) |
 | `/ingest` | Ingest new material |
+| `/conclave` | Council session (multi-agent debate) |
 | `/save` | Save current session |
 | `/resume` | Resume previous session |
 | `/setup` | Environment setup wizard |
 
+## SQUADs
+
+| Squad | Specialists | Triggers |
+|-------|-------------|---------|
+| Sales | BDR/SDS/LNS/Closer/Manager | vendas, pipeline, fechamento |
+| Exec | CRO/CFO/COO | EBITDA, scaling, valuation |
+| Ops | OpsManager/ProcessAgent | processo, SOP, checklist |
+| Marketing | CMO/GrowthAgent/CopyAgent | marketing, tráfego, copy |
+| Tech | ArchAgent/DevOps/AutomationAgent | código, deploy, automação |
+| Research | ResearchAgent/AnalystAgent | pesquisar, analisar, dados |
+| Finance | CFO/ControllerAgent/PricingAgent | financeiro, DRE, margem |
+
 ## Agents
 
-Defined in `AGENT-INDEX.yaml`, activated via slash commands.
+Defined in `agents/AGENT-INDEX.yaml`, activated via slash commands.
 
-| Type | Count | Purpose |
-|------|-------|---------|
-| CARGO | 8 | Functional roles (Sales, Marketing, Ops) |
-| MINDS | 1 | Expert mind clones |
-| CONCLAVE | 3 | Multi-perspective deliberation |
-| SYSTEM | 2 | JARVIS, Agent-Creator |
+| Type | Purpose |
+|------|---------|
+| MINDS | Expert mind clones |
+| CARGO | Functional roles (Sales, Marketing, Ops, Finance) |
+| SQUADS | Sector routers (7 squads) |
+| CONCLAVE | Multi-perspective deliberation |
+| SYSTEM | Aureon Core orchestrator + Agent-Creator |
 
-**Total Active Agents:** 12
 ## Configuration
 
 - **`.env`** is the ONLY source of truth for credentials
@@ -123,7 +136,7 @@ Configured in `settings.json` (distributed) and `settings.local.json` (local ove
 | UserPromptSubmit | `skill_router.py`, `quality_watchdog.py`, `memory_updater.py` |
 | PreToolUse | `creation_validator.py`, `claude_md_guard.py` |
 | PostToolUse | `post_tool_use.py`, `enforce_dual_location.py` |
-| Stop | `stop_hook_completeness.py`, `ralph_wiggum.py` |
+| Stop | `stop_hook_completeness.py` |
 
 ## Rules (Lazy Loading)
 
@@ -157,16 +170,12 @@ Detailed rules are loaded on-demand via keyword matching from `.claude/rules/`:
 | Problem | Solution |
 |---------|----------|
 | "Hook failed" | Check Python 3 is in PATH |
-| ".env not found" | Run `npx mega-brain-ai setup` |
+| ".env not found" | Run `npx aureon-ai setup` |
 | "Permission denied on git push" | By design — use branch + PR workflow |
 | Skills not auto-activating | Check `SKILL-INDEX.json` is generated on SessionStart |
-
-## Recent Changes
-
-See `system/docs/CHANGELOG-ARCHITECTURE.md` for architectural evolution history.
 
 ## CLAUDE.md Policy
 
 - Only 2 CLAUDE.md files are valid: root `CLAUDE.md` and `.claude/CLAUDE.md` (this file)
 - NEVER create CLAUDE.md in data or code subdirectories
-- Agent memory lives in `.claude/jarvis/` and `.claude/skills/`
+- Agent memory lives in `.claude/aureon/` and `.claude/skills/`

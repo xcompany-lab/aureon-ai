@@ -4,7 +4,7 @@
 ---
 task: TSK-030
 execution_type: Agent
-responsible: "@jarvis"
+responsible: "@aureon"
 ---
 ```
 
@@ -14,7 +14,7 @@ responsible: "@jarvis"
 |-------|-------|
 | task_name | Process Content Batch |
 | status | active |
-| responsible_executor | @jarvis |
+| responsible_executor | @aureon |
 | execution_type | Agent |
 | input | batch files, source config |
 | output | BATCH-XXX.md, insights, cascading |

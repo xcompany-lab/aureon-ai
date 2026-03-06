@@ -271,7 +271,7 @@ metodologias:
 #================================
 
 integracao:
-  projeto: "Mega Brain"
+  projeto: "Aureon AI"
   
   pontos_de_conexao:
     - sistema: "Pipeline Jarvis"

@@ -9,7 +9,7 @@ workflow:
   version: "1.0.0"
 
   # Orchestrator
-  orchestrator: "@jarvis"
+  orchestrator: "@aureon"
 
   # Input requirements
   inputs:

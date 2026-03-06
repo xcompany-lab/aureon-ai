@@ -78,7 +78,7 @@ DIMENSIONS = {
         "weight": 0.9,
     },
     "S_strategic_fit": {
-        "description": "Alinhamento com objetivos do Mega Brain",
+        "description": "Alinhamento com objetivos do Aureon AI",
         "weight": 0.8,
     },
 }
@@ -332,7 +332,7 @@ def _score_expertise(person_name, person_data, registry):
 
 
 def _score_strategic_fit(person_name, person_data, taxonomy):
-    """S - Alignment with Mega Brain objectives."""
+    """S - Alignment with Aureon AI objectives."""
     domains = person_data.get("domains", [])
     person_name_upper = person_name.upper().replace(" ", "-")
 
@@ -340,7 +340,7 @@ def _score_strategic_fit(person_name, person_data, taxonomy):
     tax_pessoas = taxonomy.get("pessoas", {})
     is_taxonomy_person = person_name_upper in tax_pessoas
 
-    # Core domains for Mega Brain
+    # Core domains for Aureon AI
     core_domains = {"vendas", "offers", "scaling", "marketing", "hiring", "management"}
     domain_overlap = len(set(domains) & core_domains)
 

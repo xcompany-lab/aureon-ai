@@ -1,14 +1,14 @@
-# Quick Start - Mega Brain
+# Quick Start - Aureon AI
 
 > Do zero ao primeiro insight em 5 minutos.
 
-Este guia assume que você já executou a instalação (`npx mega-brain install`) e o setup inicial (`/setup`). Se ainda não fez isso, consulte o [README.md](README.md).
+Este guia assume que você já executou a instalação (`npx aureon-ai install`) e o setup inicial (`/setup`). Se ainda não fez isso, consulte o [README.md](README.md).
 
 ---
 
 ## Passo 1: Insira seu primeiro conteúdo
 
-O Mega Brain aceita qualquer material de especialista. Vamos começar com um vídeo do YouTube.
+O Aureon AI aceita qualquer material de especialista. Vamos começar com um vídeo do YouTube.
 
 **Comando:**
 
@@ -17,14 +17,14 @@ O Mega Brain aceita qualquer material de especialista. Vamos começar com um ví
 ```
 
 **O que acontece:**
-- O JARVIS baixa a transcrição automaticamente
+- O Aureon baixa a transcrição automaticamente
 - O arquivo é salvo em `inbox/` com metadados (título, autor, data)
 - Um registro é criado no sistema de rastreabilidade
 
 **Saída esperada:**
 
 ```
-JARVIS: Material recebido.
+AUREON: Material recebido.
 
   Fonte:    YouTube
   Título:   "Como Criar Ofertas Irrecusáveis"
@@ -34,25 +34,25 @@ JARVIS: Material recebido.
 
   Salvo em: inbox/alex-hormozi/como-criar-ofertas-irrecusaveis.md
 
-  Próximo passo: execute /process-jarvis para processar.
+  Próximo passo: execute /aureon-process para processar.
 ```
 
 **Dica:** Você também pode ingerir arquivos locais (PDFs, transcrições, documentos):
 
 ```
-/ingest C:\Users\seu-usuario\Downloads\playbook-vendas.pdf
+/ingest /caminho/para/playbook-vendas.pdf
 ```
 
 ---
 
-## Passo 2: Processe com JARVIS
+## Passo 2: Processe com Aureon
 
-Agora o JARVIS vai processar o material pelo pipeline de 5 fases.
+Agora o Aureon vai processar o material pelo pipeline de 5 fases.
 
 **Comando:**
 
 ```
-/process-jarvis
+/aureon-process
 ```
 
 **O que acontece:**
@@ -65,7 +65,7 @@ Agora o JARVIS vai processar o material pelo pipeline de 5 fases.
 **Saída esperada:**
 
 ```
-JARVIS: Pipeline iniciado.
+AUREON: Pipeline iniciado.
 
   Fase 1/5 - Chunking .............. OK (23 chunks)
   Fase 2/5 - Resolução ............ OK (8 entidades)
@@ -90,13 +90,13 @@ Confira o status geral do sistema e os materiais processados.
 **Comando:**
 
 ```
-/jarvis-briefing
+/aureon-status
 ```
 
 **Saída esperada:**
 
 ```
-JARVIS: Briefing Operacional
+AUREON: Status Operacional
 
   Health Score: 92/100
 
@@ -108,13 +108,13 @@ JARVIS: Briefing Operacional
 
   Último processamento:
     "Como Criar Ofertas Irrecusáveis" (Alex Hormozi)
-    Processado em: 2026-02-18 14:30
+    Processado em: 2026-03-06 03:48
 
-  Agentes ativos:
-    CRO .... Pronto (12 insights carregados)
-    CFO .... Pronto (4 insights carregados)
-    CMO .... Aguardando material
-    COO .... Aguardando material
+  SQUADs ativos:
+    Sales Squad .... Pronto (12 insights carregados)
+    Exec Squad ..... Pronto (4 insights carregados)
+    Ops Squad ...... Aguardando material
+    Marketing Squad  Aguardando material
 
   Inbox pendente: 0 arquivos
 ```
@@ -132,14 +132,14 @@ A extração de DNA cria um clone mental completo de um especialista. Funciona m
 ```
 
 **O que acontece:**
-- O JARVIS analisa todos os materiais processados daquele especialista
+- O Aureon analisa todos os materiais processados daquele especialista
 - Extrai o DNA cognitivo em 5 camadas (Filosofias, Modelos Mentais, Heurísticas, Frameworks, Metodologias)
 - Cria um agente dedicado que responde como o especialista
 
 **Saída esperada:**
 
 ```
-JARVIS: Extração de DNA iniciada.
+AUREON: Extração de DNA iniciada.
 
   Especialista: Alex Hormozi
   Materiais analisados: 1
@@ -151,17 +151,48 @@ JARVIS: Extração de DNA iniciada.
   Camada L5 - Metodologias ........ OK (1 processo completo)
 
   DNA salvo em: knowledge/dna/alex-hormozi-dna.md
-  Agente criado: agents/persons/alex-hormozi.md
+  Agente criado: agents/minds/alex-hormozi.md
 
   Agora você pode consultar:
     /ask alex-hormozi "Como precificar minha oferta high-ticket?"
 ```
 
-**Dica:** Quanto mais materiais de um especialista você processar antes da extração de DNA, mais rico e preciso será o clone. Recomendamos pelo menos 3-5 materiais por especialista para resultados de alta fidelidade.
+**Dica:** Quanto mais materiais de um especialista você processar antes da extração de DNA, mais rico e preciso será o clone. Recomendamos pelo menos 3-5 materiais por especialista.
 
 ---
 
-## Passo 5: Primeira sessão do Conclave
+## Passo 5: Ativar um SQUAD
+
+Os SQUADs são times de especialistas organizados por setor. Use o SQUAD correto para resolver qualquer demanda.
+
+**Comando:**
+
+```
+/squad sales "Como responder objeção de preço?"
+```
+
+**O que acontece:**
+- O Master Router identifica o SQUAD correto
+- O Squad Router despacha para o especialista dentro do SQUAD
+- O especialista responde com base no conhecimento processado
+
+**Saída esperada:**
+
+```
+AUREON SQUAD — SALES
+  SELECTED: CLOSER
+  CONTEXT PACK:
+  - Objeção de preço identificada
+  - Material base: Alex Hormozi — Value Equation
+  - Framework aplicado: CLOSE method
+  USE AGENT: agents/cargo/sales/closer/AGENT.md
+
+CLOSER: A objeção de preço quase sempre é uma objeção de valor...
+```
+
+---
+
+## Passo 6: Primeira sessão do Conclave
 
 O Conclave é um conselho de 3 conselheiros que debate qualquer decisão estratégica do seu negócio.
 
@@ -176,43 +207,6 @@ O Conclave é um conselho de 3 conselheiros que debate qualquer decisão estrat�
 - Cada um fundamenta sua posição com base no conhecimento processado
 - O Sintetizador consolida as posições em uma recomendação
 
-**Saída esperada:**
-
-```
-CONCLAVE: Sessão iniciada.
-
-  Pergunta: "Devo lançar um produto de R$2.997 ou R$4.997?"
-
-  ── CRÍTICO METODOLÓGICO ──
-  "Antes de decidir preço, precisamos validar a Value Equation
-  (Hormozi). Qual o dream outcome, time delay, effort e sacrifice
-  do seu produto? O preço deve ser consequência do valor percebido,
-  não uma decisão arbitrária. Se o valor percebido é 10x o preço,
-  ambos funcionam. Se não é, nenhum dos dois funciona."
-
-  Fontes: knowledge/playbooks/ofertas-irrecusaveis.md
-
-  ── ADVOGADO DO DIABO ──
-  "R$4.997 parece atraente pela margem, mas considere: qual seu
-  volume atual de leads qualificados? Se sua taxa de conversão cair
-  de 8% para 4% no preço mais alto, você precisa do dobro de leads.
-  Seu funil comporta isso? Qual o CAC atual? Risco: ticket alto
-  com funil fraco = receita zero."
-
-  Fontes: Análise de unit economics (CFO)
-
-  ── SINTETIZADOR ──
-  "Recomendação: Lance a R$2.997 com upgrade path para R$4.997.
-  Isso permite:
-  1. Validar conversão no preço menor
-  2. Criar case studies com os primeiros alunos
-  3. Subir o preço com prova social
-  Prazo sugerido: 90 dias no preço menor, avaliar métricas, decidir."
-
-  Consenso: 2/3 recomendam começar por R$2.997
-  Confiança: 78% (limitada por base de dados com 1 especialista)
-```
-
 ---
 
 ## Próximos Passos
@@ -220,12 +214,12 @@ CONCLAVE: Sessão iniciada.
 Agora que você tem o básico funcionando, considere:
 
 1. **Processar mais materiais** - Quanto mais conteúdo, mais inteligente o sistema fica
-2. **Diversificar especialistas** - Cada novo especialista adiciona perspectivas ao Conclave
-3. **Usar agentes C-Level** - CRO, CFO, CMO e COO ficam mais precisos com mais dados
-4. **Configurar JARVIS Voice** - Ative as API keys opcionais para interação por voz
+2. **Diversificar especialistas** - Cada novo especialista adiciona perspectivas
+3. **Usar SQUADs** - Sales, Exec, Ops, Marketing, Tech, Research, Finance
+4. **Conectar OpenClaw** - Comandos via WhatsApp → squads → resposta automática
 
-Para configurar API keys adicionais, consulte [API-KEYS-GUIDE.md](API-KEYS-GUIDE.md).
+Para configurar API keys adicionais, consulte [docs/api-keys-guide.md](docs/api-keys-guide.md).
 
 ---
 
-*Mega Brain v1.0.0 - MoneyClub Edition*
+*Aureon AI v2.0.0 — X-Company*

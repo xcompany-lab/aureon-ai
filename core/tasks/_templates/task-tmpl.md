@@ -12,7 +12,7 @@
 ---
 task: [TASK-ID]
 execution_type: Agent | Human | Hybrid | Worker
-responsible: "@jarvis" | "@human" | "script"
+responsible: "@aureon" | "@human" | "script"
 ---
 ```
 
@@ -26,7 +26,7 @@ responsible: "@jarvis" | "@human" | "script"
 |-------|-------|
 | task_name | [Verbo + Objeto] |
 | status | pending |
-| responsible_executor | [@jarvis/@human/script] |
+| responsible_executor | [@aureon/@human/script] |
 | execution_type | [Agent/Human/Hybrid/Worker] |
 | input | [Lista de inputs] |
 | output | [Lista de outputs] |

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Autonomous Processor - Unattended file processing engine for Mega Brain pipeline.
+Autonomous Processor - Unattended file processing engine for Aureon AI pipeline.
 
 Provides Queue, Loop, Recovery, and Timeout systems for autonomous operation.
 
@@ -610,7 +610,7 @@ class AutonomousProcessor:
 
 def print_usage():
     print("""
-Autonomous Processor - Mega Brain Pipeline
+Autonomous Processor - Aureon AI Pipeline
 ===========================================
 
 Usage:

@@ -195,7 +195,7 @@ def generate_npmignore(repo_root: Path) -> str:
     """Generate .npmignore content from audit layer classifications."""
     lines = []
     lines.append("# ===========================================")
-    lines.append("# .npmignore - Mega Brain npm package")
+    lines.append("# .npmignore - Aureon AI npm package")
     lines.append("# ===========================================")
     lines.append("# AUTO-GENERATED from audit layer classifications.")
     lines.append("# Source of truth: core/intelligence/audit_layers.py")
@@ -419,7 +419,7 @@ def main():
 
     # Determine repo root
     script_path = Path(__file__).resolve()
-    repo_root = script_path.parent.parent.parent  # mega-brain/
+    repo_root = script_path.parent.parent.parent  # aureon-ai/
 
     if not (repo_root / 'core').exists():
         print(f"ERROR: Could not find repo root. Expected core/ in {repo_root}", file=sys.stderr)

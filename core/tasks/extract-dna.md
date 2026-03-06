@@ -4,7 +4,7 @@
 ---
 task: TSK-020
 execution_type: Agent
-responsible: "@jarvis"
+responsible: "@aureon"
 ---
 ```
 
@@ -14,7 +14,7 @@ responsible: "@jarvis"
 |-------|-------|
 | task_name | Extract Cognitive DNA |
 | status | active |
-| responsible_executor | @jarvis |
+| responsible_executor | @aureon |
 | execution_type | Agent |
 | input | insights, themes, source content |
 | output | DNA-CONFIG.yaml (5 layers) |

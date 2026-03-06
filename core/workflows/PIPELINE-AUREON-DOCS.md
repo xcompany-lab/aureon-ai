@@ -564,7 +564,7 @@ using LOG 1 template from LOG-TEMPLATES.md
 Pipeline 100% completo para: $SOURCE_PERSON ($SOURCE_ID)
 
 Deseja processar outro arquivo agora?
-- Caminho local: /process-jarvis inbox/PASTA/arquivo.txt
+- Caminho local: /aureon-process inbox/PASTA/arquivo.txt
 - YouTube URL: Cole a URL
 
 Se não, sistema pronto para:

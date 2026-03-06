@@ -330,7 +330,7 @@ def _save_skill_md(persona_slug, skill):
         f"```",
         f"",
         f"---",
-        f"Auto-gerado por Mega Brain Intelligence Layer | {datetime.now(timezone.utc).strftime('%Y-%m-%d')}",
+        f"Auto-gerado por Aureon AI Intelligence Layer | {datetime.now(timezone.utc).strftime('%Y-%m-%d')}",
     ])
 
     with open(filepath, "w", encoding="utf-8") as f:

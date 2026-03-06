@@ -1,0 +1,99 @@
+# workflow: wf-ingest-chunked
+# Aureon AI — Ingestão por Chunks para Materiais Grandes
+# Use este workflow quando o material exceder ~30 minutos / 5.000 palavras
+version: 1
+name: "wf-ingest-chunked"
+description: "Ingestão em lotes (chunks de 20 min) com checkpoint automático após cada fase. Resolve o problema de estouro de limite em materiais grandes."
+
+# ─────────────────────────────────────────────────────────
+# CONFIGURAÇÃO
+# ─────────────────────────────────────────────────────────
+config:
+  chunk_size_minutes: 20
+  chunk_size_words: 3500
+  checkpoint_dir: "processing/checkpoints"
+  checkpoint_file_pattern: "{material_id}-phase{phase}.json"
+  resume_on_interrupt: true
+
+# ─────────────────────────────────────────────────────────
+# FASES DO WORKFLOW
+# ─────────────────────────────────────────────────────────
+phases:
+
+  pre_check:
+    name: "PRE-CHECK — Detectar tamanho e dividir"
+    task: core/tasks/pre-check-size.md
+    output:
+      - total_words: int
+      - total_chunks: int
+      - chunk_map: list
+    on_complete: "Salvar chunk_map em {checkpoint_dir}/{material_id}-chunk-map.json"
+
+  phase_1_chunking:
+    name: "PHASE 1 — Chunking por lote"
+    task: core/tasks/chunk-content.md
+    input: chunk_map
+    loop:
+      for_each: chunk
+      save_checkpoint_after_each: true
+      checkpoint_task: core/tasks/checkpoint-save.md
+    output_dir: "artifacts/chunks/{material_id}/"
+    on_complete: "checkpoint: phase1-done"
+
+  phase_2_resolution:
+    name: "PHASE 2 — Resolução de entidades"
+    task: core/tasks/resolution.md
+    input_dir: "artifacts/chunks/{material_id}/"
+    save_checkpoint_before: true
+    checkpoint_task: core/tasks/checkpoint-save.md
+    on_complete: "checkpoint: phase2-done"
+
+  phase_3_extraction:
+    name: "PHASE 3 — Extração de insights"
+    task: core/tasks/extraction.md
+    input_dir: "artifacts/chunks/{material_id}/"
+    save_checkpoint_before: true
+    checkpoint_task: core/tasks/checkpoint-save.md
+    on_complete: "checkpoint: phase3-done"
+
+  phase_4_synthesis:
+    name: "PHASE 4 — Síntese narrativa"
+    task: core/tasks/synthesis.md
+    input: "artifacts/insights/{material_id}/"
+    save_checkpoint_before: true
+    checkpoint_task: core/tasks/checkpoint-save.md
+    on_complete: "checkpoint: phase4-done"
+
+  phase_5_compilation:
+    name: "PHASE 5 — Compilação final"
+    task: core/tasks/compilation.md
+    output:
+      - dossier: "knowledge/dossiers/{expert_id}.md"
+      - playbook: "knowledge/playbooks/{topic_id}.md"
+    on_complete: "checkpoint: phase5-done → PIPELINE COMPLETE"
+
+# ─────────────────────────────────────────────────────────
+# RESUME PROTOCOL
+# ─────────────────────────────────────────────────────────
+resume:
+  description: |
+    Se o pipeline foi interrompido, use o prompt de resume abaixo.
+    O Aureon vai detectar o último checkpoint e continuar de onde parou.
+  prompt: |
+    /aureon-checkpoint resume {material_id}
+  behavior:
+    - Lê o arquivo de checkpoint mais recente em processing/checkpoints/
+    - Identifica a última fase completada
+    - Retoma da fase seguinte sem repetir contexto anterior
+    - Estado é file-driven: não depende de memória em contexto
+
+# ─────────────────────────────────────────────────────────
+# INSTRUÇÕES DE USO
+# ─────────────────────────────────────────────────────────
+usage:
+  trigger: "/aureon-process --chunked"
+  example: "/aureon-process --chunked inbox/alex-hormozi/mastermind-1h.md"
+  notes:
+    - "Use para materiais > 30 min ou > 5.000 palavras"
+    - "Para materiais menores, use wf-pipeline-full.yaml (mais rápido)"
+    - "Checkpoints são salvos automaticamente — safe to interrupt anytime"
