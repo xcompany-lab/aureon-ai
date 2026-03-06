@@ -1,0 +1,192 @@
+{
+  "canonical_state": {
+    "version": "v2",
+    "entities": {
+      "persons": {
+        "Alex Hormozi": {
+          "canonical": "Alex Hormozi",
+          "aliases": ["alex hormozi", "alex mozy", "hormozi", "alex"],
+          "type": "person",
+          "corpus": "acquisition_com",
+          "first_seen": "AH001_001"
+        },
+        "Leila Hormozi": {
+          "canonical": "Leila Hormozi",
+          "aliases": ["leila", "layla", "leila hormozi"],
+          "type": "person",
+          "corpus": "acquisition_com",
+          "first_seen": null
+        },
+        "Taki Moore": {
+          "canonical": "Taki Moore",
+          "aliases": ["taki", "taki moore"],
+          "type": "person",
+          "corpus": "external",
+          "first_seen": "AH001_001"
+        }
+      },
+      "companies": {
+        "Acquisition.com": {
+          "canonical": "Acquisition.com",
+          "aliases": ["acquisition com", "acquisition.com", "acquisition"],
+          "type": "company",
+          "corpus": "acquisition_com"
+        },
+        "Gym Launch": {
+          "canonical": "Gym Launch",
+          "aliases": ["gym launch", "gym launching"],
+          "type": "company",
+          "corpus": "acquisition_com"
+        },
+        "Prestige Labs": {
+          "canonical": "Prestige Labs",
+          "aliases": ["prestige labs"],
+          "type": "company",
+          "corpus": "acquisition_com"
+        },
+        "Allen Fitness": {
+          "canonical": "Allen Fitness",
+          "aliases": ["allen fitness"],
+          "type": "company",
+          "corpus": "acquisition_com",
+          "note": "Gym Launch portfolio client referenced in AH001"
+        }
+      },
+      "roles": {
+        "BDR": {
+          "canonical": "BDR",
+          "aliases": ["bdr", "business development rep", "business development representative", "prospector"],
+          "type": "role",
+          "corpus": "acquisition_com",
+          "description": "Base of Christmas Tree org — makes 100+ cold calls/day, focuses on raw contact volume",
+          "first_seen": "AH001_006"
+        },
+        "SDS": {
+          "canonical": "SDS",
+          "aliases": ["sds", "sales development specialist", "setter", "pre-closer"],
+          "type": "role",
+          "corpus": "acquisition_com",
+          "description": "Middle of Christmas Tree org — runs 30-min value call, qualifies, delivers value upfront before passing to BC",
+          "first_seen": "AH001_009"
+        },
+        "BC": {
+          "canonical": "BC",
+          "aliases": ["bc", "business consultant", "closer", "account executive"],
+          "type": "role",
+          "corpus": "acquisition_com",
+          "description": "Top of Christmas Tree org — runs closing call using CLOSE framework",
+          "first_seen": "AH001_012"
+        }
+      },
+      "frameworks": {
+        "Christmas Tree Structure": {
+          "canonical": "Christmas Tree Structure",
+          "aliases": ["christmas tree", "christmas tree org", "christmas tree structure", "bdr-sds-bc model"],
+          "type": "framework",
+          "corpus": "acquisition_com",
+          "description": "3-tier outbound sales org: BDR (base, volume) → SDS (middle, qualify+value) → BC (top, close). Named for the visual shape of the org chart.",
+          "first_seen": "AH001_006"
+        },
+        "CLOSE Framework": {
+          "canonical": "CLOSE Framework",
+          "aliases": ["close framework", "close", "close acronym"],
+          "type": "framework",
+          "corpus": "acquisition_com",
+          "description": "Closing methodology: C=Clarify (restate situation), L=Label (surface 3 objections), O=Overview (show transformation), S=Sell the vacation (emotional future), E=Explain (address labeled objections)",
+          "first_seen": "AH001_012"
+        },
+        "Farm System": {
+          "canonical": "Farm System",
+          "aliases": ["farm system", "sales farm system", "internal talent development"],
+          "type": "framework",
+          "corpus": "acquisition_com",
+          "description": "Baseball-inspired internal talent development: 4 sub-levels per role (A, AA, AAA, MLB), 8-week milestones, 4-gate progression (Knowledge, Performance, Peer, Manager)",
+          "first_seen": "AH001_020"
+        },
+        "Buy-Build-Refinance": {
+          "canonical": "Buy-Build-Refinance",
+          "aliases": ["buy build refinance", "buy-build-refinance", "bbr"],
+          "type": "framework",
+          "corpus": "acquisition_com",
+          "description": "Deal structuring model for portfolio companies: Buy (acquire stake), Build (install systems and scale), Refinance (extract capital via debt against improved EBITDA)",
+          "first_seen": "AH001_028"
+        },
+        "3 Audience Buckets": {
+          "canonical": "3 Audience Buckets",
+          "aliases": ["three audience buckets", "3 buckets", "yes no maybe", "audience buckets"],
+          "type": "framework",
+          "corpus": "acquisition_com",
+          "description": "Audience segmentation: YES (ready to buy now ~3%), NO (never buy ~7%), MAYBE (right offer/time converts ~90%). Outbound targets MAYBE bucket via timing and follow-up.",
+          "first_seen": "AH001_025"
+        }
+      },
+      "concepts": {
+        "Channel Diversification": {
+          "canonical": "Channel Diversification",
+          "aliases": ["channel diversification", "channel diversity", "multi-channel"],
+          "type": "concept",
+          "corpus": "acquisition_com",
+          "description": "Strategy of building multiple lead generation channels (inbound + outbound) to increase business sellability and reduce concentration risk",
+          "first_seen": "AH001_002"
+        },
+        "Sellability": {
+          "canonical": "Sellability",
+          "aliases": ["sellability", "business sellability", "sellable"],
+          "type": "concept",
+          "corpus": "acquisition_com",
+          "description": "Hormozi's framework for making a business attractive for acquisition: multiple channels, documented systems, reduced owner dependence, predictable growth",
+          "first_seen": "AH001_002"
+        }
+      }
+    },
+    "aliases_map": {
+      "alex hormozi": "Alex Hormozi",
+      "alex mozy": "Alex Hormozi",
+      "hormozi": "Alex Hormozi",
+      "alex": "Alex Hormozi",
+      "leila": "Leila Hormozi",
+      "layla": "Leila Hormozi",
+      "leila hormozi": "Leila Hormozi",
+      "taki": "Taki Moore",
+      "taki moore": "Taki Moore",
+      "acquisition com": "Acquisition.com",
+      "acquisition.com": "Acquisition.com",
+      "acquisition": "Acquisition.com",
+      "gym launch": "Gym Launch",
+      "gym launching": "Gym Launch",
+      "prestige labs": "Prestige Labs",
+      "allen fitness": "Allen Fitness",
+      "bdr": "BDR",
+      "business development rep": "BDR",
+      "business development representative": "BDR",
+      "prospector": "BDR",
+      "sds": "SDS",
+      "sales development specialist": "SDS",
+      "setter": "SDS",
+      "pre-closer": "SDS",
+      "bc": "BC",
+      "business consultant": "BC",
+      "closer": "BC",
+      "account executive": "BC",
+      "christmas tree": "Christmas Tree Structure",
+      "christmas tree org": "Christmas Tree Structure",
+      "bdr-sds-bc model": "Christmas Tree Structure",
+      "close framework": "CLOSE Framework",
+      "close acronym": "CLOSE Framework",
+      "farm system": "Farm System",
+      "sales farm system": "Farm System",
+      "internal talent development": "Farm System",
+      "buy build refinance": "Buy-Build-Refinance",
+      "bbr": "Buy-Build-Refinance",
+      "three audience buckets": "3 Audience Buckets",
+      "3 buckets": "3 Audience Buckets",
+      "yes no maybe": "3 Audience Buckets",
+      "channel diversification": "Channel Diversification",
+      "sellability": "Sellability"
+    },
+    "review_queue": [],
+    "collisions": [],
+    "last_updated": "2026-03-04T07:30:00Z",
+    "source_ids_processed": ["AH001"]
+  }
+}

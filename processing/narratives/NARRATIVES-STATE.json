@@ -1,0 +1,141 @@
+{
+  "narratives_state": {
+    "version": "v2",
+    "persons": {
+      "Alex Hormozi": {
+        "narrative": "Alex Hormozi apresentou neste mastermind de alto nível (Taki Moore, 8-figuras+) um sistema completo para escalar times de vendas outbound — partindo do problema de concentração de canal até a estrutura operacional completa.\n\nO ponto de partida é filosófico: um negócio de canal único não é vendável. Compradores pagam múltiplos 2-3x maiores por negócios com diversificação de canais. Outbound não é opção — é prerequisito de sellability e de resiliência. Hormozi provou isso na prática durante a COVID, quando a Gym Launch foi forçada a construir outbound do zero em 90 dias e escalou para $300M ARR em 18 meses.\n\nA arquitetura central é a Christmas Tree Structure: BDRs na base (100 calls/dia, 30% contact rate, 10% set rate = 3 agendamentos/dia) alimentam SDS no meio (chamada de valor de 30min, qualificação profunda, transição scripted para BC), que alimentam BCs no topo (fechamento via CLOSE Framework). A proporção é 2:1:0.5 — BDRs alimentam metade de SDS, SDS alimentam metade de BCs.\n\nO CLOSE Framework é o coração do fechamento: C (Clarify), L (Label — nomear 3 objeções antes do cliente), O (Overview), S (Sell the vacation), E (Explain). O L é o elemento mais poderoso: quando você nomeia as objeções do cliente antes dele, a resistência cai dramaticamente.\n\nO Farm System resolve o problema de talento: ao invés de contratar BCs experientes (caros e escassos), treina BDRs promissores internamente. 4 sub-níveis por cargo (A, AA, AAA, MLB), 8 semanas por nível, 4 gates de progressão (Knowledge, Performance, Peer, Manager).\n\nO framework de 3 Audience Buckets (YES 3%, NO 7%, MAYBE 90%) explica por que outbound existe: a maioria das empresas serve apenas o bucket YES via inbound. O outbound captura o bucket MAYBE — 90% do mercado disponível.\n\nFinalmente, o maior insight estratégico: sistemas sobre pessoas. O erro mais comum de operadores é contratar 'estrelas' ao invés de construir sistemas. A meta é criar um negócio que funcione sem o dono.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "insights_included": [
+          "AH001_001", "AH001_002", "AH001_003", "AH001_004", "AH001_005",
+          "AH001_006", "AH001_007", "AH001_008", "AH001_009", "AH001_010",
+          "AH001_011", "AH001_012", "AH001_013", "AH001_014", "AH001_015",
+          "AH001_016", "AH001_017", "AH001_018", "AH001_019", "AH001_020",
+          "AH001_021", "AH001_022", "AH001_023", "AH001_024", "AH001_025",
+          "AH001_026", "AH001_027", "AH001_028", "AH001_029", "AH001_030",
+          "AH001_031", "AH001_032", "AH001_033", "AH001_034", "AH001_035",
+          "AH001_036", "AH001_037", "AH001_038", "AH001_039", "AH001_040",
+          "AH001_041", "AH001_042", "AH001_043", "AH001_044", "AH001_045",
+          "AH001_046", "AH001_047", "AH001_048", "AH001_049", "AH001_050"
+        ],
+        "patterns_identified": [
+          {
+            "pattern": "Sistemas > Estrelas",
+            "frequency": "alta",
+            "evidence": ["AH001_019", "AH001_048", "AH001_049", "AH001_050"]
+          },
+          {
+            "pattern": "Provar via outbound antes de escalar via ads",
+            "frequency": "média",
+            "evidence": ["AH001_039", "AH001_040"]
+          },
+          {
+            "pattern": "Sellability como meta permanente",
+            "frequency": "média",
+            "evidence": ["AH001_002", "AH001_029", "AH001_033"]
+          },
+          {
+            "pattern": "Métricas precisas por papel",
+            "frequency": "alta",
+            "evidence": ["AH001_007", "AH001_008", "AH001_010", "AH001_021", "AH001_022"]
+          }
+        ],
+        "open_loops": [
+          {
+            "question": "Como a Christmas Tree se adapta para tickets abaixo de $2k?",
+            "why_it_matters": "Custo da estrutura pode não se justificar em tickets menores",
+            "owner_suspected": "Alex Hormozi"
+          },
+          {
+            "question": "Qual é o prazo médio de maturação do Farm System para gerar BCs competitivos?",
+            "why_it_matters": "Investimento vs. contratação direta depende do breakeven",
+            "owner_suspected": "Alex Hormozi"
+          }
+        ],
+        "tensions": [],
+        "consensus_points": [],
+        "next_questions": [
+          "Qual é o tamanho mínimo de empresa para justificar Christmas Tree completa?",
+          "Como integrar inbound warming com cold outbound?",
+          "O CLOSE Framework funciona para vendas B2B enterprise com múltiplos stakeholders?"
+        ]
+      }
+    },
+    "themes": {
+      "01-ESTRUTURA-TIME": {
+        "narrative": "A estrutura de time em Hormozi gira em torno da especialização de papéis via Christmas Tree Structure. BDRs (volume/prospecção), SDS (valor/qualificação), BCs (fechamento) operam com métricas independentes e são recrutados por perfis distintos. A metáfora do BDR como propaganda elimina resistência ao outbound ao enquadrar o custo como mídia mensurável.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "insights_included": ["AH001-INS-001", "AH001-INS-013", "AH001-INS-016", "AH001-INS-021"],
+        "patterns_identified": [{"pattern": "Especialização aumenta performance coletiva", "frequency": "alta", "evidence": ["AH001_006", "AH001_009", "AH001_012"]}],
+        "open_loops": [],
+        "tensions": [],
+        "next_questions": ["Como transicionar de closer generalista para Christmas Tree?"]
+      },
+      "02-PROCESSO-VENDAS": {
+        "narrative": "O processo de vendas tem duas camadas: chamada SDS de valor (30min, qualificação + comprometimento) e chamada BC de fechamento (CLOSE Framework). O Label é o elemento mais inovador — nomear objeções do cliente antes dele elimina defesa emocional. Os 3 Buckets justificam outbound: 90% do mercado é MAYBE, não capturado por inbound.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "insights_included": ["AH001-INS-002", "AH001-INS-005", "AH001-INS-006", "AH001-INS-010", "AH001-INS-018", "AH001-INS-024"],
+        "patterns_identified": [{"pattern": "Valor upfront antes de venda reduz resistência", "frequency": "alta", "evidence": ["AH001_009", "AH001_010"]}],
+        "open_loops": [],
+        "tensions": [],
+        "next_questions": ["CLOSE Framework tem variações para follow-up de propostas?"]
+      },
+      "03-CONTRATACAO": {
+        "narrative": "Contratar por coachability, não por resultado passado. O Farm System (4 sub-níveis, 8 semanas, 4 gates) cria progressão clara e elimina turnover por ambiguidade. Desenvolvimento interno é mais barato que contratação de closers experientes no longo prazo.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "insights_included": ["AH001-INS-004", "AH001-INS-012", "AH001-INS-014", "AH001-INS-020", "AH001-INS-022"],
+        "patterns_identified": [{"pattern": "Critérios claros reduzem turnover", "frequency": "média", "evidence": ["AH001_021", "AH001_022"]}],
+        "open_loops": [],
+        "tensions": [],
+        "next_questions": ["Como adaptar Farm System para escalonamento rápido (6 meses)?"]
+      },
+      "09-GESTAO": {
+        "narrative": "Redução de dependência do dono em decisões operacionais é a métrica central de gestão madura. Meta: -50% de decisões pelo dono a cada 6 meses. Sistemas > estrelas é o princípio arquitetural — empresas com processos documentados e replicáveis superam no longo prazo empresas dependentes de talentos individuais.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "insights_included": ["AH001-INS-011", "AH001-INS-019", "AH001-INS-025"],
+        "patterns_identified": [{"pattern": "Sistemas eliminam dependência e aumentam valor", "frequency": "alta", "evidence": ["AH001_048", "AH001_049", "AH001_050"]}],
+        "open_loops": [],
+        "tensions": [],
+        "next_questions": ["Quais são os primeiros 3 processos a documentar na transição Operator→CEO?"]
+      },
+      "EXIT-SCALING": {
+        "narrative": "Sellability é objetivo permanente — não porque você vai vender, mas porque um negócio vendável é intrinsecamente mais valioso e autônomo. Buy-Build-Refinance permite extração de capital via dívida sem diluição. Canal único penaliza múltiplo de avaliação em 2-3x.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "insights_included": ["AH001-INS-003", "AH001-INS-008", "AH001-INS-017"],
+        "patterns_identified": [{"pattern": "Sellability como proxy de qualidade operacional", "frequency": "média", "evidence": ["AH001_002", "AH001_033"]}],
+        "open_loops": [],
+        "tensions": [],
+        "next_questions": ["Qual o múltiplo de EBITDA típico em deals Acquisition.com?"]
+      },
+      "04-COMISSIONAMENTO": {
+        "narrative": "Modelo OTE com variabilidade crescente do BDR para o BC: BDRs recebem base + bônus por agendamentos qualificados, SDS recebem base + bônus por transições aceitas, BCs recebem base menor + comissão agressiva por fechamento.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "insights_included": ["AH001-INS-009"],
+        "patterns_identified": [],
+        "open_loops": [],
+        "tensions": [],
+        "next_questions": ["Qual é o percentual de comissão típico de BC nos deals Acquisition.com?"]
+      },
+      "05-METRICAS": {
+        "narrative": "Métricas BDR: 100 calls/dia, 30% contact rate, 10% set rate = 3 agendamentos/dia por BDR. Show rate meta: 60%+. CAC outbound normaliza em 6-12 meses.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "insights_included": ["AH001-INS-007", "AH001-INS-023"],
+        "patterns_identified": [],
+        "open_loops": [],
+        "tensions": [],
+        "next_questions": ["Qual é o benchmark de close rate esperado para BCs no modelo Christmas Tree?"]
+      },
+      "06-FUNIL-APLICACAO": {
+        "narrative": "Show rate crítico: 60%+ para qualificar o SDS como eficiente. Sequência de confirmação: e-mail imediato + SMS + ligação 24h antes + SMS 2h antes.",
+        "last_updated": "2026-03-04T08:00:00Z",
+        "insights_included": ["AH001-INS-015"],
+        "patterns_identified": [],
+        "open_loops": [],
+        "tensions": [],
+        "next_questions": ["O que fazer com leads que não comparecem 2+ vezes?"]
+      }
+    },
+    "last_updated": "2026-03-04T08:00:00Z"
+  }
+}

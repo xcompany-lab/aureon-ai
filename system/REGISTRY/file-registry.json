@@ -1,0 +1,255 @@
+{
+  "files": [
+    {
+      "id": "minds/alex-hormozi/MEMORY",
+      "path": "agents/minds/alex-hormozi/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L3",
+      "agent_id": "alex-hormozi",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-04T23:08:45Z"
+    },
+    {
+      "id": "cargo/sales/closer/MEMORY",
+      "path": "agents/cargo/sales/closer/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L4",
+      "agent_id": "closer",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-04T23:15:04Z"
+    },
+    {
+      "id": "cargo/sales/sds/MEMORY",
+      "path": "agents/cargo/sales/sds/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L4",
+      "agent_id": "sds",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-04T23:21:25Z"
+    },
+    {
+      "id": "cargo/sales/lns/MEMORY",
+      "path": "agents/cargo/sales/lns/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L4",
+      "agent_id": "lns",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-04T23:25:42Z"
+    },
+    {
+      "id": "cargo/sales/bdr/MEMORY",
+      "path": "agents/cargo/sales/bdr/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L4",
+      "agent_id": "bdr",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-04T23:26:43Z"
+    },
+    {
+      "id": "cargo/sales/sales-manager/MEMORY",
+      "path": "agents/cargo/sales/sales-manager/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L4",
+      "agent_id": "sales-manager",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T06:25:06Z"
+    },
+    {
+      "id": "cargo/c-level/cro/MEMORY",
+      "path": "agents/cargo/c-level/cro/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L4",
+      "agent_id": "cro",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T06:25:50Z"
+    },
+    {
+      "id": "cargo/c-level/cfo/MEMORY",
+      "path": "agents/cargo/c-level/cfo/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L4",
+      "agent_id": "cfo",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T06:26:27Z"
+    },
+    {
+      "id": "cargo/c-level/coo/MEMORY",
+      "path": "agents/cargo/c-level/coo/MEMORY.md",
+      "type": "MEMORY",
+      "layer": "L4",
+      "agent_id": "coo",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T06:27:08Z"
+    },
+    {
+      "id": "cargo/sales/closer/AGENT",
+      "path": "agents/cargo/sales/closer/AGENT.md",
+      "type": "AGENT",
+      "layer": "L4",
+      "agent_id": "closer",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T06:59:39Z"
+    },
+    {
+      "id": "cargo/sales/sds/AGENT",
+      "path": "agents/cargo/sales/sds/AGENT.md",
+      "type": "AGENT",
+      "layer": "L4",
+      "agent_id": "sds",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T06:59:40Z"
+    },
+    {
+      "id": "cargo/sales/lns/AGENT",
+      "path": "agents/cargo/sales/lns/AGENT.md",
+      "type": "AGENT",
+      "layer": "L4",
+      "agent_id": "lns",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T07:00:06Z"
+    },
+    {
+      "id": "cargo/sales/bdr/AGENT",
+      "path": "agents/cargo/sales/bdr/AGENT.md",
+      "type": "AGENT",
+      "layer": "L4",
+      "agent_id": "bdr",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T07:00:25Z"
+    },
+    {
+      "id": "cargo/sales/sales-manager/AGENT",
+      "path": "agents/cargo/sales/sales-manager/AGENT.md",
+      "type": "AGENT",
+      "layer": "L4",
+      "agent_id": "sales-manager",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T07:00:55Z"
+    },
+    {
+      "id": "cargo/c-level/cro/AGENT",
+      "path": "agents/cargo/c-level/cro/AGENT.md",
+      "type": "AGENT",
+      "layer": "L4",
+      "agent_id": "cro",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T07:01:18Z"
+    },
+    {
+      "id": "cargo/c-level/cfo/AGENT",
+      "path": "agents/cargo/c-level/cfo/AGENT.md",
+      "type": "AGENT",
+      "layer": "L4",
+      "agent_id": "cfo",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T07:01:45Z"
+    },
+    {
+      "id": "cargo/c-level/coo/AGENT",
+      "path": "agents/cargo/c-level/coo/AGENT.md",
+      "type": "AGENT",
+      "layer": "L4",
+      "agent_id": "coo",
+      "source_id": "AH001",
+      "phase_created": 7,
+      "created_at": "2026-03-05T07:02:09Z"
+    },
+    {
+      "id": "processing/chunks/CHUNKS-STATE",
+      "path": "processing/chunks/CHUNKS-STATE.json",
+      "type": "STATE",
+      "layer": "processing",
+      "source_id": "AH001",
+      "phase_created": 1,
+      "created_at": "2026-03-04T07:05:00Z"
+    },
+    {
+      "id": "processing/canonical/CANONICAL-MAP",
+      "path": "processing/canonical/CANONICAL-MAP.json",
+      "type": "STATE",
+      "layer": "processing",
+      "source_id": "AH001",
+      "phase_created": 1,
+      "created_at": "2026-03-04T07:05:12Z"
+    },
+    {
+      "id": "processing/insights/INSIGHTS-STATE",
+      "path": "processing/insights/INSIGHTS-STATE.json",
+      "type": "STATE",
+      "layer": "processing",
+      "source_id": "AH001",
+      "phase_created": 3,
+      "created_at": "2026-03-04T07:45:00Z"
+    },
+    {
+      "id": "processing/narratives/NARRATIVES-STATE",
+      "path": "processing/narratives/NARRATIVES-STATE.json",
+      "type": "STATE",
+      "layer": "processing",
+      "source_id": "AH001",
+      "phase_created": 4,
+      "created_at": "2026-03-04T08:00:00Z"
+    },
+    {
+      "id": "knowledge/dossiers/THEMES/DOSSIER-01-ESTRUTURA-TIME",
+      "path": "knowledge/dossiers/THEMES/DOSSIER-01-ESTRUTURA-TIME.md",
+      "type": "DOSSIER",
+      "layer": "knowledge",
+      "source_id": "AH001",
+      "phase_created": 5,
+      "created_at": "2026-03-04T09:00:00Z"
+    },
+    {
+      "id": "knowledge/dossiers/THEMES/DOSSIER-02-PROCESSO-VENDAS",
+      "path": "knowledge/dossiers/THEMES/DOSSIER-02-PROCESSO-VENDAS.md",
+      "type": "DOSSIER",
+      "layer": "knowledge",
+      "source_id": "AH001",
+      "phase_created": 5,
+      "created_at": "2026-03-04T09:00:00Z"
+    },
+    {
+      "id": "knowledge/dossiers/THEMES/DOSSIER-09-GESTAO",
+      "path": "knowledge/dossiers/THEMES/DOSSIER-09-GESTAO.md",
+      "type": "DOSSIER",
+      "layer": "knowledge",
+      "source_id": "AH001",
+      "phase_created": 5,
+      "created_at": "2026-03-04T09:00:00Z"
+    },
+    {
+      "id": "knowledge/dossiers/persons/DOSSIER-ALEX-HORMOZI",
+      "path": "knowledge/dossiers/persons/DOSSIER-ALEX-HORMOZI.md",
+      "type": "DOSSIER",
+      "layer": "knowledge",
+      "source_id": "AH001",
+      "phase_created": 5,
+      "created_at": "2026-03-04T09:00:00Z"
+    }
+  ],
+  "meta": {
+    "version": "v2",
+    "last_updated": "2026-03-05T07:28:00Z",
+    "total_files": 25,
+    "source_ids": [
+      "AH001"
+    ],
+    "pipeline_complete": true
+  }
+}

@@ -1,0 +1,960 @@
+{
+  "chunks": [
+    {
+      "id_chunk": "AH001_001",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 1,
+        "total_chunks": 50
+      },
+      "timestamp": "00:00:00",
+      "speaker": "Taki Moore / Alex Hormozi",
+      "personas": ["Alex Hormozi", "Taki Moore"],
+      "temas": ["01-ESTRUTURA-TIME", "09-GESTAO"],
+      "conteudo": "Contexto de abertura: Taki Moore apresenta Alex Hormozi em formato de mastermind de alto nível (8 figuras+). Hormozi é descrito como alguém que não apenas construiu negócios massivos mas documentou e ensinou os sistemas. A sessão é sobre como escalar times de vendas — especificamente como Hormozi foi de zero para um time outbound que gerou crescimento explosivo. O framing inicial é que a maioria dos empreendedores de serviços tem um problema de concentração de canal: todo o crescimento depende de uma fonte. Hormozi vai compartilhar a solução que implementou na Acquisition.com e empresas do portfólio. Mastermind focado em operadores que já têm prova de conceito e querem escalar sem criar fragilidade no negócio."
+    },
+    {
+      "id_chunk": "AH001_002",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 2,
+        "total_chunks": 50
+      },
+      "timestamp": "00:02:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "EXIT-SCALING"],
+      "conteudo": "Hormozi abre com o problema central: dependência de canal. Se o negócio depende de apenas uma fonte de leads (orgânico, referral, ads), ele não é vendível. Potenciais compradores pagam múltiplo mais alto por negócios com diversificação de canais. A tese: 'Um negócio com dois canais vale 2-3x mais que um negócio com um canal, mesmo com o mesmo faturamento.' O risco de canal único é existencial — se o Facebook muda o algoritmo, se o YouTube penaliza, se um parceiro sai, o negócio colapsa. Outbound é o canal que mais empreendedores resistem a construir mas que tem o ROI mais previsível quando operacionalizado corretamente. A narrativa de Hormozi é que construir outbound não é opcional para quem quer um negócio de verdade — é uma alavanca de sellability e de resiliência."
+    },
+    {
+      "id_chunk": "AH001_003",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 3,
+        "total_chunks": 50
+      },
+      "timestamp": "00:05:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi", "Leila Hormozi"],
+      "temas": ["EXIT-SCALING", "09-GESTAO"],
+      "conteudo": "Hormozi conta o backstory do Gym Launch: recebeu oferta de $250M de valuation quando o negócio dependia completamente de um canal de aquisição de clientes. Leila disse 'shut it down' — não a oferta, mas o canal de risco. A decisão que não foi tomada: vender ou transformar. Hormozi reflete que decisões não tomadas são piores que decisões erradas — elas consomem energia mental continuamente sem resolver o problema. O dilema: $250M parecia muito dinheiro na época, mas saindo limpo seria ~$40M após impostos, fees e distribuição. A lição: o múltiplo que um acquirer paga é diretamente proporcional à previsibilidade e à diversificação do negócio. Negócios com uma fonte de lead capturam múltiplos de 2-3x; negócios com múltiplas fontes previsíveis capturam 5-8x. A motivação para construir outbound não foi ganância — foi sobrevivência e sellability."
+    },
+    {
+      "id_chunk": "AH001_004",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 4,
+        "total_chunks": 50
+      },
+      "timestamp": "00:10:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "02-PROCESSO-VENDAS"],
+      "conteudo": "Hormozi descreve a gênese do outbound durante COVID (2020). Inbound secou do dia para a noite — academias fechadas, o produto central de Gym Launch parou. A decisão: pivotar para outbound imediatamente. Mês 1: caos, sem processo, sem script, sem treinamento. Mês 3: primeiros sinais de tração. Mês 6: processo semi-documentado. Mês 12: crescimento consistente. Mês 14: explosão. A curva de aprendizado é exponencial, não linear. Os primeiros 6 meses são lentos e frustrantes — isso é normal e esperado. A maioria dos empreendedores desiste antes de chegar na curva de aceleração. Hormozi usa a analogia: é como aprender a surfar — você fica na areia por semanas antes de pegar a primeira onda. Mas quando pega a onda, o momentum é diferente de qualquer outra coisa."
+    },
+    {
+      "id_chunk": "AH001_005",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 5,
+        "total_chunks": 50
+      },
+      "timestamp": "00:15:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["05-METRICAS", "07-PRICING"],
+      "conteudo": "Unit economics do outbound: Hormozi estabelece os critérios mínimos para outbound funcionar. Ticket mínimo: $15.000 para que o math do outbound faça sentido. LCV (Lifetime Customer Value) ideal: $40.000+. Raciocínio: o custo de um BDR (Business Development Rep) fazendo 100 calls/dia é ~$40k/ano em OTE. Se um BDR gera 2 shows por dia e a taxa de close é 20%, isso é 0.4 closes/dia = ~150 closes/ano. Se o ticket é $15k, isso é $2.25M em receita gerada por $40k de custo = 56:1 ROI. A matemática só funciona com tickets altos. Para tickets abaixo de $5k, o custo do outbound consome a margem. A lição: antes de construir outbound, validar se o modelo de negócio suporta o custo do canal. Se o ticket não suporta, aumentar o ticket antes de contratar o primeiro BDR."
+    },
+    {
+      "id_chunk": "AH001_006",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 6,
+        "total_chunks": 50
+      },
+      "timestamp": "00:20:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME"],
+      "conteudo": "Hormozi apresenta a Christmas Tree Structure — a arquitetura do time de vendas outbound que ele desenvolveu. Visualmente parece uma árvore de natal: base larga (BDRs), meio mais estreito (SDS), topo mais estreito ainda (BC/closers). BDR = Business Development Rep: na base, fazem o volume de calls. SDS = Sales Development Specialist: no meio, qualificam e entregam valor. BC = Business Consultant (ou closer): no topo, fazem o fechamento. A lógica: cada nível filtra e qualifica para o próximo. BDRs não vendem — eles qualificam e agendam. SDS não fecha — eles constroem relacionamento e identificam fit. BC não prospecta — eles fecham. Especialização radical é a chave. 'If you look at the org chart, it looks like a christmas tree. That's exactly how this functions.'"
+    },
+    {
+      "id_chunk": "AH001_007",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 7,
+        "total_chunks": 50
+      },
+      "timestamp": "00:25:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "06-FUNIL-APLICACAO"],
+      "conteudo": "Detalhes do papel do BDR (Business Development Rep): função principal é volume de chamadas — 100 calls/dia é o benchmark. Métricas: número de dials, connects, shows agendados. Um BDR bem treinado agenda 2-3 shows por dia. O BDR é o equivalente humano de um anúncio de topo de funil — ele gera leads qualificados para o sistema, não fecha nada. Perfil: não precisa ser vendedor experiente. Na verdade, Hormozi prefere contratar BDRs sem experiência de vendas para não precisar desaprender hábitos ruins. O trabalho é estruturado e repetitivo — scripts rígidos, sem improvisação. A taxa de no-show é uma métrica crítica: se o BDR agenda mas os prospects não aparecem, o problema está na qualificação, não no closer. BDR ideal: disciplinado, resiliente a rejeição, capaz de fazer volume sem queimar."
+    },
+    {
+      "id_chunk": "AH001_008",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 8,
+        "total_chunks": 50
+      },
+      "timestamp": "00:30:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["08-FERRAMENTAS", "06-FUNIL-APLICACAO"],
+      "conteudo": "Ferramentas e stack do BDR: PhoneBurner é o software preferido — permite fazer calls em alta velocidade com automação de voicemail drop e sequências de follow-up. Local area code wrapping: usar números com código de área local do prospect aumenta a taxa de atendimento em 20-30%. A psicologia: as pessoas são mais propensas a atender números locais. CRM integrado: cada interação é logada automaticamente. O BDR não deve estar na tela durante a call — deve estar presente e focado no prospect. Scripts são rigorosos mas a entrega deve ser natural. Hormozi compara o training do BDR a treinar atores: o script é fixo, a performance é variável. Voicemail drop: gravar o voicemail perfeito uma vez e usar para todos os prospects economiza 30 segundos por call = centenas de horas por ano em volume."
+    },
+    {
+      "id_chunk": "AH001_009",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 9,
+        "total_chunks": 50
+      },
+      "timestamp": "00:35:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "02-PROCESSO-VENDAS"],
+      "conteudo": "Perfil do SDS (Sales Development Specialist): a descoberta mais poderosa de Hormozi no design do time. O SDS ideal é um ex-cliente que teve resultados com o produto/serviço. Não é um vendedor — é um praticante. A lógica: quando o prospect fala com alguém que já viveu o problema e encontrou a solução, a credibilidade é instantânea. 'Eu estava exatamente onde você está há 18 meses.' O SDS é prova social viva. Hormozi chama isso de 'social proof delivery' — a função do SDS não é vender, é humanizar o processo com evidência real. Critérios de seleção do SDS: 1) teve resultados mensuráveis com o produto; 2) é articulado e consegue contar a história de transformação; 3) tem empatia genuína com o problema do prospect. Compensação do SDS: salário base + comissão por show (não por close)."
+    },
+    {
+      "id_chunk": "AH001_010",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 10,
+        "total_chunks": 50
+      },
+      "timestamp": "00:40:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS", "06-FUNIL-APLICACAO"],
+      "conteudo": "Estrutura da call do SDS: duração ideal 30 minutos. O objetivo não é qualificar — o BDR já qualificou. O objetivo é entregar valor real e criar urgência. Estrutura: 1) Rapport rápido (2 min); 2) Diagnóstico do problema específico (8 min); 3) Case study ao vivo — 'Deixa eu te mostrar o que um cliente nosso na sua situação fez' (15 min); 4) Transição para o BC (5 min). O case study ao vivo é o coração da call do SDS. Hormozi ensina os SDS a usarem estudos de caso específicos e relevantes para o perfil do prospect. A personalização do case study ao contexto do prospect é o que diferencia um SDS mediano de um SDS excepcional. Métrica principal do SDS: show rate na call com o BC. Se o SDS tem boa show rate, está fazendo o trabalho certo."
+    },
+    {
+      "id_chunk": "AH001_011",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 11,
+        "total_chunks": 50
+      },
+      "timestamp": "00:45:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "Frame shift do SDS e a 3-way live call: o SDS não apenas agenda o BC — ele faz a transição ao vivo na call. Quando o prospect está receptivo, o SDS diz: 'Você sabe, eu tenho o nosso consultor de negócios disponível agora. Deixa eu ver se consigo conectar vocês.' Aí conecta o BC ao vivo. Esse momento — a transição ao vivo — tem uma taxa de conversão dramaticamente maior que agendar uma call futura. A lógica: o momentum emocional do prospect está no pico naquele momento. Agendar para amanhã deixa esfriar. A 3-way live call captura o momentum. O SDS fica na call inicialmente para facilitar a transição e depois sai discretamente. Hormozi compara isso com um maître d' que apresenta o chef ao cliente — o SDS é o maître d'. A qualidade da entrega da transição define se o BC recebe um prospect quente ou morno."
+    },
+    {
+      "id_chunk": "AH001_012",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 12,
+        "total_chunks": 50
+      },
+      "timestamp": "00:50:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "O papel do BC (Business Consultant) e introdução ao framework CLOSE: o BC é o especialista em fechamento — não em prospecting, não em entrega de valor, não em suporte. Fechamento exclusivamente. Hormozi desenvolveu o framework CLOSE para estruturar a call de fechamento: C - Clarify (clarificar o problema central), L - Label (nomear a objeção antes que ela apareça), O - Overview (visão geral da solução), S - Sell the vacation (vender o destino, não o avião), E - Explain the concerns (abordar preocupações). O CLOSE é uma sequência, não um menu. Cada etapa flui para a próxima. O erro mais comum dos closers é pular etapas — ir direto para o O ou o S sem completar o C e o L. A clarificação e a rotulação de objeções antes de apresentar a solução é o que diferencia o CLOSE de um pitch comum."
+    },
+    {
+      "id_chunk": "AH001_013",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 13,
+        "total_chunks": 50
+      },
+      "timestamp": "00:55:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "CLOSE framework — C (Clarify) e L (Label): Clarify significa fazer o prospect articular o problema com as próprias palavras. 'Me conta mais sobre o que está acontecendo no seu negócio de vendas agora.' O objetivo é que o prospect descreva a dor em detalhes — quanto mais específico, melhor. A clarificação cria ownership do problema pelo prospect. Label (rotular) é a habilidade mais contraintuitiva do CLOSE: o BC nomeia a objeção ANTES que o prospect a levante. 'Você provavelmente está pensando que isso vai custar muito dinheiro' ou 'Você provavelmente está se perguntando se consegue implementar isso com seu time atual.' Ao rotular a objeção primeiro, o BC desarma a defesa do prospect. A psicologia: quando você nomeia o que a pessoa está pensando, ela sente que você a entende, não que está tentando vender. O Label transforma o BC de vendedor em parceiro de diagnóstico."
+    },
+    {
+      "id_chunk": "AH001_014",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 14,
+        "total_chunks": 50
+      },
+      "timestamp": "01:00:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "CLOSE framework — O (Overview) e S (Sell the vacation): O Overview é apresentar a solução de forma macro, sem entrar em detalhes técnicos. O erro comum: closers que se perdem em features e detalhes. O prospect não quer saber como o avião funciona — quer saber como vai ser a experiência nas Maldivas. Sell the vacation é a etapa mais poderosa: o BC vende o resultado transformacional, não o produto. 'Imagina daqui a 6 meses: seu time de vendas está funcionando sem você no telefone. Você acorda de manhã e já tem 3 calls qualificadas agendadas para o dia.' A venda é da versão futura do prospect, não do produto presente. Hormozi ensina: 'Você não está vendendo o produto. Você está vendendo quem o prospect vai ser depois de usar o produto.' A vacation (destino) deve ser específica ao problema que o prospect articulou no Clarify — não genérica."
+    },
+    {
+      "id_chunk": "AH001_015",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 15,
+        "total_chunks": 50
+      },
+      "timestamp": "01:05:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "CLOSE framework — E (Explain the concerns) e técnica de fechamento por concessão/reciprocidade: Explain the concerns é abordar as objeções remanescentes de forma direta. Não esperar o prospect trazer — perguntar proativamente: 'Quais são suas maiores preocupações antes de seguirmos?' Isso força o prospect a articular as objeções e o BC a responder a coisa real, não a versão suavizada. Técnica de concessão: após endereçar as objeções, o BC faz uma concessão — não no preço, mas em algum elemento de valor (bônus, acesso, prazo). A concessão ativa a reciprocidade. Hormozi ensina: a concessão deve ser percebida como grande pelo prospect mas ter custo baixo para a empresa. A reciprocidade então cria pressão interna no prospect para fazer a compra como resposta à generosidade. O fechamento não deve ser agressivo — deve ser natural, quase inevitável, após o Explain the concerns."
+    },
+    {
+      "id_chunk": "AH001_016",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 16,
+        "total_chunks": 50
+      },
+      "timestamp": "01:10:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "Tratamento de objeção: tomador de decisão. Uma das objeções mais comuns em vendas B2B e high-ticket: 'Preciso falar com meu sócio/parceiro/cônjuge.' Hormozi ensina a tratar essa objeção antes que ela apareça, no início da call: 'Você é a pessoa que toma as decisões aqui ou tem alguém mais que precisa estar nessa conversa?' Se não está na call, o BC pergunta: 'O que você precisa ouvir hoje para saber se faz sentido incluir sua parceira/sócio nessa próxima conversa?' Isso transforma o tomador de decisão ausente de um bloqueio em uma próxima etapa natural. Se a objeção aparece no final: 'Totalmente compreensível. Qual seria o melhor caminho — você prefere que eu fale diretamente com ela ou vocês dois preferem retornar juntos?' Nunca combater a objeção — fluir ao redor dela."
+    },
+    {
+      "id_chunk": "AH001_017",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 17,
+        "total_chunks": 50
+      },
+      "timestamp": "01:15:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS", "07-PRICING"],
+      "conteudo": "Tratamento de objeção: preço e a importância de convicção do vendedor. A objeção de preço é quase sempre sintoma de outra coisa — falta de clareza no valor, falta de urgência, ou falta de confiança. Hormozi ensina: um closer que acredita que o produto está caro nunca vai fechar bem. A convicção do vendedor é transmissível — tanto a positiva quanto a negativa. Treinamento obrigatório: o BC deve ser um ex-cliente ou ter resultado com o produto, ou deve ter estudado profundamente os casos de sucesso. Quando alguém objetou 'está caro,' a resposta é: 'Comparado a quê?' A objeção de preço se dissolve quando o prospect compara o custo do produto ao custo do problema que tem — não ao preço de competidores. 'Quanto está te custando NÃO ter esse problema resolvido? Em receita perdida, em tempo, em stress?' A matemática do custo do problema sempre supera o preço do produto."
+    },
+    {
+      "id_chunk": "AH001_018",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 18,
+        "total_chunks": 50
+      },
+      "timestamp": "01:20:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "Tratamento de objeção: 'Preciso pensar.' Hormozi ensina que 'preciso pensar' é a objeção mais vaga e mais frequente. Nunca aceitar no valor de face. A resposta padrão: 'Claro, faz todo sentido querer refletir. Me ajuda a entender — o que especificamente você precisa pensar?' Isso força o prospect a articular a objeção real. As respostas possíveis revelam o bloqueio verdadeiro: se é preço, é preço; se é timing, é timing; se é medo de falhar, é medo de falhar. Cada resposta tem um caminho específico de tratamento. Hormozi ensina: 'Preciso pensar' geralmente significa uma de três coisas: 1) o prospect não viu o valor claramente; 2) há uma objeção que não foi surfaced; 3) o prospect está com medo de tomar uma decisão errada. O papel do BC é diagnosticar qual das três e tratar a causa real."
+    },
+    {
+      "id_chunk": "AH001_019",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 19,
+        "total_chunks": 50
+      },
+      "timestamp": "01:25:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "Framework YES/YES/YES para tomada de decisão: Hormozi ensina que prospects com medo de tomar decisão precisam de uma sequência de microcomprometimentos antes de tomar o macrocomprometimento. A técnica: fazer 3 perguntas que tenham resposta 'sim' inevitável, crescendo em comprometimento. Exemplo: 'Você concorda que o problema que você descreveu está custando dinheiro agora?' (YES). 'Você acredita que se você tivesse um time de vendas outbound funcionando isso mudaria os resultados?' (YES). 'E você concorda que cada mês que passa sem resolver isso é um mês de receita perdida?' (YES). Após 3 YES, o fechamento é: 'Então faz sentido para você dar o próximo passo hoje?' A física do sim: cada yes reduz a resistência ao próximo yes. A série de microcomprometimentos cria momentum psicológico que culmina no macrocomprometimento da compra."
+    },
+    {
+      "id_chunk": "AH001_020",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 20,
+        "total_chunks": 50
+      },
+      "timestamp": "01:30:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["03-CONTRATACAO", "10-CULTURA-GAMIFICACAO"],
+      "conteudo": "Introdução ao Farm System e a analogia do baseball: Hormozi apresenta o conceito de 'Farm System' — o sistema de desenvolvimento de talentos que usa como modelo o sistema de ligas do baseball americano. No baseball, o Big Leagues (MLB) é o topo, alimentado pelo Triple-A, que é alimentado pelo Double-A, e assim por diante. No contexto de vendas, cada cargo tem múltiplos sub-níveis que representam progressão. A lógica: em vez de contratar closers 'prontos' do mercado (caro e arriscado), Hormozi constrói closers internamente. O Farm System é como a empresa cria seu próprio 'talent pipeline' de vendas. Começa com os melhores BDRs que se tornam SDS candidates, e os melhores SDS que se tornam BC candidates. O sistema cria loyalidade (as pessoas sentem que a empresa investiu nelas), previsibilidade (você conhece as pessoas que promove) e qualidade (cada promoção foi merecida)."
+    },
+    {
+      "id_chunk": "AH001_021",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 21,
+        "total_chunks": 50
+      },
+      "timestamp": "01:35:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["03-CONTRATACAO", "10-CULTURA-GAMIFICACAO"],
+      "conteudo": "Farm System — 4 sub-níveis por posição: cada cargo no Christmas Tree tem 4 sub-níveis de progressão. Para BDR: BDR-1 (learning), BDR-2 (performing), BDR-3 (exceeding), BDR-4 (champion, candidato a SDS). Para SDS: mesma estrutura. Para BC: mesma estrutura. Cada sub-nível tem critérios específicos e mensuráveis para progressão. O sistema de progressão tem marcos de 8 semanas: toda promoção de sub-nível requer 8 semanas consecutivas de performance acima do critério. Isso evita flukes — um mês excepcional não qualifica; é preciso consistência. A clareza dos critérios é o que torna o sistema fair e motivador. Cada pessoa sabe exatamente o que precisa fazer para subir. Isso elimina politics e favoritism — a promoção é baseada em métricas, não em relacionamento com o gestor."
+    },
+    {
+      "id_chunk": "AH001_022",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 22,
+        "total_chunks": 50
+      },
+      "timestamp": "01:40:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["04-COMISSIONAMENTO", "05-METRICAS"],
+      "conteudo": "OTE (On-Target Earnings) por nível no Farm System: BDR: $40.000/ano OTE ($25k base + $15k variável). SDS: $55.000-$65.000/ano OTE. BC (closer): $120.000-$220.000/ano OTE dependendo do nível e performance. A estrutura de comissão do BC: base + comissão por fechamento. A lógica dos ranges: permite pagar por performance sem criar teto artificial. Um BC excepcional pode ganhar $220k; um BC mediano ganha $120k; um BC fraco sai antes de chegar na revisão. Hormozi ensina que pagar bem os melhores performers é a melhor forma de reter talento. A alternativa — pagar médio para todos — cria um ambiente que repele os melhores e retém os medíocres. 'Top performers sabem que são top performers. Se você não paga por isso, outra empresa vai.'"
+    },
+    {
+      "id_chunk": "AH001_023",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 23,
+        "total_chunks": 50
+      },
+      "timestamp": "01:45:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["04-COMISSIONAMENTO", "05-METRICAS"],
+      "conteudo": "Cálculo de CAC (Customer Acquisition Cost) outbound e estrutura de comissões por show: Hormozi detalha a matemática de custo de aquisição do outbound. CAC = (custo total do time outbound) / (clientes adquiridos via outbound). Show commissions: o SDS recebe $50 por cada prospect que aparece na call com o BC (independente de fechar). Isso alinha o incentivo do SDS — ele quer que o prospect apareça, não apenas que seja agendado. Close commission: o BC recebe percentual do valor fechado. Hormozi usa ~$500 por fechamento + percentual variável baseado no valor. A lógica das show commissions: cria accountability para o SDS sobre qualidade, não apenas quantidade de agendamentos. Um SDS que agenda 10 e aparece 2 está gerando custo sem resultado. Um SDS que agenda 5 e aparece 5 está gerando valor real. A métrica de show rate (%) é o KPI central do SDS."
+    },
+    {
+      "id_chunk": "AH001_024",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 24,
+        "total_chunks": 50
+      },
+      "timestamp": "01:50:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS", "05-METRICAS"],
+      "conteudo": "Impacto do treinamento outbound na taxa de fechamento inbound: uma das descobertas mais surpreendentes que Hormozi compartilha. Antes do outbound: taxa de close inbound era 20-25%. Depois de implementar o time outbound e treinar todos os closers no CLOSE framework e nas técnicas de objeção: taxa de close inbound subiu para 60%. A explicação: o treinamento intensivo que os closers recebem para outbound (prospects mais resistentes, mais objeções, menor qualificação inicial) os torna dramaticamente melhores também no inbound. É como treinar com pesos mais pesados — quando você volta ao peso normal, fica fácil. O outbound não apenas gera receita diretamente — ele melhora a performance em todos os outros canais. Isso é o efeito multiplicador do outbound que a maioria dos empreendedores não considera ao calcular o ROI."
+    },
+    {
+      "id_chunk": "AH001_025",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 25,
+        "total_chunks": 50
+      },
+      "timestamp": "01:55:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["03-CONTRATACAO"],
+      "conteudo": "Filosofia de contratação de BDR — não sobre-selecionar: Hormozi ensina que o maior erro na contratação de BDR é sobre-qualificar. BDRs não precisam de experiência de vendas — precisam de disciplina e resiliência. A experiência de vendas pode ser prejudicial: closers experientes que fazem BDR tendem a improvisar quando deveriam seguir o script. Critérios de seleção para BDR: 1) disciplina (consegue fazer volume repetitivo?); 2) resiliência (aguenta rejeição sem desmotivar?); 3) coachability (aceita feedback e muda?). Hormozi usa um teste simples: pede ao candidato para fazer um roleplay de script frio na entrevista. Quem improvisa muito, não passa. Quem segue o script mesmo sendo desconfortável, passa. A lógica: é mais fácil treinar alguém com disciplina do que corrigir maus hábitos de vendas. BDRs são treináveis se tiverem as características certas."
+    },
+    {
+      "id_chunk": "AH001_026",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 26,
+        "total_chunks": 50
+      },
+      "timestamp": "02:00:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["03-CONTRATACAO"],
+      "conteudo": "Champion hiring — contratação de top performers com teto de comp de $300k-$500k: Hormozi distingue entre dois tipos de contratação. Contratação regular: processo normal de Farm System, construção gradual. Champion hiring: identificar pessoas no mercado que já são excepcionais em suas funções e fazer ofertas agressivas. Para champions, o teto de compensação é diferente — $300k a $500k por ano é o range para atrair alguém que já está ganhando bem em outro lugar. A lógica: um champion pode gerar 5-10x mais resultado que um performer mediano. Pagar 3-5x mais por alguém que gera 5-10x mais resultado é matematicamente vantajoso. O desafio do champion hiring: identificar quem é realmente um champion vs quem se apresenta como tal. Hormozi usa o processo Beta (Top 1% / Bottom 10%) para validar antes de fazer a oferta final."
+    },
+    {
+      "id_chunk": "AH001_027",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 27,
+        "total_chunks": 50
+      },
+      "timestamp": "02:05:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["03-CONTRATACAO"],
+      "conteudo": "Beta Process — Top 1% identifica, Bottom 10% valida: o processo de validação de talentos de Hormozi. Top 1% identification: colocar o candidato entre os melhores do time e ver como ele se comporta. Os top performers do time identificam naturalmente quem é 'do nível deles' — eles sentem. Se os top performers ficam entusiasmados com o candidato, é um sinal forte. Bottom 10% validation: o candidato deve demonstrarse superior ao bottom 10% do time existente. Se o bottom 10% performa melhor que o candidato, ele não agrega valor real. O processo Beta é a etapa antes de fazer a oferta formal de champion. O candidato passa um período de teste (1-2 semanas) trabalhando ao lado do time existente. Hormozi usa métricas objetivas durante esse período — número de calls, connects, quality scores. A decisão de contratar é baseada em dados do Beta, não em feeling da entrevista."
+    },
+    {
+      "id_chunk": "AH001_028",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 28,
+        "total_chunks": 50
+      },
+      "timestamp": "02:10:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "09-GESTAO"],
+      "conteudo": "Filosofia Buy/Build/Refinance para composição do time: Hormozi apresenta um framework para pensar sobre como compor o time de vendas ao longo do tempo. Buy: contratar alguém pronto do mercado (caro, risco de cultural fit, mas rápido). Build: desenvolver internamente pelo Farm System (mais lento, mas alta loyalidade e fit cultural). Refinance: pegar alguém que você desenvolveu e re-oferecer condições melhores para reter. Hormozi recomenda uma mistura dos três. No início: Buy para ter velocidade. Com o tempo: mais Build para ter sustentabilidade. Periodicamente: Refinance para reter os melhores que você desenvolveu antes que alguém de fora os compre. A analogia com finanças é intencional: tratar o time de vendas como um portfólio de ativos que precisam ser comprados, desenvolvidos e refinanciados para otimizar retorno."
+    },
+    {
+      "id_chunk": "AH001_029",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 29,
+        "total_chunks": 50
+      },
+      "timestamp": "02:15:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["EXIT-SCALING"],
+      "conteudo": "Realidade do exit — $100M de valuation ≠ $100M no bolso: Hormozi desmistifica o que significa vender uma empresa. Um exit de $100M de headline value resulta em: impostos federais (~20-37% dependendo de como estruturado), fees do banco de investimento (1-3%), fees do advogado, earnout retido (frequentemente 20-40% do valor fica em earnout contingente a performance futura), distribuição para sócios. No final, o fundador sai com $35-45M de $100M de valuation. Isso ainda é dinheiro excepcional, mas não é a fantasia de $100M que a maioria imagina. Por isso Hormozi defende que a motivação de construir um negócio scalable não deve ser exclusivamente o exit — deve ser a capacidade de operar sem o fundador, gerar cash flow e criar optionalidade. O exit é o bônus, não o plano principal."
+    },
+    {
+      "id_chunk": "AH001_030",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 30,
+        "total_chunks": 50
+      },
+      "timestamp": "02:20:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["EXIT-SCALING"],
+      "conteudo": "Tédio pós-exit — a armadilha da renda passiva: Hormozi descreve uma realidade que poucos falam: muitos empreendedores que vendem seus negócios entram em depressão ou profundo vazio nos meses seguintes. A fantasiada 'renda passiva' e 'liberdade' rapidamente se torna tédio. O problema: empreendedores são construídos para construir. Quando o problema a resolver desaparece (o negócio foi vendido), o propósito desaparece junto. Hormozi conta que conversou com múltiplos empreendedores que voltaram a trabalhar meses após um exit significativo — não por dinheiro, mas por propósito e estimulação. A lição: a liberdade que você busca não é de trabalho — é de trabalho ruim. Trabalho que você ama não é fardo, é combustível. Antes de buscar o exit como escape, entender o que você está escapando e se há uma versão do negócio que você amaria construir."
+    },
+    {
+      "id_chunk": "AH001_031",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 31,
+        "total_chunks": 50
+      },
+      "timestamp": "02:25:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["EXIT-SCALING"],
+      "conteudo": "Liberdade DE vs liberdade PARA: uma das distinções filosóficas centrais de Hormozi. Liberdade DE: fugir de algo — estresse, horas longas, problemas, clientes difíceis. Liberdade PARA: ir em direção a algo — projetos que você escolhe, pessoas que você quer, impacto que importa para você. A maioria dos empreendedores busca liberdade DE sem saber o que é a liberdade PARA. Quando chegam no 'livre de' (post-exit, sem obrigações), descobrem que não têm um 'para quê'. Hormozi ensina: antes de planejar o exit, definir claramente o que você vai fazer no dia seguinte ao exit. Se não consegue definir especificamente, o exit não vai trazer a felicidade esperada. A questão não é trabalhar menos — é trabalhar em coisas que dão sentido. Escalar o negócio pode ser o caminho para trabalhar no que você ama, não o obstáculo para isso."
+    },
+    {
+      "id_chunk": "AH001_032",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 32,
+        "total_chunks": 50
+      },
+      "timestamp": "02:30:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["09-GESTAO"],
+      "conteudo": "Paralisia por decisão — decisões não tomadas como bloqueadores de visão: Hormozi apresenta um conceito importante sobre o custo das decisões adiadas. Uma decisão não tomada ocupa 'espaço de RAM' mental — consome energia continuamente sem resolver o problema. A analogia com computadores: quando você tem muitos programas abertos, o computador fica lento. Quando você fecha (decide sobre) os programas desnecessários, a velocidade volta. No contexto empresarial: toda decisão não tomada (sobre uma pessoa, uma estratégia, uma parceria, um produto) está consumindo capacidade cognitiva do líder. Hormozi recomenda um exercício periódico: listar todas as decisões pendentes, identificar qual informação faltante impede a decisão, e ou conseguir a informação ou decidir sem ela. 'A decisão errada é quase sempre melhor que nenhuma decisão.' A ação cria feedback; a inação cria estagnação."
+    },
+    {
+      "id_chunk": "AH001_033",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 33,
+        "total_chunks": 50
+      },
+      "timestamp": "02:35:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["09-GESTAO"],
+      "conteudo": "Transição de CEO para Owner — 2.5 anos de processo emocionalmente difícil: Hormozi descreve a jornada de sair operacionalmente do negócio. A transição de CEO (no dia a dia operacional) para Owner (define estratégia, não execução) levou 2.5 anos no caso dele. É emocionalmente difícil porque o CEO costuma se identificar com o negócio — o negócio É ele. Quando o negócio começa a funcionar sem ele, há um luto pelo papel anterior. Hormozi conta que há um momento específico quando você sabe que fez certo: o time toma uma decisão que você teria tomado diferente, e o resultado é tão bom ou melhor que o que você teria feito. Esse momento é assustador e libertador ao mesmo tempo. O objetivo da transição não é desaparecer — é ser consultado, não necessário. 'Você passa de bombeiro para arquiteto.'"
+    },
+    {
+      "id_chunk": "AH001_034",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 34,
+        "total_chunks": 50
+      },
+      "timestamp": "02:40:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["09-GESTAO"],
+      "conteudo": "O momento de feedback do time — 'Great not having you around': Hormozi conta um momento simbólico da transição para Owner. Após se afastar por algumas semanas, voltou e perguntou ao time como tinha sido. Um membro chave do time respondeu: 'Great not having you around.' Para muitos founders, isso seria devastador. Para Hormozi, foi a validação de que a transição estava funcionando. O time não precisava dele para executar. A interpretação: quando o founder é necessário para tudo, o negócio é um emprego glorificado. Quando o founder pode estar ausente e o negócio melhora, o negócio é uma empresa de verdade. 'Great not having you around' é o objetivo, não o fracasso. Hormozi usa isso para reencadrar o que é sucesso como líder: não ser o herói da história — construir o sistema que torna heróis desnecessários."
+    },
+    {
+      "id_chunk": "AH001_035",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 35,
+        "total_chunks": 50
+      },
+      "timestamp": "02:45:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["09-GESTAO", "EXIT-SCALING"],
+      "conteudo": "Relinquishing control em cada nível de faturamento — o que dar up em cada estágio: Hormozi apresenta um mapa de o que cada nível de receita exige que o founder abra mão. $0-$1M: você precisa abrir mão de fulfillment — parar de fazer você mesmo e começar a delegar a entrega. $1M-$10M: você precisa abrir mão de vendas — contratar um time de vendas e sair das calls. $10M-$30M: você precisa abrir mão de marketing — contratar CMO/time de marketing e parar de ser o marketing. $30M-$50M: você precisa abrir mão de liderar operações — contratar COO e parar de gerenciar o dia a dia. $50M+: você se torna o recurso — capital, network, experiência. Cada nível exige uma morte do ego diferente. A maioria dos empreendedores trava em um nível porque não consegue abrir mão da identidade associada ao que precisa delegar."
+    },
+    {
+      "id_chunk": "AH001_036",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 36,
+        "total_chunks": 50
+      },
+      "timestamp": "02:50:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["09-GESTAO"],
+      "conteudo": "Progressão de papéis do empreendedor: Doing → Managing → Leading → Decision-making → Advising: Hormozi apresenta a progressão natural do papel do founder à medida que o negócio escala. Doing: você faz tudo você mesmo. Managing: você supervisiona pessoas que fazem. Leading: você inspira e direciona managers. Decision-making: você define estratégia e toma as grandes decisões. Advising: você é o recurso de sabedoria e network — outras pessoas executam. A maioria dos founders está confortável no Doing — é onde eles são bons, onde sentem controle. A resistência a subir na progressão é psicológica: cada nível requer confiar que outros vão fazer tão bem quanto você fazia. Hormozi ensina: ninguém vai fazer exatamente como você fazia — alguns vão fazer melhor, alguns pior. O trabalho do líder é criar condições para que o time agregue mais valor que você agregaria sozinho."
+    },
+    {
+      "id_chunk": "AH001_037",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 37,
+        "total_chunks": 50
+      },
+      "timestamp": "02:55:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "09-GESTAO"],
+      "conteudo": "Hierarquia organizacional — 5 níveis no org chart: Hormozi apresenta a estrutura hierárquica ideal para uma empresa de serviços escalável. Nível 1 (base): executores — fazem o trabalho (BDRs, closers, delivery team). Nível 2: team leads — supervisionam pequenos grupos de executores. Nível 3: managers — gerenciam team leads e são responsáveis por KPIs de departamento. Nível 4: directors/VPs — definem estratégia de departamento e respondem ao C-level. Nível 5 (topo): C-level (CEO, COO, CMO, CRO) — definem estratégia da empresa. A regra de span of control: cada manager deve gerenciar no máximo 5-7 pessoas. Quando passa disso, a qualidade do management cai. A estrutura de 5 níveis funciona para empresas de $30M-$200M. Antes disso, menos níveis. Depois disso, pode adicionar mais. O erro comum: pular níveis e criar um CEO que gerencia executores diretamente."
+    },
+    {
+      "id_chunk": "AH001_038",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 38,
+        "total_chunks": 50
+      },
+      "timestamp": "03:00:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["09-GESTAO"],
+      "conteudo": "Pergunta diagnóstica: o que você precisa dar up agora? Hormozi ensina a usar a progressão de papéis (Doing → Advising) como diagnóstico para identificar onde o founder está travado. A pergunta central: 'No que você ainda está atuando como Doing que deveria ter delegado?' Normalmente é: vendas (founder ainda faz calls), conteúdo (founder ainda escreve tudo), hiring (founder ainda entrevista todo mundo), gestão de problemas de clientes (founder ainda resolve pessoalmente). O exercício: listar as 5-10 coisas que você fez na última semana. Identificar quais dessas coisas alguém contratado (a) poderia fazer com treinamento adequado. Essas são as coisas para delegar. O que sobra (tipicamente estratégia, cultura, grandes decisões) é onde o founder deve concentrar tempo. 'O que você está fazendo que não deveria ser você?' é a pergunta que libera crescimento."
+    },
+    {
+      "id_chunk": "AH001_039",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 39,
+        "total_chunks": 50
+      },
+      "timestamp": "03:05:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "Princípio value-first na call do SDS: Hormozi detalha a filosofia por trás da estrutura da call do SDS. O princípio fundamental: entregar valor real ANTES de pedir qualquer comprometimento. A maioria dos processos de vendas começa com qualificação — 'você tem budget? você tem autoridade?' Isso coloca o prospect na defensiva imediatamente. O SDS começa diferente: 'Deixa eu te mostrar algo que pode mudar como você pensa sobre esse problema.' Primeiro o valor, depois a qualificação. A lógica: quando o prospect já recebeu valor, ele quer continuar a conversa. A qualificação vem naturalmente após o rapport e o valor entregue. Hormozi usa a metáfora de um restaurante: um bom restaurante te dá um amuse-bouche antes de pedir o pedido. O amuse-bouche cria expectativa e cria reciprocidade. O SDS entrega o amuse-bouche de valor antes de pedir qualquer coisa."
+    },
+    {
+      "id_chunk": "AH001_040",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 40,
+        "total_chunks": 50
+      },
+      "timestamp": "03:10:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "EXIT-SCALING"],
+      "conteudo": "Outbound como estratégia de diversificação de canal e proteção de negócio: Hormozi reforça o argumento estratégico por trás do outbound. A questão não é apenas receita incremental — é resiliência e sellability. Um negócio com dois canais de aquisição previsíveis e documentados vale múltiplo muito maior num exit do que um negócio de canal único. Acquirers pagam por previsibilidade, não por pico. Um negócio que teve $5M de receita neste ano via um canal pode ter sido sorte ou tendência. Um negócio que tem $3M via inbound e $2M via outbound, ambos com processos documentados, é previsível e replicável — é o que os acquirers pagam premium. A fórmula: documentar o processo outbound como um ativo intangível. O playbook de outbound (quem são os BDRs, qual é o script, qual é o processo, quais são as métricas) é algo que um acquirer pode expandir. É o ativo, não apenas a receita."
+    },
+    {
+      "id_chunk": "AH001_041",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 41,
+        "total_chunks": 50
+      },
+      "timestamp": "03:15:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "06-FUNIL-APLICACAO"],
+      "conteudo": "O funil humano espelha o funil digital — modelo mental central: Hormozi apresenta o insight que unifica toda a estrutura do Christmas Tree. Um funil digital típico: anúncio (topo) → landing page (meio) → call to action/checkout (fundo). O Christmas Tree é o funil humano: BDR = anúncio (volume, mensagem padronizada, gera atenção). SDS = landing page (qualifica, entrega valor, cria interesse). BC = checkout (fecha a venda). Cada elemento do funil humano tem o mesmo trabalho do elemento equivalente do funil digital. O BDR não deve fechar porque um anúncio não fecha. O SDS não deve fechar porque uma landing page não fecha. O BC fecha porque o checkout fecha. Quando você entende que o Christmas Tree É um funil humano, a especialização de papéis faz sentido intuitivo. Misturar as funções seria como fazer um anúncio que tenta fechar a venda — ineficiente e confuso."
+    },
+    {
+      "id_chunk": "AH001_042",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 42,
+        "total_chunks": 50
+      },
+      "timestamp": "03:20:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS", "03-CONTRATACAO"],
+      "conteudo": "Ex-cliente como SDS — o poder da prova social viva: Hormozi aprofunda a escolha estratégica de usar ex-clientes como SDS. A diferença entre um SDS treinado e um ex-cliente natural: o ex-cliente não está fingindo empatia — ele viveu o problema. Quando ele diz 'eu estava exatamente onde você está', é verdade. E o prospect sente a diferença. A credibilidade de primeira mão é imune ao ceticismo que um vendedor treinado gera. O ex-cliente SDS tem uma vantagem adicional: ele conhece todos os problemas comuns da jornada do cliente porque ele os viveu. Ele pode antecipar dúvidas com autoridade genuína. Como encontrar ex-clientes para SDS: identificar os clientes que tiveram resultados excepcionais, que são articulados, e que não estão completamente absorvidos em seus próprios negócios. Oferecer uma compensação que faz sentido — frequentemente eles aceitam porque é uma maneira de se conectar à missão que transformou seu negócio."
+    },
+    {
+      "id_chunk": "AH001_043",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 43,
+        "total_chunks": 50
+      },
+      "timestamp": "03:25:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "Especialização no fechamento — o BC como especialista puro: Hormozi defende a especialização radical do papel do BC. A tentação em times pequenos é ter um closer que também prospecta, também faz onboarding, também resolve problemas. Isso é o mais eficiente no curto prazo mas o menos eficiente no longo prazo. Um BC que passa 20% do tempo fechando e 80% fazendo outras coisas é um BC com uma taxa de fechamento medíocre — não por falta de habilidade, mas por falta de foco e prática deliberada. Fechar bem é uma habilidade que requer prática massiva. Hormozi compara com atletas de elite: LeBron James não distribui hambúrgueres no intervalo. Ele foca 100% no que o torna excepcional. O BC deve fechar, ponto. Qualquer outra coisa é desperdício de talento especializado. Quando o BC está no topo do Farm System, proteger seu tempo de fechar é proteger o gerador de receita principal."
+    },
+    {
+      "id_chunk": "AH001_044",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 44,
+        "total_chunks": 50
+      },
+      "timestamp": "03:30:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["02-PROCESSO-VENDAS"],
+      "conteudo": "Surfacing de objeções antes de endereçar — a etapa Label aprofundada: Hormozi aprofunda a psicologia por trás do Label no CLOSE. A heurística: objeção não surfaced = objeção que mata o deal no silêncio. A maioria dos closers tem medo de mencionar objeções porque acham que vão plantar a semente da dúvida. A realidade oposta: o prospect já tem as objeções na cabeça; ao não mencioná-las, o closer as deixa crescer sem controle. Ao nomear a objeção ('você provavelmente está pensando que não vai conseguir implementar isso com sua equipe atual'), o BC faz duas coisas: 1) demonstra que entende o prospect profundamente; 2) assume o controle da narrativa ao redor da objeção. Quando o BC nomeia a objeção, ele pode imediatamente redirecionar: '...e essa é exatamente a razão pela qual [nosso processo de onboarding / nosso suporte / nossa metodologia] existe.' Nomear e redirecionar é mais poderoso que ignorar e torcer para não aparecer."
+    },
+    {
+      "id_chunk": "AH001_045",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 45,
+        "total_chunks": 50
+      },
+      "timestamp": "03:35:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["03-CONTRATACAO", "10-CULTURA-GAMIFICACAO"],
+      "conteudo": "Sistema de 4 portões de progressão no Farm System: Hormozi detalha como funciona a progressão dentro de cada nível. Cada posição (BDR, SDS, BC) tem 4 sub-níveis. Para progredir de um sub-nível ao próximo, o performer precisa passar por 4 portões: Portão 1: Knowledge Gate — demonstrar conhecimento do script e do produto (teste escrito/oral). Portão 2: Performance Gate — atingir métricas mínimas por 8 semanas consecutivas. Portão 3: Peer Gate — avaliação pelos pares do time (o time reconhece o nível?). Portão 4: Manager Gate — aprovação formal do gestor direto. Os 4 portões garantem que a progressão é multidimensional — não apenas números, mas também capacidade e reconhecimento do time. O peer gate é particularmente poderoso: o time sabe quem merece subir. Essa aprovação coletiva também aumenta o buy-in quando alguém progride, porque o time participou da decisão."
+    },
+    {
+      "id_chunk": "AH001_046",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 46,
+        "total_chunks": 50
+      },
+      "timestamp": "03:40:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME"],
+      "conteudo": "Subject Matter Experts (SMEs) — especialistas silados: Hormozi descreve um papel adicional na estrutura de vendas que muitos times não têm: o Subject Matter Expert. O SME é um especialista técnico/de domínio que entra em calls específicas quando a complexidade do produto/serviço requer. O SME não é um closer — ele responde perguntas técnicas que o BC não consegue. Exemplo: num software de CRM enterprise, o SME pode ser um engenheiro de soluções que demonstra a funcionalidade técnica. O BC continua gerenciando a call e o relacionamento; o SME entra, responde, e sai. A lógica: não treinar o BC para ser técnico (muito tempo, dilui o foco). Em vez disso, ter um SME que o BC pode trazer quando necessário. Isso mantém a especialização do BC intacta enquanto adiciona capacidade técnica quando necessário. O SME também pode ser um SDS avançado que domina o produto."
+    },
+    {
+      "id_chunk": "AH001_047",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 47,
+        "total_chunks": 50
+      },
+      "timestamp": "03:45:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["EXIT-SCALING"],
+      "conteudo": "Mindset de construção — expansão como motivação central: Hormozi compartilha sua filosofia pessoal de por que constrói negócios. Não é por dinheiro (já tem suficiente). Não é por fama (não precisa). É pela satisfação intrínseca de criar sistemas que funcionam, de desenvolver pessoas que se superam, de resolver problemas que pareciam impossíveis. A expansão é o estado natural de alguém vivo. A estagnação é o prelúdio da morte. Todo negócio ou está crescendo ou está morrendo — raramente fica estático. Hormozi aplica isso a si mesmo: ou está aprendendo, construindo, expandindo — ou está deteriorando. O objetivo do outbound, do Farm System, do CLOSE framework não é apenas dinheiro. É criar um sistema que funciona quando você não está lá, que desenvolve pessoas além do que elas achavam possível, que resolve um problema real para clientes reais. O negócio como veículo de expansão pessoal e coletiva."
+    },
+    {
+      "id_chunk": "AH001_048",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 48,
+        "total_chunks": 50
+      },
+      "timestamp": "03:50:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "05-METRICAS"],
+      "conteudo": "A curva S do crescimento outbound — lento então explosivo: Hormozi explica a curva de crescimento do outbound para gestão de expectativas. Meses 1-3: investimento puro. Zero ou pouquíssimo retorno. O processo está sendo construído, o time está sendo treinado, os scripts estão sendo testados. Meses 4-6: primeiros sinais. Alguns fechamentos acontecem, mas nada consistente. O CAC está alto. Meses 7-10: consistência emerge. O time encontrou o ritmo. As métricas estabilizam. Meses 11-18: escala. Você entende o sistema, sabe o que funciona, começa a contratar mais BDRs e SDS com confiança porque o modelo está provado. A maioria dos empreendedores desiste entre o mês 3 e 6 — exatamente quando está mais perto da curva de aceleração. A heurística: se você ainda está comprometido no mês 6, não desista antes do mês 12. O retorno do outbound é exponencial, não linear, e vem depois de meses de investimento sem retorno visível."
+    },
+    {
+      "id_chunk": "AH001_049",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 49,
+        "total_chunks": 50
+      },
+      "timestamp": "03:55:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["EXIT-SCALING", "01-ESTRUTURA-TIME"],
+      "conteudo": "Construindo negócios vendáveis — nome fora da porta + diversificação de canal: Hormozi sintetiza o que torna um negócio genuinamente vendável. Dois critérios principais: 1) Nome fora da porta: o negócio não depende do fundador pessoalmente — opera sem o fundador presente. Se tirar o nome do fundador da marca e o negócio colapsar, não é um negócio, é uma autoridade pessoal. 2) Diversificação de canal: ao menos dois canais de aquisição de clientes, ambos documentados e previsíveis. Um negócio com esses dois elementos captura múltiplos de 5-8x EBITDA vs 2-3x para negócios sem esses elementos. O outbound é o caminho mais direto para a diversificação de canal. E a transição de CEO para Owner (via Farm System e delegação) é o caminho para o 'nome fora da porta'. Os dois trabalham juntos para criar um ativo de verdade, não apenas um emprego com alto faturamento."
+    },
+    {
+      "id_chunk": "AH001_050",
+      "meta": {
+        "source_id": "AH001",
+        "source_type": "mastermind",
+        "source_title": "HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND]",
+        "source_path": "inbox/alex hormozi/MASTERMINDS/HOW I SCALED MY SALES TEAM [TAKI MOORE MASTERMIND] [youtube.com_watch_v=okA9Yt2KZuk].txt",
+        "source_datetime": "2023-01-01T00:00:00Z",
+        "scope": "personal",
+        "corpus": "acquisition_com",
+        "chunk_index": 50,
+        "total_chunks": 50
+      },
+      "timestamp": "04:00:00",
+      "speaker": "Alex Hormozi",
+      "personas": ["Alex Hormozi"],
+      "temas": ["01-ESTRUTURA-TIME", "09-GESTAO"],
+      "conteudo": "Meta-síntese — sistemas sobre pessoas: Hormozi conclui com o princípio unificador de tudo que foi apresentado. O Christmas Tree, o Farm System, o CLOSE framework, o Beta Process — todos são sistemas. A tese central: sistemas previsíveis superam pessoas excepcionais no longo prazo. Uma pessoa excepcional sem sistema é frágil (doença, saída, burnout). Um sistema com pessoas medianas é previsível e escalável. A combinação ideal: sistema sólido + pessoas boas. Mas se tiver que escolher, o sistema vence. Hormozi usa o McDonald's como exemplo clássico: a comida não é a melhor do mundo, mas a consistência é inigualável. Um sistema que entrega 7/10 consistentemente supera um chef de 10/10 que entrega quando está inspirado. O trabalho do empreendedor não é ser o melhor na execução — é criar o sistema que entrega resultados previsíveis independente de quem está executando. Essa é a diferença entre um negócio e um emprego."
+    }
+  ],
+  "meta": {
+    "version": "v1",
+    "last_updated": "2026-03-04T00:00:00Z",
+    "total_chunks": 50,
+    "source_ids": ["AH001"]
+  }
+}

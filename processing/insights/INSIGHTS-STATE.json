@@ -1,0 +1,538 @@
+{
+  "insights_state": {
+    "version": "v2",
+    "persons": {
+      "Alex Hormozi": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          {
+            "id_insight": "AH001-INS-001",
+            "insight": "A Christmas Tree Structure é a arquitetura ideal para outbound: BDRs na base fazem 100+ chamadas/dia e alimentam metade do número de SDS, que por sua vez alimentam metade do número de BCs (closers). O formato imita visualmente uma árvore de natal no org chart.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.97,
+            "chunks": [
+              "AH001_006",
+              "AH001_007",
+              "AH001_008",
+              "AH001_009"
+            ],
+            "tags": [
+              "[FRAMEWORK]"
+            ],
+            "tema": "01-ESTRUTURA-TIME",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-002",
+            "insight": "O CLOSE Framework é o método de fechamento de Hormozi: C=Clarify (restating situation), L=Label (surfacing 3 objections proativamente), O=Overview (mostrar transformação completa), S=Sell the vacation (vender o resultado emocional futuro), E=Explain (endereçar as objeções já rotuladas no L). Rotular objeções antes do cliente mencioná-las elimina a resistência.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.96,
+            "chunks": [
+              "AH001_012",
+              "AH001_013",
+              "AH001_014",
+              "AH001_015"
+            ],
+            "tags": [
+              "[FRAMEWORK]",
+              "[METODOLOGIA]"
+            ],
+            "tema": "02-PROCESSO-VENDAS",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-003",
+            "insight": "Um negócio com dois canais de aquisição vale 2-3x mais que um negócio com faturamento idêntico mas canal único. Channel diversification não é estratégia de crescimento — é prerequisito de sellability. Negócios de canal único não são vendáveis.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.95,
+            "chunks": [
+              "AH001_002"
+            ],
+            "tags": [
+              "[HEURISTICA]",
+              "[FILOSOFIA]"
+            ],
+            "tema": "EXIT-SCALING",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-004",
+            "insight": "O Farm System é o sistema interno de desenvolvimento de talento inspirado no baseball: 4 sub-níveis por cargo (A, AA, AAA, MLB), progressão a cada 8 semanas, 4 gates para avançar (Knowledge Gate, Performance Gate, Peer Gate, Manager Gate). Elimina contratação externa cara e cria pipeline previsível de performers.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.95,
+            "chunks": [
+              "AH001_020",
+              "AH001_021",
+              "AH001_022"
+            ],
+            "tags": [
+              "[FRAMEWORK]",
+              "[METODOLOGIA]"
+            ],
+            "tema": "03-CONTRATACAO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-005",
+            "insight": "O SDS (Sales Development Specialist) faz uma ligação de valor de 30 minutos ANTES de passar para o closer (BC). Essa chamada entrega valor real, qualifica profundamente e cria comprometimento emocional. A transição SDS→BC usa script específico: 'Há alguém em nossa empresa especializado em [problema], posso te conectar?' — o cliente pede a próxima etapa ao invés de ser empurrado.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.95,
+            "chunks": [
+              "AH001_009",
+              "AH001_010",
+              "AH001_011"
+            ],
+            "tags": [
+              "[METODOLOGIA]",
+              "[FRAMEWORK]"
+            ],
+            "tema": "02-PROCESSO-VENDAS",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-006",
+            "insight": "Os 3 Audience Buckets de Hormozi: YES (~3% prontos para comprar agora), NO (~7% nunca vão comprar), MAYBE (~90% que comprariam com a oferta/timing certos). Outbound existe para capturar o bucket MAYBE com timing e follow-up — a maioria das empresas deixa 90% do mercado disponível na mesa por não ter outbound.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.94,
+            "chunks": [
+              "AH001_025",
+              "AH001_026"
+            ],
+            "tags": [
+              "[MODELO-MENTAL]",
+              "[FRAMEWORK]"
+            ],
+            "tema": "02-PROCESSO-VENDAS",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-007",
+            "insight": "Métricas BDR: alvo de 100 chamadas/dia, esperar 30% taxa de contato, 10% taxa de agendamento do contato (= 3% de chamadas → agendamentos). Um BDR bem calibrado gera 3 agendamentos/dia. Com 5 BDRs, são 15 agendamentos/dia para o pipeline SDS.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.93,
+            "chunks": [
+              "AH001_007",
+              "AH001_008"
+            ],
+            "tags": [
+              "[HEURISTICA]"
+            ],
+            "tema": "05-METRICAS",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-008",
+            "insight": "O modelo Buy-Build-Refinance para portfolio: Comprar participação em empresa, Construir sistemas e escalar, Refinanciar via dívida contra EBITDA melhorado. Permite extrair capital sem vender equity — 'o dinheiro não precisa vir de uma venda, vem do balanço melhorado'.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.92,
+            "chunks": [
+              "AH001_028"
+            ],
+            "tags": [
+              "[FRAMEWORK]"
+            ],
+            "tema": "EXIT-SCALING",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-009",
+            "insight": "Estrutura de compensação OTE para time de vendas: BDR recebe base menor + bônus por agendamentos qualificados realizados, SDS recebe base média + bônus por transições aceitas pelo BC, BC recebe base menor + comissão agressiva por fechamento. O OTE (On-Target Earnings) total deve ser competitivo com mercado mas majoritariamente variável.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.9,
+            "chunks": [
+              "AH001_020",
+              "AH001_021"
+            ],
+            "tags": [
+              "[HEURISTICA]",
+              "[METODOLOGIA]"
+            ],
+            "tema": "04-COMISSIONAMENTO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-010",
+            "insight": "O 'L' do CLOSE (Label) é o elemento mais contraintuitivo e poderoso: o vendedor nomeia as 3 objeções mais prováveis ANTES do cliente mencioná-las. 'Você provavelmente está pensando X, Y e Z.' Isso muda a dinâmica — o cliente não precisa defender as objeções pois já foram validadas. Reduz resistência em 60-70% segundo Hormozi.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.93,
+            "chunks": [
+              "AH001_013"
+            ],
+            "tags": [
+              "[HEURISTICA]",
+              "[MODELO-MENTAL]"
+            ],
+            "tema": "02-PROCESSO-VENDAS",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-011",
+            "insight": "O dono precisa escalar de Operator para CEO antes que o negócio seja vendável. Enquanto o dono é responsável por funções operacionais, o negócio depende dele e o múltiplo de avaliação é penalizado. A transição CEO-Owner é um processo de 5 níveis de delegação: nível 1 (faz), nível 2 (instrui), nível 3 (lidera), nível 4 (delega com oversight), nível 5 (confia completamente.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.9,
+            "chunks": [
+              "AH001_033",
+              "AH001_034",
+              "AH001_035",
+              "AH001_036"
+            ],
+            "tags": [
+              "[FRAMEWORK]",
+              "[MODELO-MENTAL]"
+            ],
+            "tema": "09-GESTAO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-012",
+            "insight": "Perfil de contratação do BDR: coachability é o atributo #1 (aprende rápido o script), seguido de energy/hunger, e depois habilidade de comunicação verbal. Não contratar pelo resultado passado em vendas — contratar pela vontade de aprender e seguir processo. BDRs excelentes geralmente não são os 'melhores vendedores' anteriores.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.88,
+            "chunks": [
+              "AH001_024"
+            ],
+            "tags": [
+              "[HEURISTICA]"
+            ],
+            "tema": "03-CONTRATACAO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-013",
+            "insight": "A Gym Launch foi construída do zero usando outbound durante a COVID quando eventos presenciais pararam. O time foi de 0 a outbound em 90 dias, escalonando para $300M ARR em 18 meses. A crise forçou o sistema — outbound virou o canal principal, não o complementar.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.92,
+            "chunks": [
+              "AH001_003",
+              "AH001_004"
+            ],
+            "tags": [
+              "[MODELO-MENTAL]"
+            ],
+            "tema": "01-ESTRUTURA-TIME",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-014",
+            "insight": "O SDS deve ter perfil diferente do BDR e do BC: é o 'connector' que gosta genuinamente de ajudar, tem empatia alta, sabe fazer perguntas investigativas (SPIN-like) e é excelente em criar rapport. Não é necessariamente um fechador. O SDS mede sucesso em transições aceitas pelo BC e show rate da reunião.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.87,
+            "chunks": [
+              "AH001_009",
+              "AH001_010"
+            ],
+            "tags": [
+              "[HEURISTICA]"
+            ],
+            "tema": "03-CONTRATACAO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-015",
+            "insight": "A taxa de show rate das reuniões SDS→BC é um KPI crítico. Se abaixo de 60%, o SDS está agendando mal (não qualificando) ou o acompanhamento pré-reunião é fraco. Hormozi usa sequência de confirmação: e-mail imediato + SMS + ligação 24h antes + SMS 2h antes.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.88,
+            "chunks": [
+              "AH001_010",
+              "AH001_027"
+            ],
+            "tags": [
+              "[HEURISTICA]"
+            ],
+            "tema": "06-FUNIL-APLICACAO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-016",
+            "insight": "Hormozi usa a metáfora do 'BDR como propaganda': assim como anúncios pagos pagam por atenção em escala, BDRs pagam por atenção via tempo humano. Quando você entende que um BDR substituindo anúncios tem ROI mensurável similar (custo por lead qualificado), a resistência a contratar outbound diminui.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.9,
+            "chunks": [
+              "AH001_006"
+            ],
+            "tags": [
+              "[MODELO-MENTAL]"
+            ],
+            "tema": "01-ESTRUTURA-TIME",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-017",
+            "insight": "Filosofia de liberdade pós-exit de Hormozi: a riqueza não está em ter mais dinheiro mas em ter mais opções. A maioria dos empreendedores que vendem continuam trabalhando porque o negócio era a identidade. A meta real é criar um sistema que funcione sem você — seja para vender ou não vender.",
+            "priority": "LOW",
+            "status": "processed",
+            "confidence": 0.85,
+            "chunks": [
+              "AH001_029",
+              "AH001_030",
+              "AH001_031"
+            ],
+            "tags": [
+              "[FILOSOFIA]"
+            ],
+            "tema": "EXIT-SCALING",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-018",
+            "insight": "O script de abertura do BDR é crítico para a taxa de contato. Hormozi usa abertura pattern-interrupt: não é uma chamada de vendas convencional, é uma pergunta de curiosidade específica sobre o negócio do prospect. Exemplo: 'Você aceita novos clientes de [nicho]?' — 80% responde sim ou não antes de perceber que é outreach.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.87,
+            "chunks": [
+              "AH001_007",
+              "AH001_008"
+            ],
+            "tags": [
+              "[METODOLOGIA]"
+            ],
+            "tema": "02-PROCESSO-VENDAS",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-019",
+            "insight": "Sistemas sobre pessoas: o maior erro de operadores é contratar 'estrelas' ao invés de construir sistemas. Uma estrela de vendas numa empresa sem sistema cria dependência. Um sistema médio com pessoas médias supera uma estrela sem sistema no longo prazo — é mais previsível, escalável e replicável.",
+            "priority": "HIGH",
+            "status": "processed",
+            "confidence": 0.95,
+            "chunks": [
+              "AH001_048",
+              "AH001_049",
+              "AH001_050"
+            ],
+            "tags": [
+              "[FILOSOFIA]",
+              "[MODELO-MENTAL]"
+            ],
+            "tema": "09-GESTAO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-020",
+            "insight": "O perfil do BC (closer) exige alta tolerância a rejeição, forte conviction no produto/oferta, e capacidade de controlar a conversação sem ser dominante. O BC ideal acredita genuinamente que o produto transforma a vida do cliente — a conviction não pode ser fabricada, vem de usar/conhecer profundamente o produto.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.87,
+            "chunks": [
+              "AH001_012",
+              "AH001_016"
+            ],
+            "tags": [
+              "[HEURISTICA]"
+            ],
+            "tema": "03-CONTRATACAO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-021",
+            "insight": "Estratégia de diversificação de canal de Hormozi: inbound (orgânico + ads) + outbound (Christmas Tree) + referrals (programa estruturado) + partnerships. A ordem de implementação importa: primeiro provar o modelo via outbound (controle total), depois escalar via ads, depois structured referrals.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.88,
+            "chunks": [
+              "AH001_039",
+              "AH001_040",
+              "AH001_041"
+            ],
+            "tags": [
+              "[METODOLOGIA]"
+            ],
+            "tema": "01-ESTRUTURA-TIME",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-022",
+            "insight": "Para o Farm System funcionar, cada nível precisa de critérios de avanço claros e mensuráveis. A ambiguidade nos critérios de promoção é a causa #1 de turnover em times de vendas — pessoas não sabem o que precisam fazer para avançar e se frustram. O sistema deve ser transparente e auditável.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.9,
+            "chunks": [
+              "AH001_021",
+              "AH001_022"
+            ],
+            "tags": [
+              "[HEURISTICA]",
+              "[METODOLOGIA]"
+            ],
+            "tema": "03-CONTRATACAO",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-023",
+            "insight": "O custo de aquisição do cliente (CAC) no outbound é inicialmente 3-5x maior que inbound, mas o CAC normaliza em 6-12 meses à medida que o time amadurece e a lista fica mais qualificada. O erro é desistir do outbound nos primeiros 90 dias quando o CAC parece proibitivo.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.85,
+            "chunks": [
+              "AH001_004",
+              "AH001_005"
+            ],
+            "tags": [
+              "[HEURISTICA]"
+            ],
+            "tema": "05-METRICAS",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-024",
+            "insight": "O 'S' do CLOSE (Sell the vacation) é sobre vender a transformação, não o produto. O cliente não compra um programa de ginástica — compra como vai se sentir quando estiver fit. O vendedor deve pintar o futuro desejado com detalhes emocionais antes de endereçar o preço.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.92,
+            "chunks": [
+              "AH001_014"
+            ],
+            "tags": [
+              "[METODOLOGIA]"
+            ],
+            "tema": "02-PROCESSO-VENDAS",
+            "source_id": "AH001"
+          },
+          {
+            "id_insight": "AH001-INS-025",
+            "insight": "Hormozi sobre o CEO-Owner gap: quando o dono ainda toma decisões operacionais diárias, ele é um Operator com título de CEO. A transição real ocorre quando o time toma decisões sem o dono e apenas reporta resultados. Medir: quantas decisões passam pelo dono por semana — o número deve cair 50% a cada 6 meses de escalonamento.",
+            "priority": "MEDIUM",
+            "status": "processed",
+            "confidence": 0.88,
+            "chunks": [
+              "AH001_033",
+              "AH001_034"
+            ],
+            "tags": [
+              "[HEURISTICA]",
+              "[MODELO-MENTAL]"
+            ],
+            "tema": "09-GESTAO",
+            "source_id": "AH001"
+          }
+        ]
+      }
+    },
+    "themes": {
+      "01-ESTRUTURA-TIME": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          "AH001-INS-001",
+          "AH001-INS-013",
+          "AH001-INS-016",
+          "AH001-INS-021"
+        ]
+      },
+      "02-PROCESSO-VENDAS": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          "AH001-INS-002",
+          "AH001-INS-005",
+          "AH001-INS-006",
+          "AH001-INS-010",
+          "AH001-INS-018",
+          "AH001-INS-024"
+        ]
+      },
+      "03-CONTRATACAO": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          "AH001-INS-004",
+          "AH001-INS-012",
+          "AH001-INS-014",
+          "AH001-INS-020",
+          "AH001-INS-022"
+        ]
+      },
+      "04-COMISSIONAMENTO": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          "AH001-INS-009"
+        ]
+      },
+      "05-METRICAS": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          "AH001-INS-007",
+          "AH001-INS-023"
+        ]
+      },
+      "06-FUNIL-APLICACAO": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          "AH001-INS-015"
+        ]
+      },
+      "09-GESTAO": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          "AH001-INS-011",
+          "AH001-INS-019",
+          "AH001-INS-025"
+        ]
+      },
+      "EXIT-SCALING": {
+        "source_ids": [
+          "AH001"
+        ],
+        "insights": [
+          "AH001-INS-003",
+          "AH001-INS-008",
+          "AH001-INS-017"
+        ]
+      }
+    },
+    "change_log": [
+      {
+        "timestamp": "2026-03-04T07:45:00Z",
+        "source_id": "AH001",
+        "action": "extracted",
+        "person": "Alex Hormozi",
+        "insights_added": 25,
+        "insights_high": 9,
+        "insights_medium": 13,
+        "insights_low": 3,
+        "contradictions": 0
+      },
+      {
+        "timestamp": "2026-03-05T07:28:00Z",
+        "source_id": "AH001",
+        "action": "pipeline_complete",
+        "person": "Alex Hormozi",
+        "phase": 8,
+        "insights_processed": 25,
+        "agents_created": 9,
+        "agents_with_memory": 9,
+        "notes": "Phase 8 finalization. All 25 insights propagated to 1 mind (alex-hormozi) and 8 cargo agents. All MEMORY.md and AGENT.md files confirmed present."
+      }
+    ],
+    "last_updated": "2026-03-05T07:28:00Z"
+  }
+}
