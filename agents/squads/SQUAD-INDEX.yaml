@@ -1,0 +1,43 @@
+version: 1
+squads:
+  sales:
+    description: "SQUAD de Vendas (roteia para BDR/SDS/LNS/Closer/Sales Manager)."
+    members:
+      - agents/cargo/sales/bdr/AGENT.md
+      - agents/cargo/sales/sds/AGENT.md
+      - agents/cargo/sales/lns/AGENT.md
+      - agents/cargo/sales/closer/AGENT.md
+      - agents/cargo/sales/sales-manager/AGENT.md
+    router:
+      agent_path: agents/squads/sales/AGENT.md
+    triggers:
+      - "vendas"
+      - "closer"
+      - "fechamento"
+      - "objeção"
+      - "pipeline"
+      - "sdr"
+      - "bdr"
+      - "sds"
+      - "show rate"
+      - "close rate"
+      - "comissão"
+      - "ote"
+
+  exec:
+    description: "SQUAD Executivo (CRO/CFO/COO)."
+    members:
+      - agents/cargo/c-level/cro/AGENT.md
+      - agents/cargo/c-level/cfo/AGENT.md
+      - agents/cargo/c-level/coo/AGENT.md
+    router:
+      agent_path: agents/squads/exec/AGENT.md
+    triggers:
+      - "margem"
+      - "net profit"
+      - "ebitda"
+      - "valuation"
+      - "exit"
+      - "m&a"
+      - "scaling"
+      - "headcount"
