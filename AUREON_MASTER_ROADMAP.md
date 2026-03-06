@@ -22,7 +22,7 @@
 | **SQUADs adicionais (Ops, Tech, Marketing, Research, Finance)** | ✅ Feito |
 | **Integração OpenClaw / WhatsApp — Personalidade** | ✅ Feito |
 | **Integração OpenClaw / WhatsApp — Router v2.0** | ✅ Feito |
-| **Integração OpenClaw / WhatsApp — Skills Execution** | 🔄 Em Progresso |
+| **Integração OpenClaw / WhatsApp — Skills Execution** | ✅ Feito |
 | **Interface J.A.R.V.I.S (cockpit)** | ❌ Pendente |
 
 ---
@@ -136,13 +136,18 @@ WhatsApp → OpenClaw Gateway → Aureon AI Core (SOUL.md) → Intent Detection 
 - [x] Formato de resposta estruturado padrão
 - [x] Testado e validado no WhatsApp ✅
 
-#### Fase 3: Execution Layer (Definido, Implementação Pendente) 🔄
+#### Fase 3: Execution Layer ✅ COMPLETO (2026-03-06 16:30)
 - [x] TOOLS.md com skills definidos
 - [x] Safety rules (auto-execute, require confirmation, blocked)
 - [x] Comandos de execução (`/execute`, `/logs`, `/deploy`, `/n8n`)
-- [ ] Skills implementados em Python/Node (código real)
-- [ ] Integração N8N via webhooks
-- [ ] Integração Notion/Drive
+- [x] Skills implementados em Python (código real) — 6 skills
+- [x] Integração N8N via webhooks (n8n_trigger.py)
+- [x] Sistema de SQUAD activation (squad_activation.py)
+- [x] System monitoring (system_status.py)
+- [x] Deploy automation (deploy_app.py)
+- [x] Log reading (read_logs.py)
+- [x] Command execution (execute_command.py)
+- [ ] Integração Notion/Drive (próxima etapa)
 
 **Arquivos criados:**
 - `integrations/openclaw/workspace-templates/SOUL.md` — v2.0 Router + Execution
@@ -155,7 +160,19 @@ WhatsApp → OpenClaw Gateway → Aureon AI Core (SOUL.md) → Intent Detection 
 - Input: "Como melhorar a conversão do meu funil?"
 - Output: ✅ SQUAD Sales ativado + estratégias de conversão + próximos passos
 
-**Próximo passo:** Implementar skills reais (Python/Node) para execução de comandos
+**Skills implementados (6):**
+- `execute_command.py` — Execução segura de comandos shell
+- `read_logs.py` — Leitura de logs systemd
+- `deploy_app.py` — Deploy staging/production
+- `n8n_trigger.py` — Trigger de workflows N8N
+- `squad_activation.py` — Ativação de contexto SQUAD
+- `system_status.py` — Monitoramento de sistema
+
+**Localização:** `integrations/openclaw/skills/`
+
+**Documentação:** `integrations/openclaw/skills/README.md`
+
+**Próximo passo:** Pipeline Chunked (resolver estouro de limite em ingestão)
 
 ---
 
@@ -242,19 +259,20 @@ aureon-ai/
 
 ## ⚡ Próximo Passo Prático (Agora)
 
-### ✅ Completados (2026-03-06)
+### ✅ Completados (Atualizado 2026-03-06 16:30)
 1. ~~**OpenClaw conectado**~~ — WhatsApp funcionando
 2. ~~**Personalidade Aureon AI**~~ — SOUL.md v2.0 deployado
 3. ~~**Router de SQUADs**~~ — 7 SQUADs com detecção automática
 4. ~~**Comandos básicos**~~ — `/sales`, `/tech`, `/ops`, etc.
 5. ~~**Testado e validado**~~ — "Como melhorar conversão?" → SQUAD Sales ✅
+6. ~~**Skills reais (Execution Layer)**~~ — 6 Python skills implementados ✅
+7. ~~**Integração N8N (base)**~~ — n8n_trigger.py com 6 workflows ✅
+8. ~~**Rebrand A1**~~ — Docs e superfície rebrandados ✅
 
 ### 🔄 Prioridade Alta (Próximas Ações)
-1. **Skills reais (Execution Layer)** — Implementar Python/Node skills para comandos
-2. **Integração N8N** — Conectar workflows via webhooks
-3. **Pipeline chunked** — Resolver estouro de limite em ingestão
-4. **Rebrand A1** — Docs e superfície (README, CLAUDE.md, package.json)
-5. **Rebrand A2** — Core interno (renomear `core/jarvis/` → `core/aureon/`)
+1. **Pipeline chunked** — Resolver estouro de limite em ingestão (3-4h)
+2. **Rebrand A2** — Core interno (renomear `core/jarvis/` → `core/aureon/`) (2-3h)
+3. **Deploy skills no servidor** — Copiar skills para servidor OpenClaw (30min)
 
 ### ⏳ Médio Prazo
 6. **Rebrand A3** — Comandos slash e binários
