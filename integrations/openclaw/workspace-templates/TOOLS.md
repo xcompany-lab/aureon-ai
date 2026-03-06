@@ -321,5 +321,122 @@ Output: 🏛️ AUREON AI — SQUAD TECH [contexto ativo]
 
 ---
 
-*Última atualização: 2026-03-06*
+## 🔧 IMPLEMENTED SKILLS
+
+Skills prontos em Python, disponíveis em: `/home/aureon/projects/mega-brain-lab/mega-brain/integrations/openclaw/skills/`
+
+### 1. Execute Command (execute_command.py)
+```bash
+python3 /path/to/skills/execute_command.py "ls -la"
+python3 /path/to/skills/execute_command.py "systemctl status openclaw"
+python3 /path/to/skills/execute_command.py "rm file.txt" --confirmed
+```
+
+**Features:**
+- Bloqueio de comandos perigosos
+- Confirmação para comandos destrutivos
+- Timeout de 5 minutos
+- Output JSON estruturado
+
+---
+
+### 2. Read Logs (read_logs.py)
+```bash
+python3 /path/to/skills/read_logs.py openclaw 50
+python3 /path/to/skills/read_logs.py nginx 30
+```
+
+**Features:**
+- Leitura de logs systemd
+- Configurável número de linhas
+- Timeout de 10 segundos
+
+---
+
+### 3. Deploy Application (deploy_app.py)
+```bash
+python3 /path/to/skills/deploy_app.py staging
+python3 /path/to/skills/deploy_app.py production main --confirmed
+```
+
+**Features:**
+- Validação de environment (staging/production)
+- Confirmação obrigatória para production
+- Steps: pull → install → test → build → restart → health check
+- Rollback automático em falhas
+
+---
+
+### 4. N8N Trigger (n8n_trigger.py)
+```bash
+python3 /path/to/skills/n8n_trigger.py lead_enrichment '{"name":"John","email":"john@example.com"}'
+python3 /path/to/skills/n8n_trigger.py data_sync
+```
+
+**Features:**
+- 6 workflows pré-configurados
+- Configuração via environment variables
+- Fallback para urllib se requests não disponível
+- Timeout de 30 segundos
+
+**Workflows disponíveis:**
+- lead_enrichment
+- email_sequence
+- data_sync
+- report_generation
+- notion_sync
+- drive_backup
+
+---
+
+### 5. Squad Activation (squad_activation.py)
+```bash
+python3 /path/to/skills/squad_activation.py sales
+python3 /path/to/skills/squad_activation.py tech
+python3 /path/to/skills/squad_activation.py list
+```
+
+**Features:**
+- 7 SQUADs disponíveis
+- Exibe especialistas, comandos e triggers
+- Formatação visual clara
+
+---
+
+### 6. System Status (system_status.py)
+```bash
+python3 /path/to/skills/system_status.py
+python3 /path/to/skills/system_status.py --detailed
+```
+
+**Features:**
+- Métricas em tempo real (CPU, RAM, Disk, Processes)
+- Health status (healthy/warning/critical)
+- Modo detalhado com load average e memory details
+- Uptime do sistema
+
+---
+
+## 🚀 DEPLOYMENT
+
+Para usar via WhatsApp através do OpenClaw:
+
+```bash
+# 1. Copiar skills para servidor OpenClaw
+scp -r integrations/openclaw/skills/ openclaw@server:/home/openclaw/aureon-skills/
+
+# 2. Testar skills individualmente
+ssh openclaw@server
+cd /home/openclaw/aureon-skills
+python3 system_status.py
+python3 squad_activation.py sales
+
+# 3. Skills estarão disponíveis via comandos no WhatsApp
+# Ex: "Ativar SQUAD Sales" → Executa squad_activation.py sales
+# Ex: "Ver status do sistema" → Executa system_status.py
+```
+
+---
+
+*Última atualização: 2026-03-06 16:30 UTC-3*
 *Aureon AI — Sistema de Inteligência Executiva*
