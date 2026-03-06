@@ -1,8 +1,8 @@
-# Guia de API Keys - Mega Brain
+# Guia de API Keys - Aureon AI
 
 > Como obter e configurar cada API key do sistema.
 
-Este guia cobre todas as API keys utilizadas pelo Mega Brain. Apenas a **Anthropic (Claude)** é obrigatória. Todas as demais são opcionais e adicionam funcionalidades extras.
+Este guia cobre todas as API keys utilizadas pelo Aureon AI. Apenas a **Anthropic (Claude)** é obrigatória. Todas as demais são opcionais e adicionam funcionalidades extras.
 
 ---
 
@@ -22,7 +22,7 @@ Este guia cobre todas as API keys utilizadas pelo Mega Brain. Apenas a **Anthrop
 
 ### O que faz
 
-Claude é o cérebro do Mega Brain. Toda a inteligência do sistema -- processamento de materiais, agentes especializados, Conclave, extração de DNA -- roda via Claude.
+Claude é o cérebro do Aureon AI. Toda a inteligência do sistema -- processamento de materiais, agentes especializados, Conclave, extração de DNA -- roda via Claude.
 
 ### Onde obter
 
@@ -35,14 +35,14 @@ Claude é o cérebro do Mega Brain. Toda a inteligência do sistema -- processam
 3. Confirme seu email
 4. No painel, vá em **API Keys** no menu lateral
 5. Clique em **Create Key**
-6. Dê um nome descritivo: `mega-brain-prod`
+6. Dê um nome descritivo: `aureon-ai-prod`
 7. Copie a chave gerada (começa com `sk-ant-...`)
 8. Adicione créditos em **Billing** > **Add Credits** (mínimo $5)
 
 ### Como configurar
 
 ```bash
-# No arquivo .env do Mega Brain
+# No arquivo .env do Aureon AI
 ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 ```
 
@@ -93,7 +93,7 @@ Permite que o JARVIS fale em voz alta. Transforma texto em áudio com voz natura
 ### Como configurar
 
 ```bash
-# No arquivo .env do Mega Brain
+# No arquivo .env do Aureon AI
 ELEVENLABS_API_KEY=sk_sua-chave-aqui
 ```
 
@@ -138,7 +138,7 @@ Permite que o JARVIS ouça você. Transforma áudio/voz em texto (Speech-to-Text
 3. Confirme seu email
 4. No painel, vá em **API Keys** no menu lateral
 5. Clique em **Create a New API Key**
-6. Dê um nome: `mega-brain`
+6. Dê um nome: `aureon-ai`
 7. Em permissões, selecione **Member** (acesso completo)
 8. Clique em **Create Key**
 9. Copie a chave gerada imediatamente (ela não será mostrada novamente)
@@ -146,7 +146,7 @@ Permite que o JARVIS ouça você. Transforma áudio/voz em texto (Speech-to-Text
 ### Como configurar
 
 ```bash
-# No arquivo .env do Mega Brain
+# No arquivo .env do Aureon AI
 DEEPGRAM_API_KEY=sua-chave-aqui
 ```
 
@@ -185,7 +185,7 @@ Os créditos iniciais são mais do que suficientes para uso pessoal.
 
 ### O que faz
 
-Permite importar documentos diretamente do Google Drive para o inbox do Mega Brain. Útil se você armazena PDFs, transcrições ou documentos de curso no Drive.
+Permite importar documentos diretamente do Google Drive para o inbox do Aureon AI. Útil se você armazena PDFs, transcrições ou documentos de curso no Drive.
 
 ### Onde obter
 
@@ -196,7 +196,7 @@ Permite importar documentos diretamente do Google Drive para o inbox do Mega Bra
 1. Acesse [console.cloud.google.com](https://console.cloud.google.com/)
 2. Crie um novo projeto (ou selecione existente):
    - Clique em **Select a project** > **New Project**
-   - Nome: `mega-brain`
+   - Nome: `aureon-ai`
    - Clique em **Create**
 3. Ative a API do Google Drive:
    - No menu lateral, vá em **APIs & Services** > **Library**
@@ -206,7 +206,7 @@ Permite importar documentos diretamente do Google Drive para o inbox do Mega Bra
    - Vá em **APIs & Services** > **Credentials**
    - Clique em **Create Credentials** > **OAuth client ID**
    - Em tipo, selecione **Desktop app**
-   - Nome: `mega-brain-drive`
+   - Nome: `aureon-ai-drive`
    - Clique em **Create**
 5. Baixe o arquivo JSON de credenciais:
    - Clique no ícone de download ao lado da credencial criada
@@ -214,24 +214,24 @@ Permite importar documentos diretamente do Google Drive para o inbox do Mega Bra
 6. Configure a tela de consentimento (se solicitado):
    - Vá em **OAuth consent screen**
    - Tipo: **External**
-   - Preencha nome do app: `Mega Brain`
+   - Preencha nome do app: `Aureon AI`
    - Adicione seu email como usuário de teste
    - Salve
 
 ### Como configurar
 
 ```bash
-# Copie o arquivo de credenciais para o Mega Brain
-cp credentials.json /caminho/para/mega-brain/system/credentials.json
+# Copie o arquivo de credenciais para o Aureon AI
+cp credentials.json /caminho/para/aureon-ai/system/credentials.json
 
-# No arquivo .env do Mega Brain
+# No arquivo .env do Aureon AI
 GOOGLE_DRIVE_CREDENTIALS=system/credentials.json
 ```
 
 ### Como testar
 
 ```bash
-# No Mega Brain, execute:
+# No Aureon AI, execute:
 /ingest gdrive://pasta-id/nome-do-arquivo.pdf
 ```
 
@@ -262,13 +262,13 @@ Fornece embeddings de alta qualidade para busca semântica (RAG). Quando ativado
 3. Confirme seu email
 4. No painel, vá em **API Keys**
 5. Clique em **Create new API key**
-6. Nome: `mega-brain`
+6. Nome: `aureon-ai`
 7. Copie a chave gerada (começa com `pa-...`)
 
 ### Como configurar
 
 ```bash
-# No arquivo .env do Mega Brain
+# No arquivo .env do Aureon AI
 VOYAGE_API_KEY=pa-sua-chave-aqui
 ```
 
@@ -290,7 +290,7 @@ curl -X POST "https://api.voyageai.com/v1/embeddings" \
 | Free | 50M tokens | Gratuito |
 | Pro | 300M tokens | $0.10/1M tokens |
 
-O plano gratuito cobre amplamente o uso normal do Mega Brain.
+O plano gratuito cobre amplamente o uso normal do Aureon AI.
 
 ---
 
@@ -316,7 +316,7 @@ GOOGLE_DRIVE_CREDENTIALS=system/credentials.json
 VOYAGE_API_KEY=pa-sua-chave-aqui
 ```
 
-**Localização:** O arquivo `.env` fica na raiz do projeto Mega Brain.
+**Localização:** O arquivo `.env` fica na raiz do projeto Aureon AI.
 
 **Segurança:** Nunca compartilhe suas API keys. O arquivo `.env` já está incluído no `.gitignore` por padrão.
 
@@ -369,4 +369,4 @@ R: Verifique se: (1) a chave não expirou, (2) há créditos/saldo na conta, (3)
 
 ---
 
-*Mega Brain v1.0.0 - MoneyClub Edition*
+*Aureon AI v1.0.0 - X-Company Edition*

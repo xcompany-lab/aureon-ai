@@ -1,8 +1,8 @@
-# Contributing to Mega Brain
+# Contributing to Aureon AI
 
 ## Maintainer
 
-This project is maintained exclusively by **@thiagofinch**. All official updates and releases are published by the maintainer only.
+This project is maintained by **X-Company** (@xcompany-lab). All official updates and releases are published by the maintainer only.
 
 ## Branch Workflow
 
@@ -40,7 +40,7 @@ Reference related issues when applicable: `feat: add login form refs #42`
 1. Create a branch from `main` following the naming convention above
 2. Make your changes with conventional commits
 3. Open a PR using the provided template
-4. All PRs require approval from **@thiagofinch** before merge
+4. All PRs require approval from **X-Company** before merge
 5. Ensure all checklist items in the PR template are addressed
 6. Use `Fixes #XX` in the PR body to auto-close related issues
 
@@ -59,4 +59,4 @@ Reference related issues when applicable: `feat: add login form refs #42`
 
 ## Questions?
 
-Open an issue or reach out to **@thiagofinch**.
+Open an issue or reach out to **X-Company** (@xcompany-lab).

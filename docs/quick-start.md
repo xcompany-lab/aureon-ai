@@ -1,4 +1,4 @@
-# QUICK START - Mega Brain
+# QUICK START - Aureon AI
 
 **Para começar AGORA em 4 passos:**
 
@@ -8,8 +8,8 @@
 
 ```bash
 # Navegar para o projeto
-# Navigate to the Mega Brain project root
-cd "<your-mega-brain-path>"
+# Navigate to the Aureon AI project root
+cd "<your-aureon-ai-path>"
 
 # Copiar materiais para pastas corretas
 cp ~/Downloads/hormozi-curso/*.mp4 00-raw-materials/HORMOZI/videos/
