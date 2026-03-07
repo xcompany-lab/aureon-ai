@@ -45,7 +45,68 @@ Resposta → WhatsApp
 }
 ```
 
-## Comandos de Administração
+## Remote Management Scripts
+
+Scripts para gerenciar o servidor OpenClaw remotamente via SSH (requer chave SSH configurada).
+
+### Scripts Disponíveis
+
+| Script | Descrição | Uso |
+|--------|-----------|-----|
+| [remote-restart.sh](remote-restart.sh) | Reinicia OpenClaw e mostra status | `bash integrations/openclaw/remote-restart.sh` |
+| [remote-logs.sh](remote-logs.sh) | Visualiza logs (últimas 100 linhas ou tempo real) | `bash integrations/openclaw/remote-logs.sh [linhas] [-f]` |
+| [remote-doctor.sh](remote-doctor.sh) | Executa diagnóstico e corrige problemas | `bash integrations/openclaw/remote-doctor.sh [--fix]` |
+| [remote-deploy.sh](remote-deploy.sh) | Deploy completo do Aureon AI no servidor | `bash integrations/openclaw/remote-deploy.sh` |
+| [remote-restore-backup.sh](remote-restore-backup.sh) | Restaura backup mais recente do config | `bash integrations/openclaw/remote-restore-backup.sh` |
+
+### Exemplos de Uso
+
+```bash
+# Reiniciar o serviço remotamente
+bash integrations/openclaw/remote-restart.sh
+
+# Ver logs em tempo real
+bash integrations/openclaw/remote-logs.sh 50 -f
+
+# Diagnosticar e corrigir problemas
+bash integrations/openclaw/remote-doctor.sh --fix
+
+# Fazer deploy completo
+bash integrations/openclaw/remote-deploy.sh
+
+# Restaurar backup (se algo quebrar)
+bash integrations/openclaw/remote-restore-backup.sh
+```
+
+### Configuração SSH Necessária
+
+Para usar os scripts remotos, configure acesso SSH sem senha:
+
+```bash
+# 1. Gerar chave SSH (se não existir)
+ssh-keygen -t rsa -b 4096 -C "aureon-megabrain" -N ""
+
+# 2. Copiar chave para o servidor
+ssh-copy-id root@openclaw-xcompany
+
+# 3. Criar ~/.ssh/config
+cat >> ~/.ssh/config << 'EOF'
+Host openclaw-xcompany
+    HostName openclaw-xcompany.local
+    User root
+    IdentityFile ~/.ssh/id_rsa
+    StrictHostKeyChecking no
+EOF
+
+chmod 600 ~/.ssh/config
+
+# 4. Testar
+ssh openclaw-xcompany whoami
+```
+
+## Comandos de Administração (Local)
+
+Se você estiver conectado diretamente no servidor:
 
 ```bash
 # Status do canal WhatsApp
