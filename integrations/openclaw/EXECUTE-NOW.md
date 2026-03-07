@@ -125,14 +125,74 @@ Deve mostrar o conteúdo do SOUL.md.
 apt-get update && apt-get install -y jq
 ```
 
+## Configuração de Transcrição de Áudio (Whisper)
+
+### Problema: Áudios não são transcritos
+
+Se você enviar áudios pelo WhatsApp e o bot não entender, é porque falta configurar o Whisper.
+
+### Solução Rápida
+
+```bash
+# No servidor openclaw-xcompany como root
+cd /root
+bash enable-audio-transcription.sh
+```
+
+O script vai:
+1. Adicionar configuração `tools.media.audio` no `openclaw.json`
+2. Solicitar sua `OPENAI_API_KEY` e salvar em `/opt/openclaw.env`
+3. Reiniciar o gateway
+4. Validar a configuração
+
+### Configuração Manual (alternativa)
+
+Se preferir configurar manualmente:
+
+```bash
+# 1. Editar /opt/openclaw.env
+nano /opt/openclaw.env
+
+# Adicionar linha:
+OPENAI_API_KEY=sk-proj-...
+
+# 2. Editar openclaw.json
+jq '.tools.media.audio = {
+  "provider": "openai",
+  "model": "whisper-1",
+  "echoTranscript": true,
+  "echoFormat": "📝 Transcrição: {transcript}"
+}' /home/openclaw/.openclaw/openclaw.json > /tmp/openclaw.json.tmp
+
+mv /tmp/openclaw.json.tmp /home/openclaw/.openclaw/openclaw.json
+chown openclaw:openclaw /home/openclaw/.openclaw/openclaw.json
+
+# 3. Reiniciar
+systemctl restart openclaw
+
+# 4. Testar
+# Envie um áudio pelo WhatsApp
+```
+
+### Verificação
+
+Após configurar, envie um áudio pelo WhatsApp. Você deve receber:
+
+```
+📝 Transcrição: [seu texto aqui]
+```
+
+E então o bot responde ao conteúdo transcrito.
+
 ## Próximos Passos Após Sucesso
 
 1. ✅ Personalidade Aureon AI funcionando
-2. ⏳ Testar roteamento de SQUADs (enviar "vendas", "tech", etc.)
-3. ⏳ Configurar memory search (opcional)
-4. ⏳ Adicionar mais números ao allowlist (opcional)
+2. ✅ Transcrição de áudio via Whisper configurada
+3. ⏳ Testar roteamento de SQUADs (enviar "vendas", "tech", etc.)
+4. ⏳ Configurar memory search (opcional)
+5. ⏳ Adicionar mais números ao allowlist (opcional)
 
 ---
 
 **Status:** 🟡 Aguardando execução no servidor
-**Última atualização:** 2026-03-06 03:45
+**Última atualização:** 2026-03-07

@@ -68,7 +68,7 @@ Aqui estão os seus braços operacionais:
 7. **SQUAD Product:** UX, Roadmap e Inovação.
 AGENTS_EOF
 
-# 5. openclaw.json — Estrutura de Canais
+# 5. openclaw.json — Estrutura de Canais e Gateway
 echo "⚙️ Atualizando openclaw.json..."
 cat > "$OPENCLAW_HOME/openclaw.json" << CONFIG_EOF
 {
@@ -89,8 +89,24 @@ cat > "$OPENCLAW_HOME/openclaw.json" << CONFIG_EOF
       }
     ]
   },
+  "tools": {
+    "media": {
+      "audio": {
+        "provider": "openai",
+        "model": "whisper-1",
+        "echoTranscript": true,
+        "echoFormat": "📝 Transcrição: {transcript}"
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "bind": "auto",
+    "token": "AureonToken2026"
+  },
   "channels": {
     "whatsapp": {
+      "enabled": true,
       "dmPolicy": "allowlist",
       "allowFrom": ["+555193623832"],
       "groups": {
@@ -103,36 +119,50 @@ cat > "$OPENCLAW_HOME/openclaw.json" << CONFIG_EOF
 }
 CONFIG_EOF
 
-# 6. Fix Config & Gateway Mode
-echo "🔧 Corrigindo configuração..."
-sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw doctor --fix || true
-sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw config set gateway.mode local || true
+# 6. Injetar OPENAI_API_KEY no environment
+echo "🔑 Configurando OPENAI_API_KEY para transcrição de áudio..."
+if [ -f /opt/openclaw.env ]; then
+  # Remover linha antiga se existir
+  sed -i '/^OPENAI_API_KEY=/d' /opt/openclaw.env
+fi
+# Adicionar OPENAI_API_KEY (ou solicitar ao usuário)
+if [ -z "$OPENAI_API_KEY" ]; then
+  echo "⚠️  OPENAI_API_KEY não encontrado no ambiente atual."
+  echo "   Por favor, adicione manualmente em /opt/openclaw.env:"
+  echo "   OPENAI_API_KEY=sk-proj-..."
+else
+  echo "OPENAI_API_KEY=$OPENAI_API_KEY" >> /opt/openclaw.env
+  echo "✅ OPENAI_API_KEY configurado em /opt/openclaw.env"
+fi
 
-# 7. Definir System Prompt do Agente
-echo "🧠 Carregando SOUL.md como system prompt..."
-SOUL_CONTENT=$(cat "$AGENT_DIR/SOUL.md")
-sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw agents configure main --system-prompt "$SOUL_CONTENT" 2>/dev/null || \
-sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw config set agents.list.0.systemPrompt "$SOUL_CONTENT" || \
-echo "⚠️  System prompt será carregado via SOUL.md no próximo restart"
+# 7. Fix Config & Gateway Mode
+echo "🔧 Corrigindo configuração..."
+sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw doctor --fix --non-interactive || true
 
 # 8. Sincronizar Identidade via CLI
 echo "🎨 Sincronizando identidade visual no sistema..."
-sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw agents set-identity --agent main --from-identity --workspace "$AGENT_DIR/../" || \
 sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw agents set-identity --agent main --name "Aureon AI" --theme "executive"
 
-# 9. Limpeza e Permissões
+# 9. Sincronizar Configurações (Garantir que ambos os usuários tenham a mesma config)
+echo "📂 Sincronizando arquivos de configuração..."
+mkdir -p /home/aureon/.openclaw 2>/dev/null || true
+cp "$OPENCLAW_HOME/openclaw.json" /home/aureon/.openclaw/openclaw.json 2>/dev/null || true
 chown -R openclaw:openclaw "$OPENCLAW_HOME"
+
+# 10. Limpeza final e Permissões
 chmod 700 "$OPENCLAW_HOME"
 chmod 700 "$AGENT_DIR"
+chmod 600 "$OPENCLAW_HOME/openclaw.json"
 
-# 10. Reiniciar e Validar
-echo "🔄 Reiniciando serviço..."
+# 11. Reiniciar e Validar
+echo "🔄 Reiniciando serviço (Forçando limpeza de porta)..."
+fuser -k 18789/tcp 2>/dev/null || true
 systemctl restart openclaw
-sleep 2
+sleep 5
 
 echo ""
 echo "📊 STATUS FINAL:"
-sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw doctor
+sudo -u openclaw HOME=/home/openclaw /usr/bin/openclaw doctor --non-interactive
 
 echo ""
 echo "🎉 Aureon AI configurado!"
@@ -140,4 +170,7 @@ echo ""
 echo "⚠️  PRÓXIMOS PASSOS:"
 echo "   1. Configure o token Anthropic: openclaw setup-token"
 echo "   2. Verifique variáveis de ambiente no arquivo: /opt/openclaw.env"
-echo "   3. Teste no WhatsApp: 'Quem é você?'"
+echo "   3. Se OPENAI_API_KEY não foi configurado automaticamente, adicione em /opt/openclaw.env"
+echo "   4. Teste no WhatsApp:"
+echo "      - Texto: 'Quem é você?'"
+echo "      - Áudio: Envie um áudio qualquer (será transcrito automaticamente)"

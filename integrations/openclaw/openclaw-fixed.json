@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.23",
+    "lastTouchedAt": "2026-03-06T22:44:54.511Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-06T22:44:51.375Z",
+    "lastRunVersion": "2026.2.23",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-opus-4-5"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "default": true,
+        "name": "Aureon AI",
+        "identity": {
+          "name": "Aureon AI",
+          "theme": "executive"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@aureon",
+            "aureon"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "media": {
+      "audio": {
+        "provider": "openai",
+        "model": "whisper-1",
+        "echoTranscript": true,
+        "echoFormat": "📝 Transcrição: {transcript}"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "whatsapp": {
+      "enabled": true,
+      "dmPolicy": "denylist",
+      "denyFrom": [],
+      "allowFrom": [
+        "+555193623832"
+      ],
+      "replyPolicy": "allowlist-only",
+      "groupPolicy": "allowlist",
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "debounceMs": 0,
+      "mediaMaxMb": 50
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "bind": "auto",
+    "auth": {
+      "mode": "token",
+      "token": "AureonToken2026"
+    }
+  }
+}

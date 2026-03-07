@@ -61,6 +61,55 @@ sudo journalctl -u openclaw -f --no-pager
 openclaw agents list --bindings
 ```
 
+## Audio Transcription (Whisper)
+
+O Aureon AI transcreve automaticamente áudios do WhatsApp usando OpenAI Whisper.
+
+### Configuração
+
+```json
+{
+  "tools": {
+    "media": {
+      "audio": {
+        "provider": "openai",
+        "model": "whisper-1",
+        "echoTranscript": true,
+        "echoFormat": "📝 Transcrição: {transcript}"
+      }
+    }
+  }
+}
+```
+
+### Requisitos
+
+1. **OPENAI_API_KEY** configurado em `/opt/openclaw.env`
+2. Áudios até 50MB (definido em `channels.whatsapp.mediaMaxMb`)
+
+### Como Funciona
+
+1. Usuário envia áudio pelo WhatsApp
+2. OpenClaw baixa o arquivo
+3. Whisper transcreve automaticamente
+4. Bot envia confirmação: `📝 Transcrição: [texto]`
+5. Claude processa o texto transcrito normalmente
+
+### Habilitar em Instalação Existente
+
+```bash
+# Método 1: Script standalone (recomendado)
+bash enable-audio-transcription.sh
+
+# Método 2: Redeploy completo
+bash deploy-aureon-openclaw.sh
+```
+
+### Custos
+
+- Whisper: ~$0.006 por minuto de áudio
+- Áudio de 30 segundos: ~$0.003 (muito barato)
+
 ## Comandos disponíveis no WhatsApp
 
 | Comando | Ação |
