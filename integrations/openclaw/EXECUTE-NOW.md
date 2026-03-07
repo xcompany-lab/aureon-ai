@@ -125,64 +125,56 @@ Deve mostrar o conteúdo do SOUL.md.
 apt-get update && apt-get install -y jq
 ```
 
-## Configuração de Transcrição de Áudio (Whisper)
+## Configuração de Transcrição de Áudio (OpenAI Whisper)
 
-### Problema: Áudios não são transcritos
+### ✅ CONFIGURADO! (v2026.2.23+)
 
-Se você enviar áudios pelo WhatsApp e o bot não entender, é porque falta configurar o Whisper.
+A transcrição de áudio foi configurada com sucesso usando o script `enable-audio-v2.sh`.
 
-### Solução Rápida
+**Configuração aplicada:**
+```json
+{
+  "tools": {
+    "media": {
+      "audio": {
+        "enabled": true,
+        "maxBytes": 20971520,
+        "models": [{ "provider": "openai", "model": "gpt-4o-mini-transcribe" }]
+      }
+    }
+  }
+}
+```
+
+### 🧪 Como Testar
+
+1. **Envie um áudio** pelo WhatsApp para `+555193623832`
+2. O OpenClaw deve transcrever automaticamente
+3. Bot responde ao conteúdo transcrito
+
+### 📊 Ver Logs em Tempo Real
 
 ```bash
-# No servidor openclaw-xcompany como root
-cd /root
-bash enable-audio-transcription.sh
+# Da máquina local
+bash integrations/openclaw/remote-logs.sh 50 -f
 ```
 
-O script vai:
-1. Adicionar configuração `tools.media.audio` no `openclaw.json`
-2. Solicitar sua `OPENAI_API_KEY` e salvar em `/opt/openclaw.env`
-3. Reiniciar o gateway
-4. Validar a configuração
+### ⚠️ Se Não Funcionar
 
-### Configuração Manual (alternativa)
-
-Se preferir configurar manualmente:
-
+**Verificar OPENAI_API_KEY:**
 ```bash
-# 1. Editar /opt/openclaw.env
-nano /opt/openclaw.env
-
-# Adicionar linha:
-OPENAI_API_KEY=sk-proj-...
-
-# 2. Editar openclaw.json
-jq '.tools.media.audio = {
-  "provider": "openai",
-  "model": "whisper-1",
-  "echoTranscript": true,
-  "echoFormat": "📝 Transcrição: {transcript}"
-}' /home/openclaw/.openclaw/openclaw.json > /tmp/openclaw.json.tmp
-
-mv /tmp/openclaw.json.tmp /home/openclaw/.openclaw/openclaw.json
-chown openclaw:openclaw /home/openclaw/.openclaw/openclaw.json
-
-# 3. Reiniciar
-systemctl restart openclaw
-
-# 4. Testar
-# Envie um áudio pelo WhatsApp
+ssh openclaw-xcompany "cat /opt/openclaw.env | grep OPENAI"
 ```
 
-### Verificação
-
-Após configurar, envie um áudio pelo WhatsApp. Você deve receber:
-
-```
-📝 Transcrição: [seu texto aqui]
+**Reconfigurar (se necessário):**
+```bash
+bash integrations/openclaw/enable-audio-v2.sh
 ```
 
-E então o bot responde ao conteúdo transcrito.
+**Restaurar backup (se quebrar):**
+```bash
+bash integrations/openclaw/remote-restore-backup.sh
+```
 
 ## Próximos Passos Após Sucesso
 

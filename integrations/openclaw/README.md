@@ -122,54 +122,66 @@ sudo journalctl -u openclaw -f --no-pager
 openclaw agents list --bindings
 ```
 
-## Audio Transcription (Whisper)
+## Audio Transcription (OpenAI Whisper)
 
 O Aureon AI transcreve automaticamente áudios do WhatsApp usando OpenAI Whisper.
 
-### Configuração
+### Configuração Correta (v2026.2.23+)
 
 ```json
 {
   "tools": {
     "media": {
       "audio": {
-        "provider": "openai",
-        "model": "whisper-1",
-        "echoTranscript": true,
-        "echoFormat": "📝 Transcrição: {transcript}"
+        "enabled": true,
+        "maxBytes": 20971520,
+        "models": [
+          {
+            "provider": "openai",
+            "model": "gpt-4o-mini-transcribe"
+          }
+        ]
       }
     }
   }
 }
 ```
 
+**Nota:** A estrutura mudou na versão 2026.2+. Use `models` (array) em vez de configuração direta.
+
 ### Requisitos
 
 1. **OPENAI_API_KEY** configurado em `/opt/openclaw.env`
-2. Áudios até 50MB (definido em `channels.whatsapp.mediaMaxMb`)
+2. Áudios até 20MB (definido em `tools.media.audio.maxBytes`)
+3. OpenClaw v2026.2.23 ou superior
 
 ### Como Funciona
 
 1. Usuário envia áudio pelo WhatsApp
-2. OpenClaw baixa o arquivo
-3. Whisper transcreve automaticamente
-4. Bot envia confirmação: `📝 Transcrição: [texto]`
-5. Claude processa o texto transcrito normalmente
+2. OpenClaw baixa o arquivo (até 20MB)
+3. OpenAI transcreve usando `gpt-4o-mini-transcribe`
+4. Claude recebe o texto transcrito automaticamente
+5. Bot responde normalmente ao conteúdo
 
 ### Habilitar em Instalação Existente
 
 ```bash
-# Método 1: Script standalone (recomendado)
-bash enable-audio-transcription.sh
-
-# Método 2: Redeploy completo
-bash deploy-aureon-openclaw.sh
+# Script atualizado para v2026.2.23+
+bash integrations/openclaw/enable-audio-v2.sh
 ```
+
+O script vai:
+- ✅ Criar backup automático do config
+- ✅ Aplicar configuração correta
+- ✅ Verificar se OPENAI_API_KEY está configurado
+- ✅ Validar com `openclaw doctor`
+- ✅ Reiniciar o serviço
 
 ### Custos
 
-- Whisper: ~$0.006 por minuto de áudio
-- Áudio de 30 segundos: ~$0.003 (muito barato)
+- OpenAI Whisper: ~$0.006 por minuto de áudio
+- Áudio de 30 segundos: ~$0.003
+- Áudio de 2 minutos: ~$0.012 (muito barato)
 
 ## Comandos disponíveis no WhatsApp
 
