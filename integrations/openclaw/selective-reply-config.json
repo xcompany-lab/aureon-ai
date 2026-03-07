@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.23",
+    "description": "Configuração OpenClaw com resposta seletiva: responde apenas owner, registra todos"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-07T00:00:00.000Z",
+    "lastRunVersion": "2026.2.23",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-3-haiku-20240307"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "default": true,
+        "name": "Aureon AI",
+        "identity": {
+          "name": "Aureon AI",
+          "theme": "executive"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@aureon",
+            "aureon"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {},
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "whatsapp": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "allowFrom": ["*"],
+      "groupPolicy": "allowlist",
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "debounceMs": 0,
+      "mediaMaxMb": 50
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "bind": "auto",
+    "auth": {
+      "mode": "token",
+      "token": "AureonToken2026"
+    }
+  }
+}
