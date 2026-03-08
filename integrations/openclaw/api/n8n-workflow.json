@@ -1,0 +1,126 @@
+{
+  "name": "Aureon AI - OpenClaw Remote Skills Dispatcher",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "openclaw/execute-skill",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract skill name and arguments from request body\nconst body = $input.item.json.body;\nconst skillName = body.skill;\nconst args = body.args || {};\n\n// Map skill names to commands\nconst skillCommands = {\n  'system_status': 'python3 /home/openclaw/aureon-skills/system_status.py',\n  'read_logs': `python3 /home/openclaw/aureon-skills/read_logs.py ${args.service || 'openclaw'} ${args.lines || 50}`,\n  'deploy_app': `python3 /home/openclaw/aureon-skills/deploy_app.py ${args.environment || 'staging'}`,\n  'n8n_trigger': `python3 /home/openclaw/aureon-skills/n8n_trigger.py ${args.workflow}`,\n  'squad_activation': `python3 /home/openclaw/aureon-skills/squad_activation.py ${args.squad || 'sales'}`,\n  'send_whatsapp': `python3 /home/openclaw/aureon-skills/send_whatsapp.py '${args.recipient}' '${args.message}'`,\n  'execute_command': `python3 /home/openclaw/aureon-skills/execute_command.py '${args.command}' ${args.confirmed ? '--confirmed' : ''}`\n};\n\nconst command = skillCommands[skillName];\n\nif (!command) {\n  throw new Error(`Unknown skill: ${skillName}`);\n}\n\nreturn {\n  json: {\n    command: command,\n    skill: skillName,\n    args: args\n  }\n};"
+      },
+      "id": "function-build-command",
+      "name": "Build SSH Command",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "command": "={{ $json.command }}",
+        "host": "openclaw-xcompany.local",
+        "authentication": "privateKey",
+        "privateKey": "={{ $env.OPENCLAW_SSH_KEY }}",
+        "username": "root"
+      },
+      "id": "ssh-execute",
+      "name": "Execute on OpenClaw Server",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse JSON output from skill\nconst stdout = $input.item.json.stdout;\nlet result;\n\ntry {\n  result = JSON.parse(stdout);\n} catch (e) {\n  // If not JSON, return raw output\n  result = {\n    success: true,\n    output: stdout,\n    raw: true\n  };\n}\n\nreturn {\n  json: {\n    skill: $node['Build SSH Command'].json.skill,\n    result: result,\n    executedAt: new Date().toISOString()\n  }\n};"
+      },
+      "id": "function-parse-output",
+      "name": "Parse Output",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Handle errors\nconst error = $input.item.json;\n\nreturn {\n  json: {\n    success: false,\n    error: error.message || 'Unknown error',\n    skill: $node['Build SSH Command'].json.skill,\n    executedAt: new Date().toISOString()\n  }\n};"
+      },
+      "id": "function-error-handler",
+      "name": "Error Handler",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [850, 500]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 500
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1050, 500]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [[{ "node": "Build SSH Command", "type": "main", "index": 0 }]]
+    },
+    "Build SSH Command": {
+      "main": [[{ "node": "Execute on OpenClaw Server", "type": "main", "index": 0 }]]
+    },
+    "Execute on OpenClaw Server": {
+      "main": [
+        [{ "node": "Parse Output", "type": "main", "index": 0 }],
+        [{ "node": "Error Handler", "type": "main", "index": 0 }]
+      ]
+    },
+    "Parse Output": {
+      "main": [[{ "node": "Respond to Webhook", "type": "main", "index": 0 }]]
+    },
+    "Error Handler": {
+      "main": [[{ "node": "Respond Error", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "Aureon AI",
+      "id": "aureon-ai"
+    },
+    {
+      "name": "OpenClaw",
+      "id": "openclaw"
+    }
+  ],
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "description": "Webhook endpoint to execute OpenClaw skills remotely via SSH. Receives POST requests with skill name and arguments, executes on server, returns JSON result.",
+    "version": "1.0.0"
+  }
+}
