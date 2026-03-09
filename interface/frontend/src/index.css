@@ -1,37 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 262.1 83.3% 57.8%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 142.1 76.2% 36.3%;
-    --destructive: 0 62.8% 30.6%;
+    --background: 222 84% 2%;
+    --foreground: 180 100% 90%;
+    
+    --primary: 190 100% 50%; /* Cyan/Electric Blue */
+    --primary-foreground: 190 100% 10%;
+    
+    --secondary: 260 100% 60%; /* Purple Neon */
+    --secondary-foreground: 260 100% 98%;
+    
+    --muted: 210 40% 10%;
+    --muted-foreground: 180 20% 60%;
+    
+    --accent: 150 100% 50%; /* Green Neon */
+    --accent-foreground: 150 100% 10%;
+    
+    --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
+    
+    --border: 190 100% 20%;
+    --ring: 190 100% 50%;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    background-image: 
+      radial-gradient(circle at 50% 50%, hsla(190, 100%, 10%, 0.3) 0%, transparent 70%),
+      linear-gradient(to bottom, transparent, hsla(222, 84%, 2%, 0.8)),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300f2ff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   code {
-    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', monospace;
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -39,25 +52,65 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted rounded;
+  background: hsla(190, 100%, 50%, 0.2);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-muted-foreground;
+  background: hsla(190, 100%, 50%, 0.5);
 }
 
-/* Custom Utility Classes */
 @layer utilities {
   .glass {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(148, 163, 184, 0.1);
+    background: hsla(222, 84%, 5%, 0.6);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsla(190, 100%, 50%, 0.15);
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 0, 0, 0.8),
+      inset 0 0 0 1px hsla(190, 100%, 50%, 0.05);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px hsla(190, 100%, 50%, 0.5), 0 0 20px hsla(190, 100%, 50%, 0.3);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    background: linear-gradient(135deg, #00f2ff 0%, #7000ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .border-glow {
+    box-shadow: 0 0 15px hsla(190, 100%, 50%, 0.2);
+  }
+
+  .hud-scanline {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hud-scanline::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.animate-hud-pulse {
+  animation: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

@@ -34,6 +34,7 @@ SKILLS = {
     "squad_activation": "/home/openclaw/aureon-skills/squad_activation.py",
     "send_whatsapp": "/home/openclaw/aureon-skills/send_whatsapp.py",
     "execute_command": "/home/openclaw/aureon-skills/execute_command.py",
+    "save_conversation": "/home/openclaw/aureon-skills/save_conversation.py",  # Memory unification
 }
 
 

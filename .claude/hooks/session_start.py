@@ -112,6 +112,20 @@ CRITICAL_FILES = {
         ],
         'required': True,
         'max_age_hours': 720  # 30 dias
+    },
+    'voice_memory': {
+        'paths': [
+            '.claude/aureon/VOICE-MEMORY.md'
+        ],
+        'required': False,
+        'max_age_hours': 8760  # 1 ano — memória acumulativa
+    },
+    'whatsapp_memory': {
+        'paths': [
+            '.claude/aureon/WHATSAPP-MEMORY.md'
+        ],
+        'required': False,
+        'max_age_hours': 8760  # 1 ano — memória acumulativa
     }
 }
 
@@ -564,6 +578,84 @@ def load_boot_sequence() -> Dict:
     }
 
 
+def load_voice_memory() -> Dict:
+    """
+    Carrega memória de sessões da interface de voz.
+
+    Lê o VOICE-MEMORY.md gerado pelo backend de voz e injeta
+    como contexto para que o Aureon saiba o que foi discutido
+    nas sessões de voz anteriores.
+    """
+    filepath = find_file(CRITICAL_FILES['voice_memory'])
+    if not filepath:
+        return {'raw': '', 'loaded': False, 'injection_prompt': ''}
+
+    content = read_file_safe(filepath)
+    if not content or len(content.strip()) < 50:
+        return {'raw': '', 'loaded': False, 'injection_prompt': ''}
+
+    # Pegar apenas as últimas entradas (últimos 3000 chars) para não sobrecarregar
+    recent = content[-3000:] if len(content) > 3000 else content
+
+    # Contar quantas sessões existem
+    session_count = content.count('### [')
+
+    injection = f"""
+[MEMÓRIA DE INTERFACE DE VOZ - {session_count} sessão(ões) registrada(s)]
+
+O senhor interagiu comigo via interface de voz anteriormente.
+Últimas interações registradas:
+
+{recent}
+
+[Use este contexto para criar continuidade com as sessões de voz anteriores.]
+"""
+
+    return {
+        'raw': content,
+        'loaded': True,
+        'session_count': session_count,
+        'injection_prompt': injection
+    }
+
+
+def load_whatsapp_memory() -> Dict:
+    """
+    Carrega memória das conversões de WhatsApp via OpenClaw.
+
+    Lê o WHATSAPP-MEMORY.md gravado pelo webhook do backend e injeta
+    como contexto para que o Aureon saiba o que foi discutido no WhatsApp.
+    """
+    filepath = find_file(CRITICAL_FILES['whatsapp_memory'])
+    if not filepath:
+        return {'raw': '', 'loaded': False, 'injection_prompt': ''}
+
+    content = read_file_safe(filepath)
+    if not content or len(content.strip()) < 50:
+        return {'raw': '', 'loaded': False, 'injection_prompt': ''}
+
+    recent = content[-3000:] if len(content) > 3000 else content
+    session_count = content.count('### [')
+
+    injection = f"""
+[MEMÓRIA DE WHATSAPP - {session_count} conversa(s) registrada(s)]
+
+O senhor interagiu comigo via WhatsApp anteriormente.
+Últimas conversões registradas:
+
+{recent}
+
+[Use este contexto para criar continuidade com as conversões do WhatsApp.]
+"""
+
+    return {
+        'raw': content,
+        'loaded': True,
+        'session_count': session_count,
+        'injection_prompt': injection
+    }
+
+
 #================================
 # VERIFICAÇÃO DE INTEGRIDADE
 #================================
@@ -618,7 +710,9 @@ def generate_consolidated_prompt(
     identity: Dict,
     dna: Dict,
     soul: Dict,
-    boot_sequence: Optional[Dict] = None
+    boot_sequence: Optional[Dict] = None,
+    voice_memory: Optional[Dict] = None,
+    whatsapp_memory: Optional[Dict] = None
 ) -> str:
     """
     Gera prompt consolidado para injeção no contexto.
@@ -663,6 +757,14 @@ Sou o parceiro operacional do senhor. Sou a consciência do Mega Brain.
     # 5. Injeção de memória relacional
     if memory.get('injection_prompt'):
         parts.append(memory['injection_prompt'])
+
+    # 5b. Injeção de memória de interface de voz
+    if voice_memory and voice_memory.get('loaded') and voice_memory.get('injection_prompt'):
+        parts.append(voice_memory['injection_prompt'])
+
+    # 5c. Injeção de memória do WhatsApp
+    if whatsapp_memory and whatsapp_memory.get('loaded') and whatsapp_memory.get('injection_prompt'):
+        parts.append(whatsapp_memory['injection_prompt'])
 
     # 6. Regras absolutas resumidas
     parts.append("""
@@ -846,10 +948,12 @@ def main():
         soul = load_soul()
         latest_session = load_latest_session()
         boot_sequence = load_boot_sequence()
+        voice_memory = load_voice_memory()  # Memória da interface de voz
+        whatsapp_memory = load_whatsapp_memory()  # Memória das conversões WhatsApp
 
         # === GERAR PROMPT CONSOLIDADO ===
         consolidated_prompt = generate_consolidated_prompt(
-            state, memory, pending, current_task, identity, dna, soul, boot_sequence
+            state, memory, pending, current_task, identity, dna, soul, boot_sequence, voice_memory, whatsapp_memory
         )
 
         # === FORMATAR OUTPUT ===
@@ -881,7 +985,11 @@ def main():
 
         # Sistemas carregados
         loaded = integrity.get('loaded', [])
-        output_parts.append(f"\n[SISTEMAS] {len(loaded)}/8 arquivos carregados: {', '.join(loaded[:5])}...")
+        voice_sessions = voice_memory.get('session_count', 0) if voice_memory.get('loaded') else 0
+        wa_sessions = whatsapp_memory.get('session_count', 0) if whatsapp_memory.get('loaded') else 0
+        voice_status = f" | 🎤 {voice_sessions} voz" if voice_sessions > 0 else ""
+        wa_status = f" | 📱 {wa_sessions} whatsapp" if wa_sessions > 0 else ""
+        output_parts.append(f"\n[SISTEMAS] {len(loaded)}/8 arquivos carregados: {', '.join(loaded[:5])}...{voice_status}{wa_status}")
 
         # Citação
         output_parts.append(f"\n_{get_jarvis_quote()}_")
