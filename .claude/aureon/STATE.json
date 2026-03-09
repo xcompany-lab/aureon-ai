@@ -6,7 +6,7 @@
   "session": {
     "id": null,
     "started_at": null,
-    "last_action_at": "2026-03-06T03:43:11.585710",
+    "last_action_at": "2026-03-09T17:25:35.856741",
     "is_active": false
   },
   "current_state": {
@@ -30,5 +30,13 @@
     "prompt_count": 13,
     "bracket": "FRESH",
     "context_percent": 90.2
+  },
+  "voice_interface": {
+    "total_sessions": 24,
+    "last_session_at": "2026-03-09T17:24:05.367741",
+    "last_session_id": "voice-20260309-172405",
+    "last_command": "Aureon, consegue me ouvir? Explica um pouquinho como é que você funciona, o que você pode fazer por mim?",
+    "last_response_preview": "Bom dia, senhor! Eu sou o J.A.R.V.I.S., o assistente de inteligência artificial do projeto Aureon. \n",
+    "last_action_at": "2026-03-09T17:25:35.856634"
   }
 }

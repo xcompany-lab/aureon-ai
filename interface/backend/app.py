@@ -40,6 +40,12 @@ openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # Anthropic Claude — The REAL Aureon brain
 anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
+# MiniMax TTS — Aureon's voice
+MINIMAX_API_KEY = os.getenv("MINIMAX_API_KEY", "")
+MINIMAX_TTS_MODEL = os.getenv("MINIMAX_TTS_MODEL", "speech-02-hd")
+MINIMAX_VOICE_ID = os.getenv("MINIMAX_VOICE_ID", "English_expressive_narrator")
+MINIMAX_TTS_ENABLED = bool(MINIMAX_API_KEY)
+
 # In-memory conversation history for current session
 conversation_history = []
 session_start_time = datetime.now()
@@ -150,7 +156,8 @@ print("-" * 60)
 print(f"AUREON VOICE BRAIN :: SOUL + MEMORY LOADED")
 print(f"System prompt: {soul_chars} chars")
 print(f"Session ID: {session_id}")
-print(f"Brain: claude-3-haiku | STT: Whisper")
+tts_engine = f"MiniMax ({MINIMAX_TTS_MODEL})" if MINIMAX_TTS_ENABLED else "Web Speech API"
+print(f"Brain: claude-3-haiku | STT: Whisper | TTS: {tts_engine}")
 print(f"Memory file: {VOICE_MEMORY_FILE}")
 print("-" * 60)
 
@@ -160,6 +167,121 @@ save_state({
     "last_session_at": datetime.now().isoformat(),
     "last_session_id": session_id
 })
+
+
+# ============================================================
+# MiniMax TTS — Geração de áudio com voz clonada
+# ============================================================
+
+def minimax_tts(text: str, voice_id: str = None) -> tuple[bytes | None, int]:
+    """
+    Converte texto para áudio usando a API MiniMax.
+    Retorna (bytes MP3, usage_characters) ou (None, 0) se falhar.
+    Suporta voz clonada via voice_id no .env.
+    """
+    import urllib.request
+    import urllib.error
+
+    if not MINIMAX_TTS_ENABLED:
+        print("[MiniMax TTS] Falha: Chave de API não configurada.")
+        return None
+
+    # Normalização fonética para o motor de voz
+    # Evita que soletre J.A.R.V.I.S. ou outras siglas com pontos
+    text_norm = text.replace("J.A.R.V.I.S.", "Jarvis")
+    text_norm = text_norm.replace("Aureon AI", "Aureon Ei-Ai")
+    text_norm = text_norm.replace("Aureon", "Aurêon") # Ajuste de pronúncia PT-BR
+    
+    voice = voice_id or MINIMAX_VOICE_ID
+    url = "https://api.minimax.io/v1/t2a_v2"
+
+    payload = json.dumps({
+        "model": MINIMAX_TTS_MODEL,
+        "text": text_norm,
+        "voice_setting": {
+            "voice_id": voice,
+            "speed": 1.0,
+            "vol": 1.0,
+            "pitch": 0
+        },
+        "audio_setting": {
+            "sample_rate": 32000,
+            "bitrate": 128000,
+            "format": "mp3",
+            "channel": 1
+        }
+    }).encode("utf-8")
+
+    req = urllib.request.Request(
+        url,
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {MINIMAX_API_KEY}"
+        },
+        method="POST"
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+
+        # Verifica resposta base
+        base_resp = result.get("base_resp", {})
+        if base_resp.get("status_code") != 0:
+            msg = base_resp.get("status_msg", "Erro desconhecido")
+            print(f"[MiniMax TTS] Falha do provedor: {msg} (code: {base_resp.get('status_code')})")
+            return None, 0
+
+        # Extrai uso de caracteres
+        extra_info = result.get("extra_info", {})
+        usage_characters = extra_info.get("usage_characters", 0)
+
+        # MiniMax retorna hex-encoded audio
+        audio_hex = result.get("data", {}).get("audio", "")
+        if audio_hex:
+            return bytes.fromhex(audio_hex), usage_characters
+
+        print(f"[MiniMax TTS] Resposta inesperada (sem áudio): {result}")
+        return None, 0
+
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="ignore")
+        print(f"[MiniMax TTS] HTTP {e.code}: {body[:200]}")
+        return None, 0
+    except Exception as e:
+        print(f"[MiniMax TTS] Erro: {e}")
+        return None, 0
+
+
+@app.route('/api/voice/speak', methods=['POST'])
+def speak():
+    """
+    Endpoint dedicado TTS — recebe texto e retorna áudio MP3 (base64).
+    Útil para o frontend tocar a resposta do Aureon com voz clonada.
+
+    Body: { "text": "...", "voice_id": "...(optional)" }
+    """
+    import base64
+    data = request.get_json()
+    if not data or not data.get("text"):
+        return jsonify({"error": "Campo 'text' obrigatório"}), 400
+
+    text = data["text"]
+    voice_id = data.get("voice_id", MINIMAX_VOICE_ID)
+
+    audio_bytes, usage = minimax_tts(text, voice_id)
+    if not audio_bytes:
+        return jsonify({"error": "MiniMax TTS falhou ou não está configurado"}), 503
+
+    audio_b64 = base64.b64encode(audio_bytes).decode("utf-8")
+    return jsonify({
+        "audio_base64": audio_b64,
+        "format": "mp3",
+        "voice_id": voice_id,
+        "model": MINIMAX_TTS_MODEL,
+        "chars": len(text)
+    })
 
 
 @app.route('/api/voice/process', methods=['POST'])
@@ -215,13 +337,36 @@ def process_voice():
             "last_action_at": datetime.now().isoformat()
         })
 
+
+
+        # 6. MiniMax TTS — gera áudio com a voz do Aureon
+        import base64
+        audio_b64 = None
+        tts_used = False
+        usage_chars = 0
+        estimated_cost = 0.0
+        
+        audio_bytes, usage_chars = minimax_tts(ai_response)
+        if audio_bytes:
+            audio_b64 = base64.b64encode(audio_bytes).decode("utf-8")
+            tts_used = True
+            # Preço: $0.05 / 1000 chars (speech-02-hd)
+            estimated_cost = (usage_chars / 1000.0) * 0.05
+            print(f"[MiniMax TTS] Áudio gerado: {len(audio_bytes)} bytes | Uso: {usage_chars} chars | Custo: ${estimated_cost:.4f}")
+
         # 6. Log to Supabase (non-blocking)
         try:
             supabase.table("activity_feed").insert({
                 "event_type": "system",
                 "title": "Voice — Aureon Real (com memória)",
                 "description": f"[{session_id}] Operador: {user_text} | Aureon: {ai_response[:150]}",
-                "metadata": {"source": "voice_v3", "model": "claude-3-haiku", "memory_active": True}
+                "metadata": {
+                    "source": "voice_v3", 
+                    "model": "claude-3-haiku", 
+                    "memory_active": True,
+                    "tts_usage_chars": usage_chars,
+                    "tts_estimated_cost_usd": estimated_cost
+                }
             }).execute()
         except Exception as se:
             print(f"[log] Supabase skipped: {se}")
@@ -230,7 +375,12 @@ def process_voice():
             "transcription": user_text,
             "response": ai_response,
             "status": "success",
-            "session_id": session_id
+            "session_id": session_id,
+            "audio_base64": audio_b64,      # MP3 em base64 se MiniMax ativo
+            "audio_format": "mp3" if tts_used else None,
+            "tts_engine": "minimax" if tts_used else "browser",
+            "usage": usage_chars,
+            "cost": estimated_cost
         })
 
     except Exception as e:

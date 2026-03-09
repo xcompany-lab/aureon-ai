@@ -6,6 +6,7 @@ interface Message {
     type: 'user' | 'aureon'
     text: string
     time: string
+    cost?: number
 }
 
 export const VoiceCommandOverlay: React.FC = () => {
@@ -19,15 +20,18 @@ export const VoiceCommandOverlay: React.FC = () => {
     ])
     const msgEndRef = useRef<HTMLDivElement>(null)
     const msgId = useRef(1)
+    const [sessionCost, setSessionCost] = useState(0)
 
-    const addMessage = (type: 'user' | 'aureon', text: string) => {
+    const addMessage = (type: 'user' | 'aureon', text: string, cost?: number) => {
         const msg: Message = {
             id: msgId.current++,
             type,
             text,
-            time: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+            time: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
+            cost
         }
         setMessages(prev => [...prev, msg])
+        if (cost) setSessionCost(prev => prev + cost)
         setTimeout(() => msgEndRef.current?.scrollIntoView({ behavior: 'smooth' }), 100)
     }
 
@@ -45,6 +49,22 @@ export const VoiceCommandOverlay: React.FC = () => {
         if (blob) processAudio(blob)
     }
 
+    const playBase64Audio = (base64: string) => {
+        try {
+            const binaryString = window.atob(base64)
+            const bytes = new Uint8Array(binaryString.length)
+            for (let i = 0; i < binaryString.length; i++) {
+                bytes[i] = binaryString.charCodeAt(i)
+            }
+            const blob = new Blob([bytes], { type: 'audio/mp3' })
+            const url = URL.createObjectURL(blob)
+            const audio = new Audio(url)
+            audio.play()
+        } catch (error) {
+            console.error('Error playing MiniMax audio:', error)
+        }
+    }
+
     const processAudio = async (blob: Blob) => {
         setIsProcessing(true)
         try {
@@ -55,8 +75,14 @@ export const VoiceCommandOverlay: React.FC = () => {
             if (data.status === 'success') {
                 addMessage('user', data.transcription)
                 setStatus('RESPONDENDO...')
+
+                // Play MiniMax audio if available
+                if (data.audio_base64) {
+                    playBase64Audio(data.audio_base64)
+                }
+
                 setTimeout(() => {
-                    addMessage('aureon', data.response)
+                    addMessage('aureon', data.response, data.cost)
                     setStatus('STANDBY')
                     setIsProcessing(false)
                 }, 300)
@@ -149,8 +175,8 @@ export const VoiceCommandOverlay: React.FC = () => {
                         {[
                             { label: 'Neural Link', value: 'ATIVO', color: 'text-green-400' },
                             { label: 'Voice Engine', value: 'ONLINE', color: 'text-primary' },
-                            { label: 'OpenAI Whisper', value: 'SYNC', color: 'text-primary' },
                             { label: 'Supabase DB', value: 'CONECTADO', color: 'text-green-400' },
+                            { label: 'Custo Sessão', value: `$${sessionCost.toFixed(4)}`, color: 'text-yellow-400' },
                         ].map(({ label, value, color }) => (
                             <div key={label} className="flex justify-between items-center border-b border-primary/10 pb-3">
                                 <span className="text-[10px] text-primary/50 uppercase tracking-wider">{label}</span>
@@ -266,13 +292,19 @@ export const VoiceCommandOverlay: React.FC = () => {
                                         <span className="text-[8px] text-primary/30 uppercase">{msg.type === 'aureon' ? '◈ AUREON' : '◉ OPERADOR'}</span>
                                         <span className="text-[8px] text-primary/20">{msg.time}</span>
                                     </div>
-                                    <div className={`max-w-[90%] px-4 py-3 rounded text-xs leading-relaxed
+                                    <div className={`max-w-[90%] px-4 py-3 rounded text-xs leading-relaxed relative
                     ${msg.type === 'aureon'
                                             ? 'bg-primary/5 border border-primary/20 text-primary/90 text-left'
                                             : 'bg-secondary/5 border border-secondary/20 text-secondary/80 text-right'
                                         }`}
                                         style={{ textShadow: msg.type === 'aureon' ? '0 0 10px rgba(0,242,255,0.2)' : 'none' }}>
                                         {msg.text}
+                                        {msg.cost !== undefined && msg.cost > 0 && (
+                                            <div className="mt-2 pt-2 border-t border-primary/10 text-[8px] text-primary/40 flex justify-between uppercase tracking-tighter">
+                                                <span>MiniMax HD Usage</span>
+                                                <span>Cost: ${msg.cost.toFixed(4)}</span>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ))}
