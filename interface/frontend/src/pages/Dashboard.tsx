@@ -2,7 +2,7 @@ import { useAuthStore } from '../store/authStore'
 import { useNavigate } from 'react-router-dom'
 import { useSystemStatus } from '../hooks/useSystemStatus'
 import { ActivityFeed } from '../components/ActivityFeed'
-import { AureonCore } from '../components/AureonCore'
+import { AureonVisualizer } from '../components/AureonVisualizer'
 import { VoiceCommandOverlay } from '../components/VoiceCommandOverlay'
 
 export default function Dashboard() {
@@ -16,137 +16,187 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-background p-4 md:p-8 hud-scanline">
-      <div className="max-w-7xl mx-auto space-y-8">
-        {/* Top Navigation / HUD Bar */}
-        <div className="flex items-center justify-between glass p-4 rounded-lg border-b border-primary/30">
-          <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-primary/50 flex items-center justify-center bg-primary/10">
-              <span className="text-primary font-bold text-xl leading-none">A</span>
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-glow tracking-widest text-primary uppercase">
-                Aureon <span className="text-foreground/50 font-light">OS v1.0</span>
-              </h1>
-              <div className="flex items-center gap-2 text-[10px] uppercase tracking-tighter text-muted-foreground">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Neural Connection: ACTIVE
-              </div>
-            </div>
-          </div>
+    <div className="min-h-screen bg-[#010810] text-[#00FFFF] font-['Share_Tech_Mono'] select-none flex flex-col items-stretch hud-scanline">
+      {/* Background Visualizer - Fixed/Absolute background */}
+      <AureonVisualizer isListening={false} isProcessing={metricsLoading} audioLevel={0} />
 
-          <div className="flex items-center gap-6">
-            <div className="hidden md:block text-right">
-              <p className="text-xs text-muted-foreground uppercase">System Operator</p>
-              <p className="text-sm font-semibold text-primary">{profile?.name || profile?.email}</p>
-            </div>
+      <div className="hud-container">
+        {/* TOP BAR */}
+        <header className="topbar">
+          <div className="logo px-5 flex flex-col justify-center">
+            <span className="text-lg font-black tracking-[0.3em] glitch">AUREON</span>
+            <span className="text-[10px] opacity-70 tracking-[0.2em] font-light">OPERATING SYSTEM V1.0</span>
+          </div>
+          <div className="hud-section border-r border-line2 flex items-center gap-2" data-label="Status">
+            <span className="text-[11px] text-glow uppercase">Neural Link: Active</span>
+          </div>
+          <div className="hud-section border-r border-line2 flex items-center gap-2" data-label="Operator">
+            <span className="text-[11px]">{profile?.name || profile?.email || 'UNAUTHORIZED'}</span>
+          </div>
+          <div className="ml-auto px-6 h-full flex items-center border-l border-line2">
             <button
               onClick={handleSignOut}
-              className="px-4 py-2 border border-destructive/50 hover:bg-destructive/10 text-destructive text-xs uppercase tracking-widest rounded transition-all"
+              className="px-4 py-1 border border-red/30 hover:bg-red/20 text-red/60 text-[9px] font-black uppercase tracking-[0.2em] transition-all"
             >
               Terminate Session
             </button>
           </div>
-        </div>
+        </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Left: System Metrics HUD */}
-          <div className="lg:col-span-1 space-y-6">
-            <h2 className="text-xs font-bold text-primary/70 uppercase tracking-[0.2em] mb-4">Diagnostics</h2>
+        {/* LEFT PANEL: DIAGNOSTICS */}
+        <aside className="panel-side panel-left">
+          <div className="hud-section" data-label="DIAGNÓSTICO">
+            <div className="space-y-4 mt-2">
+              {/* CPU */}
+              <div>
+                <div className="flex justify-between text-[10px] uppercase opacity-60 mb-1">
+                  <span>Processor Load</span>
+                  <span className="text-primary">{metricsLoading ? '--' : metrics.cpu}%</span>
+                </div>
+                <div className="h-1 bg-line2 relative overflow-hidden">
+                  <div
+                    className="absolute inset-y-0 left-0 bg-primary shadow-glow transition-all duration-1000"
+                    style={{ width: `${metrics.cpu}%` }}
+                  />
+                </div>
+              </div>
 
-            {/* Metric Card 1: CPU */}
-            <div className="glass p-5 rounded-lg border-l-2 border-primary">
-              <div className="flex justify-between items-start mb-2">
-                <span className="text-[10px] uppercase text-muted-foreground">Processor Load</span>
-                <span className="text-xs font-mono text-primary">{metricsLoading ? '--' : metrics.cpu}%</span>
+              {/* RAM */}
+              <div>
+                <div className="flex justify-between text-[10px] uppercase opacity-60 mb-1">
+                  <span>Neural Memory</span>
+                  <span className="text-secondary">{metricsLoading ? '--' : metrics.ram}%</span>
+                </div>
+                <div className="h-1 bg-line2 relative overflow-hidden">
+                  <div
+                    className="absolute inset-y-0 left-0 bg-secondary shadow-[0_0_10px_rgba(112,0,255,0.8)] transition-all duration-1000"
+                    style={{ width: `${metrics.ram}%` }}
+                  />
+                </div>
               </div>
-              <div className="h-1 w-full bg-primary/10 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary shadow-[0_0_10px_rgba(0,242,255,0.8)] transition-all duration-1000"
-                  style={{ width: `${metrics.cpu}%` }}
-                />
+
+              {/* DISK */}
+              <div>
+                <div className="flex justify-between text-[10px] uppercase opacity-60 mb-1">
+                  <span>Data Repository</span>
+                  <span className="text-accent">{metricsLoading ? '--' : metrics.disk}%</span>
+                </div>
+                <div className="h-1 bg-line2 relative overflow-hidden">
+                  <div
+                    className="absolute inset-y-0 left-0 bg-accent shadow-[0_0_10px_rgba(0,255,150,0.8)] transition-all duration-1000"
+                    style={{ width: `${metrics.disk}%` }}
+                  />
+                </div>
               </div>
-              <p className="text-[8px] mt-2 text-muted-foreground font-mono">CORE_TEMP: OPTIMAL | CYCLES: SYNC</p>
             </div>
+            <p className="text-[8px] mt-4 text-primary/40 font-mono tracking-tighter">
+              STORAGE_LINK: SECURE | ENCRYPTION: AES-256
+            </p>
+          </div>
 
-            {/* Metric Card 2: RAM */}
-            <div className="glass p-5 rounded-lg border-l-2 border-secondary">
-              <div className="flex justify-between items-start mb-2">
-                <span className="text-[10px] uppercase text-muted-foreground">Neural Memory</span>
-                <span className="text-xs font-mono text-secondary">{metricsLoading ? '--' : metrics.ram}%</span>
+          <div className="flex-1 flex flex-col min-h-0">
+            <div className="hud-section" data-label="SYSTEM_LOG">
+              <div className="text-[9px] opacity-40 space-y-1 mt-2">
+                <p>[OK] BOOT_SEQUENCE_COMPLETE</p>
+                <p>[OK] NEURAL_SYNC_ESTABLISHED</p>
+                <p>[OK] SQUAD_HEARTBEAT_ACTIVE</p>
               </div>
-              <div className="h-1 w-full bg-secondary/10 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-secondary shadow-[0_0_10px_rgba(112,0,255,0.8)] transition-all duration-1000"
-                  style={{ width: `${metrics.ram}%` }}
-                />
-              </div>
-              <p className="text-[8px] mt-2 text-muted-foreground font-mono">BUFFER: ACTIVE | SWAP: STANDBY</p>
-            </div>
-
-            {/* Metric Card 3: Storage */}
-            <div className="glass p-5 rounded-lg border-l-2 border-accent">
-              <div className="flex justify-between items-start mb-2">
-                <span className="text-[10px] uppercase text-muted-foreground">Data Repository</span>
-                <span className="text-xs font-mono text-accent">{metricsLoading ? '--' : metrics.disk}%</span>
-              </div>
-              <div className="h-1 w-full bg-accent/10 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-accent shadow-[0_0_10px_rgba(0,255,150,0.8)] transition-all duration-1000"
-                  style={{ width: `${metrics.disk}%` }}
-                />
-              </div>
-              <p className="text-[8px] mt-2 text-muted-foreground font-mono">STORAGE_LINK: SECURE | ENCRYPTION: AES-256</p>
             </div>
           </div>
 
-          {/* Center: The Core Interaction Area */}
-          <div className="lg:col-span-2 flex flex-col items-center justify-center min-h-[400px] relative">
-            <div className="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center overflow-hidden">
+          <div className="p-4 mt-auto">
+            <div className="ang-all border border-line bg-white/5 p-4 text-center">
+              <span className="text-[10px] tracking-widest uppercase opacity-60">System Core</span>
+              <div className="mt-2 text-primary font-bold">STABLE</div>
+            </div>
+          </div>
+        </aside>
+
+        {/* CENTER PANEL: CORE */}
+        <main className="flex flex-col flex-1 overflow-hidden relative">
+          <div className="flex-1 flex flex-col items-center justify-center relative">
+            <div className="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center">
               <div className="w-[500px] h-[500px] rounded-full border border-primary/20 animate-spin-slow" />
-              <div className="absolute w-[300px] h-[300px] rounded-full border border-dashed border-secondary/20 animate-reverse-spin-slow" />
+              <div className="absolute w-[400px] h-[400px] rounded-full border border-dashed border-secondary/10 animate-reverse-spin-slow" />
             </div>
 
-            <AureonCore size="lg" />
+            <div className="z-10 text-center">
+              <div className="mb-8">
+                <h2 className="text-primary text-xs uppercase tracking-[0.5em] font-light mb-2">Neural Interface</h2>
+                <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+              </div>
 
-            <div className="mt-12 text-center space-y-4">
-              <p className="text-glow text-primary text-sm uppercase tracking-[0.3em] font-light">
-                Listening for Command
-              </p>
-              <div className="flex gap-4 justify-center">
-                <button className="px-6 py-2 glass hover:bg-primary/20 text-primary text-xs uppercase tracking-widest rounded border border-primary/50 transition-all">
-                  Text Input
-                </button>
-                <button className="px-6 py-2 bg-primary/20 hover:bg-primary/40 text-primary text-xs uppercase tracking-widest rounded border border-primary shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all">
-                  Voice Mode
-                </button>
+              {/* This area is visually handled by AureonVisualizer's radar in background */}
+
+              <div className="mt-24 space-y-6">
+                <p className="text-glow text-primary text-[10px] uppercase tracking-[0.4em] font-light animate-pulse">
+                  System Standby // Ready for Command
+                </p>
+
+                {/* Overlay Activation Button is typically floating, but let's put it here as a primary action if we want */}
+                <div className="flex gap-4 justify-center">
+                  <div className="text-[8px] opacity-30 mt-8 max-w-[200px] mx-auto leading-relaxed">
+                    NAVIGATE TO COMMAND CENTER TO START NEURAL INTERACTION OR EXECUTE DIRECT PIPELINES.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right: Activity / Log HUD */}
-          <div className="lg:col-span-1 space-y-4 h-full">
-            <div className="glass rounded-lg p-5 flex flex-col h-[500px] border-r-2 border-primary/50">
-              <div className="flex items-center justify-between mb-4 pb-2 border-b border-primary/20">
-                <h2 className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Live Stream</h2>
-                <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(0,242,255,1)]" />
+          <div className="px-4 py-2 border-t border-line2 flex justify-between items-center bg-black/20">
+            <span className="text-[9px] tracking-widest uppercase opacity-50">Active Pipelines</span>
+            <span className="text-[8px] opacity-30">SC-01 // READY</span>
+          </div>
+        </main>
+
+        {/* RIGHT PANEL: ACTIVITY FEED */}
+        <aside className="panel-side panel-right">
+          <div className="px-4 py-3 border-b border-line2 flex justify-between items-center">
+            <span className="text-[9px] tracking-widest uppercase opacity-50">Neural Log</span>
+            <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse shadow-glow" />
+          </div>
+          <div className="flex-1 overflow-hidden flex flex-col">
+            <ActivityFeed />
+          </div>
+
+          <div className="hud-section mt-auto" data-label="KNOWLEDGE DNA">
+            <div className="space-y-4 mt-4">
+              <div className="flex flex-col gap-1">
+                <div className="flex justify-between text-[8px] uppercase tracking-widest opacity-60">
+                  <span>Filosofias</span><span>70%</span>
+                </div>
+                <div className="h-0.5 bg-line2 w-full"><div className="h-full bg-c" style={{ width: '70%' }} /></div>
               </div>
-              <ActivityFeed />
+              <div className="flex flex-col gap-1">
+                <div className="flex justify-between text-[8px] uppercase tracking-widest opacity-60">
+                  <span>Mental Models</span><span>85%</span>
+                </div>
+                <div className="h-0.5 bg-line2 w-full"><div className="h-full bg-c2" style={{ width: '85%' }} /></div>
+              </div>
             </div>
           </div>
-        </div>
+        </aside>
+
+        {/* BOTTOM BAR */}
+        <footer className="bottombar h-9">
+          <div className="px-4 border-r border-line2 flex items-center gap-2 h-full text-[9px] tracking-widest opacity-60">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#00FF88] shadow-[0_0_4px_#00FF88]" />
+            CORE STABLE
+          </div>
+          <div className="px-4 border-r border-line2 flex items-center gap-2 h-full text-[9px] tracking-widest opacity-60">
+            SECURE LINK V3.1
+          </div>
+          <div className="flex-1 flex items-center px-4 gap-4 h-full text-[8px] text-primary/40 uppercase font-mono">
+            Aureon Core Engine Interface :: Terminal_ID: MB-03-26 :: Sector: 7G
+          </div>
+          <div className="px-4 border-l border-line2 flex items-center h-full text-[8px] font-mono text-primary/40">
+            LATENCY: 14.82ms :: SESSION_STABLE
+          </div>
+        </footer>
       </div>
 
-      {/* Voice Command Component */}
+      {/* Voice Command Component - Handles its own isActive state and button */}
       <VoiceCommandOverlay />
-
-      {/* Decorative HUD Elements */}
-      <div className="fixed bottom-4 left-4 text-[8px] font-mono text-primary/40 uppercase pointer-events-none">
-        Aureon Core Engine Interface :: Terminal_ID: MB-03-26 :: Sector: 7G
-      </div>
-      <div className="fixed bottom-4 right-4 text-[8px] font-mono text-primary/40 uppercase pointer-events-none">
-        LATENCY: {(Math.random() * 20 + 10).toFixed(2)}ms :: ENCRYPTION: ACTIVE :: SESSION_STABLE
-      </div>
     </div>
   )
 }

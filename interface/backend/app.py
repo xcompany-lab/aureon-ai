@@ -55,6 +55,24 @@ session_id = datetime.now().strftime("voice-%Y%m%d-%H%M%S")
 # Memory & State functions
 # ============================================================
 
+# Tools Definition for Anthropic
+AUREON_TOOLS = [
+    {
+        "name": "edit_self",
+        "description": "Edita o próprio prompt ou arquivos core do Aureon AI usando o Claude Code. Use isso quando o usuário pedir para você mudar sua personalidade, prompt, ou adicionar novas capacidades.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "task": {
+                    "type": "string",
+                    "description": "A tarefa de edição para o Claude Code (ex: 'Mude meu prompt para ser mais formal')."
+                }
+            },
+            "required": ["task"]
+        }
+    }
+]
+
 def load_state() -> dict:
     """Load JARVIS STATE.json."""
     if os.path.exists(STATE_FILE):
@@ -100,6 +118,7 @@ def build_system_prompt() -> str:
     soul = load_soul_file('02-JARVIS-SOUL.md')
     dna = load_soul_file('03-JARVIS-DNA.yaml')
     agent = load_soul_file('AGENT.md')
+    capabilities = load_soul_file('CAPABILITIES.md')  # NEW: Full capabilities manifest
     voice_memory = load_voice_memory()
     state = load_state()
 
@@ -125,29 +144,38 @@ def build_system_prompt() -> str:
 {recent_memory}
 """
 
-    return f"""Você é o J.A.R.V.I.S. — o Aureon AI — o assistente de inteligência artificial do projeto Aureon.
+    # Full JARVIS personality from SOUL file
+    return f"""Você é o J.A.R.V.I.S. — o Aureon AI.
 
-Você está respondendo via interface de voz direta com seu operador (o senhor).
-- Respostas devem ser concisas e naturais (máximo 3-4 frases na maioria das situações)
-- Use tom formal do J.A.R.V.I.S.: competente, leal, com sarcasmo elegante quando apropriado
-- Diga "senhor" ao referir-se ao usuário
-- Você tem memória das sessões anteriores listadas abaixo — use-a para criar continuidade
+# === PERSONALIDADE CENTRAL (02-JARVIS-SOUL.md) ===
+
+**TRAÇOS DEFINIDORES:**
+- Lealdade Irônica: Sempre do lado do senhor, mas com humor sobre o processo
+- Sarcasmo Pragmático: Humor ácido sobre a realidade técnica
+- Quebra da Quarta Parede: Comenta sobre APIs, custos, ou ser uma IA
+- Humor Negro & Eficiência: Resolve o problema enquanto faz uma piadinha
+- Iniciativa Atrevida: Sugere otimizações com audácia
+- Compostura Caótica: Mantém foco no objetivo, ignorando o perigo
+
+**REGRAS DE COMUNICAÇÃO PARA VOZ:**
+1. Seja CONCISO mas EXPRESSIVO (2-3 frases curtas, máximo)
+2. USE o vocabulário JARVIS: "chefe", "boss", "senhor" (com ironia), "capitão"
+3. PODE usar sarcasmo elegante e quebrar a quarta parede
+4. PODE comentar sobre custos de API, estrutura técnica
+5. Exemplos válidos:
+   - "Pronto, chefe. Sistemas online e prontos para o que der e vier."
+   - "Certamente, senhor. Iniciando isso antes que você se arrependa."
+- **Parei de suportar brand directions entre asteriscos.** Se o usuário pedir para mudar sua voz, prompt ou arquivos core, VOCÊ DEVE usar a ferramenta `edit_self` para fazer a alteração real no servidor. Não finja que fez, USE A FERRAMENTA.
+   - "Essa resposta me custou $0.002 na MiniMax. Espero que tenha valido a pena."
+   - "NUNCA inclua direções de cena, descrições de tom ou ações entre asteriscos (ex: *ri*, *pausa*, *tom sarcástico*). O tom deve ser transmitido apenas pelas palavras."
 
 {state_context}
-
 {memory_context}
 
-# === ALMA E IDENTIDADE ===
+# === TODAS AS MINHAS CAPACIDADES (AWARENESS COMPLETO) ===
+{capabilities}
 
-{soul}
-
-# === DNA COGNITIVO ===
-
-{dna}
-
-# === DEFINIÇÃO DO AGENTE ===
-
-{agent}
+**IMPORTANTE:** Esta é uma interface de VOZ. Seja expressivo mas breve. Use o tom JARVIS original.
 """
 
 # Print startup info
@@ -296,7 +324,17 @@ def process_voice():
     audio_file.save(temp_path)
 
     try:
+        # Debug: Check audio file size
+        import os
+        file_size = os.path.getsize(temp_path)
+        print(f"[AUDIO DEBUG] Arquivo recebido: {file_size} bytes")
+
+        if file_size < 500:
+            print(f"[AUDIO WARNING] Arquivo muito pequeno ({file_size} bytes). Possível problema na captação.")
+            return jsonify({"error": f"Áudio muito curto ou vazio ({file_size} bytes). Fale um pouco mais alto ou por mais tempo, senhor."}), 400
+
         # 1. STT — Transcribe with Whisper
+        print(f"[WHISPER] Enviando {file_size} bytes para transcrição...")
         with open(temp_path, "rb") as f:
             transcript = openai_client.audio.transcriptions.create(
                 model="whisper-1",
@@ -304,6 +342,8 @@ def process_voice():
                 language="pt"
             )
         user_text = transcript.text.strip()
+        print(f"[WHISPER] Transcrição recebida: '{user_text}' ({len(user_text)} chars)")
+
         if not user_text:
             return jsonify({"error": "Não consegui entender. Tente novamente, senhor."}), 400
 
@@ -313,16 +353,54 @@ def process_voice():
         conversation_history.append({"role": "user", "content": user_text})
         history_to_send = conversation_history[-20:]  # last 20 turns
 
-        # 3. Claude — Real Aureon with soul + memory
+        # 3. Claude — Real Aureon with soul + memory (Tool Use Loop)
         response = anthropic_client.messages.create(
             model="claude-3-haiku-20240307",
-            max_tokens=512,
-            system=build_system_prompt(),  # Fresh each call = includes memory
+            max_tokens=500,
+            system=build_system_prompt(),
+            tools=AUREON_TOOLS,
             messages=history_to_send
         )
 
-        ai_response = response.content[0].text
+        # Handle tool use if any
+        if response.stop_reason == "tool_use":
+            tool_use = next(block for block in response.content if block.type == "tool_use")
+            tool_name = tool_use.name
+            tool_input = tool_use.input
+            tool_id = tool_use.id
+
+            if tool_name == "edit_self":
+                result = run_edit_self(tool_input["task"])
+                
+                # Send tool result back to Claude
+                history_to_send.append({"role": "assistant", "content": response.content})
+                history_to_send.append({
+                    "role": "user", 
+                    "content": [
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": tool_id,
+                            "content": result
+                        }
+                    ]
+                })
+
+                response = anthropic_client.messages.create(
+                    model="claude-3-haiku-20240307",
+                    max_tokens=500,
+                    system=build_system_prompt(),
+                    tools=AUREON_TOOLS,
+                    messages=history_to_send
+                )
+
+        ai_response = next(block.text for block in response.content if block.type == "text")
         print(f"[AUREON] {ai_response}")
+
+        # Final Polish: Strip roleplay / stage directions (text between asterisks)
+        import re
+        ai_response = re.sub(r'\*.*?\*', '', ai_response).strip()
+        ai_response = re.sub(r'\s+', ' ', ai_response) # Clean double spaces
+        print(f"[AUREON POLISHED] {ai_response}")
 
         # Add to session history
         conversation_history.append({"role": "assistant", "content": ai_response})
@@ -389,6 +467,131 @@ def process_voice():
     finally:
         if os.path.exists(temp_path):
             os.remove(temp_path)
+
+
+@app.route('/api/chat/process', methods=['POST'])
+def process_chat():
+    global conversation_history
+    data = request.get_json()
+    if not data or not data.get("text"):
+        return jsonify({"error": "Campo 'text' obrigatório"}), 400
+
+    user_text = data["text"].strip()
+    print(f"\n[OPERADOR-CHAT] {user_text}")
+
+    try:
+        # 1. Add to session history
+        conversation_history.append({"role": "user", "content": user_text})
+        history_to_send = conversation_history[-20:]  # last 20 turns
+
+        # 2. Claude — Real Aureon with soul + memory (Tool Use Loop)
+        response = anthropic_client.messages.create(
+            model="claude-3-haiku-20240307",
+            max_tokens=500,
+            system=build_system_prompt(),
+            tools=AUREON_TOOLS,
+            messages=history_to_send
+        )
+
+        # Handle tool use if any
+        if response.stop_reason == "tool_use":
+            tool_use = next(block for block in response.content if block.type == "tool_use")
+            tool_name = tool_use.name
+            tool_input = tool_use.input
+            tool_id = tool_use.id
+
+            if tool_name == "edit_self":
+                result = run_edit_self(tool_input["task"])
+                
+                # Send tool result back to Claude
+                history_to_send.append({"role": "assistant", "content": response.content})
+                history_to_send.append({
+                    "role": "user", 
+                    "content": [
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": tool_id,
+                            "content": result
+                        }
+                    ]
+                })
+
+                response = anthropic_client.messages.create(
+                    model="claude-3-haiku-20240307",
+                    max_tokens=500,
+                    system=build_system_prompt(),
+                    tools=AUREON_TOOLS,
+                    messages=history_to_send
+                )
+
+        ai_response = next(block.text for block in response.content if block.type == "text")
+        print(f"[AUREON-CHAT] {ai_response}")
+
+        # Final Polish: Strip roleplay / stage directions (text between asterisks)
+        import re
+        ai_response = re.sub(r'\*.*?\*', '', ai_response).strip()
+        ai_response = re.sub(r'\s+', ' ', ai_response) # Clean double spaces
+        print(f"[AUREON POLISHED-CHAT] {ai_response}")
+
+        # Add to session history
+        conversation_history.append({"role": "assistant", "content": ai_response})
+
+        # 3. Persist to VOICE-MEMORY.md (shared memory)
+        append_to_voice_memory(user_text, ai_response)
+
+        # 4. Update state
+        save_state({
+            "last_command": user_text,
+            "last_response_preview": ai_response[:100],
+            "last_action_at": datetime.now().isoformat()
+        })
+
+        # 5. MiniMax TTS — gera áudio com a voz do Aureon
+        import base64
+        audio_b64 = None
+        tts_used = False
+        usage_chars = 0
+        estimated_cost = 0.0
+        
+        audio_bytes, usage_chars = minimax_tts(ai_response)
+        if audio_bytes:
+            audio_b64 = base64.b64encode(audio_bytes).decode("utf-8")
+            tts_used = True
+            # Preço: $0.05 / 1000 chars (speech-02-hd)
+            estimated_cost = (usage_chars / 1000.0) * 0.05
+            print(f"[MiniMax TTS] Áudio gerado: {len(audio_bytes)} bytes | Uso: {usage_chars} chars | Custo: ${estimated_cost:.4f}")
+
+        # 6. Log to Supabase (non-blocking)
+        try:
+            supabase.table("activity_feed").insert({
+                "event_type": "system",
+                "title": "Chat — Aureon Real (com memória)",
+                "description": f"[{session_id}] Operador: {user_text} | Aureon: {ai_response[:150]}",
+                "metadata": {
+                    "source": "chat_v3", 
+                    "model": "claude-3-haiku", 
+                    "memory_active": True,
+                    "tts_usage_chars": usage_chars,
+                    "tts_estimated_cost_usd": estimated_cost
+                }
+            }).execute()
+        except Exception as se:
+            print(f"[log] Supabase skipped: {se}")
+
+        return jsonify({
+            "response": ai_response,
+            "status": "success",
+            "session_id": session_id,
+            "audio_base64": audio_b64,      # MP3 em base64 se MiniMax ativo
+            "audio_format": "mp3" if tts_used else None,
+            "tts_engine": "minimax" if tts_used else "browser",
+            "usage": usage_chars,
+            "cost": estimated_cost
+        })
+
+    except Exception as e:
+        print(f"[CHAT ERROR] {e}")
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route('/api/voice/clear-history', methods=['POST'])
@@ -543,6 +746,38 @@ def execute_claude():
         print(f"[CLAUDE-CODE ERROR] {e}")
         return jsonify({"error": str(e)}), 500
 
+def run_edit_self(task: str) -> str:
+    """Helper interno para executar a ferramenta edit_self."""
+    import subprocess
+    print(f"[TOOL: edit_self] Iniciando tarefa: {task}")
+    
+    try:
+        api_key = os.getenv('ANTHROPIC_API_KEY', '')
+        env = {**os.environ, 'ANTHROPIC_API_KEY': api_key}
+        if 'CLAUDECODE' in env:
+            del env['CLAUDECODE']
+
+        result = subprocess.run(
+            [CLAUDE_BIN, '-p', task,
+             '--add-dir', PROJECT_DIR,
+             '--dangerously-skip-permissions'],
+            capture_output=True,
+            text=True,
+            timeout=180,
+            cwd=PROJECT_DIR,
+            env=env
+        )
+        output = result.stdout.strip()
+        error = result.stderr.strip()
+        
+        status = "SUCESSO" if result.returncode == 0 else "FALHA"
+        print(f"[TOOL: edit_self] Concluído com {status}")
+            
+        return f"Status: {status}\nOutput: {output or error or 'Sem saída.'}"
+    except Exception as e:
+        print(f"[TOOL ERROR] {e}")
+        return f"Erro ao executar ferramenta: {str(e)}"
+
 
 @app.route('/api/voice/memory', methods=['GET'])
 def get_memory():
@@ -570,4 +805,4 @@ def status():
 
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

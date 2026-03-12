@@ -12,31 +12,33 @@ export function ActivityFeed() {
     }
 
     return (
-        <div className="space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+        <div className="flex-1 overflow-y-auto space-y-1 p-2 custom-scrollbar">
             {activities.length === 0 ? (
-                <div className="text-center p-8 text-muted-foreground">
+                <div className="text-center p-8 text-primary/20 text-[10px] uppercase tracking-widest">
                     No activity recorded yet.
                 </div>
             ) : (
                 activities.map((activity) => (
                     <div
                         key={activity.id}
-                        className="flex items-start gap-4 p-3 rounded-md bg-background/50 border border-border/50 hover:border-primary/30 transition-colors"
+                        className="border-l border-transparent hover:border-primary/50 hover:bg-white/5 transition-all p-2 group cursor-default"
                     >
-                        <div className={`mt-1 h-2 w-2 rounded-full shrink-0 ${getStatusColor(activity.event_type)}`} />
-                        <div className="flex-1 min-w-0">
-                            <div className="flex items-center justify-between gap-2">
-                                <h4 className="text-sm font-medium truncate">{activity.title}</h4>
-                                <span className="text-[10px] text-muted-foreground whitespace-nowrap">
-                                    {new Date(activity.created_at).toLocaleTimeString()}
+                        <div className="flex items-center justify-between gap-2 mb-0.5">
+                            <div className="flex items-center gap-2">
+                                <div className={`h-1 w-1 rounded-full ${getStatusColor(activity.event_type)} shadow-sm`} />
+                                <span className="text-[9px] font-bold uppercase tracking-wider text-primary/80">
+                                    {activity.title}
                                 </span>
                             </div>
-                            {activity.description && (
-                                <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                                    {activity.description}
-                                </p>
-                            )}
+                            <span className="text-[8px] text-primary/30 font-mono">
+                                {new Date(activity.created_at).toLocaleTimeString()}
+                            </span>
                         </div>
+                        {activity.description && (
+                            <p className="text-[9px] text-primary/50 leading-relaxed font-mono pl-3">
+                                {activity.description}
+                            </p>
+                        )}
                     </div>
                 ))
             )}
